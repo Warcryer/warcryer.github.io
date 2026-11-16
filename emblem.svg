@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Warcryer emblem: a war horn sounding. Original drawing for this project. -->
+  <circle cx="512" cy="512" r="470" fill="#14151a"/>
+  <circle cx="512" cy="512" r="418" fill="none" stroke="#c5a25a" stroke-width="22"/>
+  <circle cx="512" cy="512" r="386" fill="none" stroke="#c5a25a" stroke-opacity=".35" stroke-width="4"/>
+  <g transform="translate(512 512) scale(.92) translate(-586 -468)">
+    <path d="M262 566 Q440 800 764 432 L640 300 Q486 566 262 566 Z" fill="#c5a25a"/>
+    <clipPath id="horn"><path d="M262 566 Q440 800 764 432 L640 300 Q486 566 262 566 Z"/></clipPath>
+    <g clip-path="url(#horn)" stroke="#14151a" stroke-width="20">
+      <path d="M452 500 L520 700"/>
+      <path d="M350 520 L392 680"/>
+    </g>
+    <ellipse cx="702" cy="366" rx="94" ry="30" transform="rotate(46.8 702 366)" fill="#e6c77a"/>
+    <ellipse cx="702" cy="366" rx="62" ry="15" transform="rotate(46.8 702 366)" fill="#14151a"/>
+    <g fill="none" stroke="#e6c77a" stroke-width="26" stroke-linecap="round">
+      <path d="M741 229 A142 142 0 0 1 838 325"/>
+      <path d="M764 150 A222 222 0 0 1 917 310" stroke-opacity=".6"/>
+    </g>
+  </g>
+</svg>

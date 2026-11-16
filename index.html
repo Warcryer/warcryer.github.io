@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warcryer: voice that follows the chain of command</title>
+<meta name="description" content="Free, open-source push-to-talk voice for large gaming alliances. The event roster decides who hears whom, so nobody picks a channel.">
+<meta property="og:title" content="Warcryer">
+<meta property="og:description" content="Voice that follows the chain of command. Free, open-source push-to-talk voice for large gaming alliances.">
+<meta property="og:image" content="shots/board.jpg">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="icon" href="favicon.png">
+<link rel="preload" href="fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#top"><img src="emblem.svg" alt="" width="34" height="34"><span>Warcryer</span></a>
+  <nav>
+    <a href="#nets">How it works</a>
+    <a href="#leaders">For leaders</a>
+    <a href="#open">Open source</a>
+    <a class="btn small" href="https://github.com/Salty-Dragon/voice-client/releases">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <img class="emblem" src="emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
+  <h1>Warcryer</h1>
+  <p class="tagline">Voice that follows the chain of command.</p>
+  <p class="lede">Push-to-talk voice for large gaming alliances. The event roster decides who hears whom, so nobody picks a channel and nobody talks over the call.</p>
+  <div class="actions">
+    <a class="btn" href="https://github.com/Salty-Dragon/voice-client/releases">Download for Windows</a>
+    <a class="btn quiet" href="https://github.com/Salty-Dragon/voice-client">Source on GitHub</a>
+  </div>
+  <p class="fine">Free and open source. Windows 10 and 11. Early test builds, not yet code-signed.</p>
+</section>
+
+<section class="shot">
+  <figure>
+    <img src="shots/board.jpg" alt="Two players side by side: the leader's roster board with parties of players, and a member's voice screen with their nets" width="1600" height="775" loading="lazy">
+    <figcaption>Left, the leader's roster board. Right, the nets a member was placed on. Drag a player to another party and their voice follows within a couple of seconds.</figcaption>
+  </figure>
+</section>
+
+<section id="nets">
+  <h2>Five nets, one microphone</h2>
+  <p class="intro">During an event every player is on several voice nets at once. Each net you may speak on has its own push-to-talk key, and you only ever hear the nets your place on the roster gives you.</p>
+
+  <ol class="nets">
+    <li style="--net:#e2553f">
+      <h3>Broadcast</h3>
+      <p class="who">Event leader and deputies speak</p>
+      <p>The call everyone hears. Used for the orders that move the whole alliance.</p>
+    </li>
+    <li style="--net:#e6c77a">
+      <h3>Command</h3>
+      <p class="who">Leaders only</p>
+      <p>Event leader, deputies, clan leaders and party leaders plan here without the rank and file hearing it.</p>
+    </li>
+    <li style="--net:#8c86ff">
+      <h3>Clan</h3>
+      <p class="who">Clan leader and officers speak</p>
+      <p>Each clan's own orders, heard by that clan alone.</p>
+    </li>
+    <li style="--net:#5fd35f">
+      <h3>Party</h3>
+      <p class="who">Everyone in the party speaks</p>
+      <p>Where the fighting is called. Push-to-talk or voice activation, your choice.</p>
+    </li>
+    <li style="--net:#9a968c">
+      <h3>Reserve</h3>
+      <p class="who">Players waiting for a party</p>
+      <p>Latecomers wait here with the organisers until they are placed.</p>
+    </li>
+  </ol>
+
+  <div class="split">
+    <div>
+      <h3>A leader's voice cuts through</h3>
+      <p>While someone speaks on a higher net, the nets below it drop to a murmur and come back when the call ends. A Broadcast order is heard over party chatter without silencing it, and the lowered nets say so on screen.</p>
+      <h3>Keys that work in the game</h3>
+      <p>Push-to-talk keys, including mouse side buttons, work while the game has focus. They are never taken away from the game, and no administrator rights are needed.</p>
+    </div>
+    <figure>
+      <img src="shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's Clan and Party nets show as lowered" width="1600" height="775" loading="lazy">
+      <figcaption>Left, the leader holds the Broadcast key. Right, a member's Clan and Party nets are lowered.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="leaders">
+  <h2>Run the alliance from the same window</h2>
+  <p class="intro">No bouncing between a website, a spreadsheet and a voice app. Each screen offers only what your role allows, and the server checks every action again.</p>
+  <div class="cards">
+    <article>
+      <h3>Operations</h3>
+      <p>Create a siege or raid, choose the clans taking part, build parties on a drag-and-drop board, then go live. Everyone on the roster is pulled into their nets at once.</p>
+    </article>
+    <article>
+      <h3>Clans</h3>
+      <p>Players ask to join; leaders and officers approve. A clan leader can upload a crest, which appears beside each member's name when they speak.</p>
+    </article>
+    <article>
+      <h3>The lounge</h3>
+      <p>Between events each clan has a lounge to sit and talk in. When an operation ends, everyone is returned there automatically.</p>
+    </article>
+    <article>
+      <h3>Moves that stick</h3>
+      <p>Move a player mid-fight and their audio follows. Send someone to Reserve, hand over a party, appoint a deputy: voice rights change with the role.</p>
+    </article>
+  </div>
+  <figure class="wide">
+    <img src="shots/voice.jpg" alt="The voice screen: one card per net, showing who is speaking and which key talks there" width="1600" height="775" loading="lazy">
+    <figcaption>The voice screen during an operation: one card per net, who is speaking, and the key that talks there.</figcaption>
+  </figure>
+</section>
+
+<section id="open">
+  <h2>Open source, and quiet about your data</h2>
+  <div class="cards three">
+    <article>
+      <h3>The client is public</h3>
+      <p>The Windows app is MIT licensed. Every release is built from the public repository by GitHub Actions and installed and tested on a clean Windows machine before it is published.</p>
+      <p><a href="https://github.com/Salty-Dragon/voice-client">Read the source</a></p>
+    </article>
+    <article>
+      <h3>Sign in with Discord</h3>
+      <p>Sign-in happens in your own browser. The app asks Discord only who you are: no email address, no server list, no messages. It never sees your password.</p>
+    </article>
+    <article>
+      <h3>Nothing recorded</h3>
+      <p>Voice is relayed live and not stored. Key presses are not logged or sent; only the keys you bind are acted on. No telemetry, no ads.</p>
+      <p><a href="https://github.com/Salty-Dragon/voice-client#key-capture-and-privacy">How key capture works</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="status" class="status">
+  <h2>Where it stands</h2>
+  <p>Warcryer is in early testing with one alliance. The Windows client is open source and its test builds are public. Hosting for other alliances is not available yet.</p>
+  <div class="actions">
+    <a class="btn" href="https://github.com/Salty-Dragon/voice-client/releases">Download for Windows</a>
+    <a class="btn quiet" href="https://github.com/Salty-Dragon/voice-client/tree/main/docs">Read the guides</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Warcryer is a community project, MIT licensed. It is not affiliated with or endorsed by NCSOFT or any game publisher, and it uses no game artwork.</p>
+  <p><a href="https://github.com/Salty-Dragon/voice-client">GitHub</a> · <a href="https://github.com/Salty-Dragon/voice-client/releases">Releases</a> · <a href="https://github.com/Salty-Dragon/voice-client/issues">Report a problem</a></p>
+</footer>
+
+</body>
+</html>
