@@ -93,7 +93,10 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
 .split p { color: var(--muted); margin-bottom: 1.6em; }
+.split + .split { margin-top: clamp(40px, 6vw, 72px); }
+.split.flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .split.flip { grid-template-columns: 1fr; } .split.flip figure { order: 2; } }
 
 /* Cards */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
