@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Warcryer: voice that follows the chain of command</title>
-<meta name="description" content="Free, open-source push-to-talk voice for large gaming alliances. The event roster decides who hears whom, so nobody picks a channel.">
+<meta name="description" content="A free, open-source alternative to TeamSpeak for large gaming alliances and clans. The event roster decides who hears whom, so nobody picks a channel.">
 <meta property="og:title" content="Warcryer">
-<meta property="og:description" content="Voice that follows the chain of command. Free, open-source push-to-talk voice for large gaming alliances.">
+<meta property="og:description" content="Voice that follows the chain of command. A free, open-source alternative to TeamSpeak for large gaming alliances and clans.">
 <meta property="og:image" content="shots/board.jpg">
 <meta name="theme-color" content="#0b0c0f">
 <link rel="icon" href="favicon.png">
@@ -20,6 +20,7 @@
   <nav>
     <a href="#watch">Walkthrough</a>
     <a href="#nets">How it works</a>
+    <a href="#planning">Planning</a>
     <a href="#leaders">For leaders</a>
     <a href="#open">Open source</a>
     <a class="btn small" href="https://github.com/Warcryer/client/releases/latest">Download</a>
@@ -32,7 +33,7 @@
   <img class="emblem" src="emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
   <h1>Warcryer</h1>
   <p class="tagline">Voice that follows the chain of command.</p>
-  <p class="lede">Push-to-talk voice for large gaming alliances. The event roster decides who hears whom, so nobody picks a channel and nobody talks over the call.</p>
+  <p class="lede">A free, open-source alternative to TeamSpeak for large alliances and clans. The event roster decides who hears whom, so nobody picks a channel and nobody talks over the call.</p>
   <div class="actions">
     <a class="btn" href="https://github.com/Warcryer/client/releases/latest">Download for Windows</a>
     <a class="btn quiet" href="https://github.com/Warcryer/client">Source on GitHub</a>
@@ -56,7 +57,7 @@
       <span class="play-mark" aria-hidden="true"></span>
     </button>
   </div>
-  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href="https://youtu.be/mfSGKR_gbI8">watch it on YouTube</a>.</p>
+  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href="https://youtu.be/mfSGKR_gbI8">watch it on YouTube</a>. It was recorded before sign-ups, party needs and attendance were added; those are shown <a href="#planning">further down</a>.</p>
 </section>
 
 <section id="nets">
@@ -131,6 +132,38 @@
   </div>
 </section>
 
+<section id="planning">
+  <h2>Plan the event, then see who came</h2>
+  <p class="intro">The spreadsheet an alliance keeps for sign-ups, party lists and attendance is built in, and it knows who is actually in voice.</p>
+
+  <div class="cards">
+    <article>
+      <h3>Who is coming</h3>
+      <p>When an event is created, every member of its clans is asked in the app, and one click answers. A player bringing a different character says which, for that event only. The leader of a constant party can sign the whole party up.</p>
+    </article>
+    <article>
+      <h3>What each party needs</h3>
+      <p>Players choose their class and level once, from the alliance's own lists. Each party then shows whether it is full and which support roles it still has nobody for. Click a missing role to list the unplaced players who can fill it.</p>
+    </article>
+    <article>
+      <h3>Attendance</h3>
+      <p>After the event, the board lists who was in voice and for how long, counted from the moment the operation started. Late arrivals, early leavers and players who said they were coming and never showed are plain to see.</p>
+    </article>
+    <article>
+      <h3>Into your own sheet</h3>
+      <p>One button copies the table, ready to paste into the spreadsheet where you keep points or DKP. Organisers see everyone; clan leaders see their own clan.</p>
+    </article>
+  </div>
+  <figure class="wide">
+    <img src="shots/planning.jpg" alt="The roster board of a planned castle siege: twenty coming, one cannot, three have not answered. Three parties, one full, the others listing the support roles they still need, and Reserve sorted by who is coming" width="1600" height="944" loading="lazy">
+    <figcaption>A planned operation. One party is full; the other two list what they still need.</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="shots/attendance.jpg" alt="The attendance table of an ended operation: it ran for one hour thirty-two minutes with twenty-one of twenty-four players in voice, each with their time, share of the operation and when they joined" width="1600" height="694" loading="lazy">
+    <figcaption>Attendance after an operation, with a button that copies it for a spreadsheet.</figcaption>
+  </figure>
+</section>
+
 <section id="leaders">
   <h2>Run the alliance from the same window</h2>
   <p class="intro">No bouncing between a website, a spreadsheet and a voice app. Each screen offers only what your role allows, and the server checks every action again.</p>
@@ -188,7 +221,7 @@
     </article>
     <article>
       <h3>Nothing recorded</h3>
-      <p>Voice is relayed live and not stored. Key presses are not logged or sent; only the keys you bind are acted on. No telemetry, no ads. You can delete your account, and everything kept about you, from the app.</p>
+      <p>Voice is relayed live and not stored. Key presses are not logged or sent; only the keys you bind are acted on. No telemetry, no ads. The server notes when you join and leave a net, which is how an event's organisers see who attended. You can delete your account, and everything kept about you, from the app.</p>
       <p><a href="https://github.com/Warcryer/client/blob/main/PRIVACY.md">Read the privacy policy</a></p>
     </article>
     <article>
@@ -211,7 +244,7 @@
 </main>
 
 <footer>
-  <p>Warcryer is a community project, MIT licensed. It is not affiliated with or endorsed by NCSOFT or any game publisher, and it uses no game artwork.</p>
+  <p>Warcryer is a community project, MIT licensed. It is not affiliated with or endorsed by NCSOFT or any game publisher, and it uses no game artwork. TeamSpeak is a trademark of its owner, named here only for comparison; Warcryer is not affiliated with it.</p>
   <p><a href="https://github.com/Warcryer/client">GitHub</a> · <a href="https://github.com/Warcryer/client/releases">Releases</a> · <a href="https://github.com/Warcryer/client/blob/main/PRIVACY.md">Privacy policy</a> · <a href="https://github.com/Warcryer/client#code-signing-policy">Code signing policy</a> · <a href="https://github.com/Warcryer/client/issues">Report a problem</a></p>
 </footer>
 
