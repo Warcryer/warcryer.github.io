@@ -18,6 +18,7 @@
 <header class="top">
   <a class="brand" href="#top"><img src="emblem.svg" alt="" width="34" height="34"><span>Warcryer</span></a>
   <nav>
+    <a href="#watch">Walkthrough</a>
     <a href="#nets">How it works</a>
     <a href="#leaders">For leaders</a>
     <a href="#open">Open source</a>
@@ -44,6 +45,18 @@
     <img src="shots/board.jpg" alt="Two players side by side: the leader's roster board with three parties, two of them marked as constant parties, and a member's voice screen with her nets" width="1600" height="775" loading="lazy">
     <figcaption>Left, the leader's roster board. Right, the nets a member was placed on. Drag a player to another party and their voice follows within a couple of seconds.</figcaption>
   </figure>
+</section>
+
+<section id="watch">
+  <h2>Watch an evening of it</h2>
+  <p class="intro">A thirteen-minute walkthrough from the alliance leader's seat: signing in, clans and invite links, building the roster, going live, a briefing, a party losing its leader, and the log afterwards. It has captions and no sound. The clans and players in it are made up.</p>
+  <div class="video" id="video">
+    <button type="button" class="play" id="play" aria-label="Play the walkthrough video">
+      <img src="shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
+      <span class="play-mark" aria-hidden="true"></span>
+    </button>
+  </div>
+  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href="https://youtu.be/mfSGKR_gbI8">watch it on YouTube</a>.</p>
 </section>
 
 <section id="nets">
@@ -202,5 +215,16 @@
   <p><a href="https://github.com/Warcryer/client">GitHub</a> · <a href="https://github.com/Warcryer/client/releases">Releases</a> · <a href="https://github.com/Warcryer/client/blob/main/PRIVACY.md">Privacy policy</a> · <a href="https://github.com/Warcryer/client#code-signing-policy">Code signing policy</a> · <a href="https://github.com/Warcryer/client/issues">Report a problem</a></p>
 </footer>
 
+<script>
+  // The video is fetched from YouTube only when someone asks to play it.
+  document.getElementById("play").addEventListener("click", function () {
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/mfSGKR_gbI8?autoplay=1&rel=0";
+    frame.title = "Warcryer walkthrough";
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    document.getElementById("video").replaceChildren(frame);
+  });
+</script>
 </body>
 </html>
