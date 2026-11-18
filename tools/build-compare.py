@@ -37,7 +37,7 @@ ROWS = [
     ("over", "A leader's voice over the rest", "Automatic: while someone speaks on a higher net, the nets below it are lowered for everyone who hears both."),
     ("moves", "Moving a player mid-fight", "Drag them to another party on the roster board. Their voice follows in a second or two, with a sound to tell them."),
     ("planning", "Sign-ups, parties and what each party lacks", "Built in: who is coming, constant parties, a drag-and-drop board that shows which roles a party still needs."),
-    ("attendance", "Attendance", "Recorded: who was in voice and for how long, ready to paste into a spreadsheet."),
+    ("attendance", "Attendance", "Recorded and kept with each operation: who was in voice, and for how long."),
     ("chat", "Event text chat", "A channel per net, a pinned order, a ready check, and quick calls on a key, in a window that sits on the game."),
     ("hosting", "Hosting", "Hosted for you. You cannot run your own server."),
     ("price", "Price", "Free while in beta."),
