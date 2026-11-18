@@ -129,3 +129,61 @@ footer p { max-width: 70ch; margin: 0 auto .6em; }
 .steps { max-width: 46rem; margin: 1.6em auto 0; padding-left: 1.4em; text-align: left; color: var(--muted); }
 .steps li { margin: .55em 0; }
 .steps strong { color: var(--text, inherit); font-weight: 600; }
+
+/* Comparison pages (compare/, written by tools/build-compare.py). */
+.page .hero { padding-bottom: clamp(32px, 5vw, 56px); }
+.page h1 { font-size: clamp(1.9rem, 5.4vw, 3.1rem); text-wrap: balance; }
+.page .hero .lede { margin-top: 1.2em; }
+.page .hero .fine { margin-top: 1.4em; }
+.top nav a[aria-current="page"] { color: var(--gold-bright); }
+.crumbs { font-size: .84rem; color: var(--muted); margin-bottom: 2.2em; display: flex; flex-wrap: wrap; justify-content: center; gap: .5em; }
+.crumbs a { color: var(--muted); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.verdict article { background: rgb(18 20 26 / .85); border: 1px solid var(--line); border-radius: 2px; padding: 22px 22px 10px; }
+.verdict article.ours { border-color: var(--gold-dim); }
+.verdict article.ours h3 { color: var(--gold-bright); }
+.verdict ul, ul.plain { margin: 0 0 1em; padding-left: 1.2em; color: var(--muted); }
+.verdict li, ul.plain li { margin: .5em 0; }
+ul.plain { max-width: 70ch; }
+@media (max-width: 720px) { .verdict { grid-template-columns: 1fr; } }
+
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.cards h3 a { color: inherit; text-decoration: none; }
+.cards h3 a:hover { color: var(--gold-bright); }
+@media (max-width: 720px) { .cards.two { grid-template-columns: 1fr; } }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--gold-dim); border-radius: 2px; }
+table.compare { width: 100%; border-collapse: collapse; font-size: .93rem; line-height: 1.5; }
+table.compare th, table.compare td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+table.compare tbody tr:last-child th, table.compare tbody tr:last-child td { border-bottom: 0; }
+table.compare thead th { font-family: var(--display); letter-spacing: .08em; text-transform: uppercase; font-size: .86rem; color: var(--text); background: var(--bg-1); }
+table.compare thead th a { color: inherit; }
+table.compare tbody th { width: 21%; font-weight: 600; color: var(--text); background: rgb(18 20 26 / .6); }
+table.compare td { color: var(--muted); width: 39.5%; }
+table.compare td:nth-child(2), table.compare thead th:nth-child(2) { color: var(--text); background: rgb(200 164 90 / .07); }
+table.compare thead th:nth-child(2) { color: var(--gold-bright); }
+table.compare.many { min-width: 960px; font-size: .84rem; }
+table.compare.many th, table.compare.many td { padding: 11px 12px; }
+table.compare.many tbody th { width: 13%; }
+table.compare.many td { width: auto; }
+.note { margin-top: 1.2em; max-width: 80ch; }
+
+.steps.left { margin-left: 0; }
+.faq { max-width: 72ch; margin: 0; }
+.faq dt { font-weight: 600; color: var(--text); margin-top: 1.4em; }
+.faq dt:first-child { margin-top: 0; }
+.faq dd { margin: .4em 0 0; color: var(--muted); }
+
+/* On a phone a two-product table reads as one block per row, each answer under its product's name. */
+@media (max-width: 640px) {
+  table.compare:not(.many) thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  table.compare:not(.many), table.compare:not(.many) tbody, table.compare:not(.many) tr, table.compare:not(.many) th, table.compare:not(.many) td { display: block; width: auto; }
+  table.compare:not(.many) tr { border-bottom: 1px solid var(--gold-dim); }
+  table.compare:not(.many) tbody tr:last-child { border-bottom: 0; }
+  table.compare:not(.many) tbody th { border-bottom: 0; padding-bottom: 6px; font-size: 1rem; }
+  table.compare:not(.many) td { border-bottom: 0; padding-top: 8px; padding-bottom: 12px; }
+  table.compare:not(.many) td::before { content: attr(data-who); display: block; font-family: var(--display); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  table.compare:not(.many) td:nth-child(2)::before { color: var(--gold-bright); }
+}
