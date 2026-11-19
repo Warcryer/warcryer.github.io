@@ -1,8 +1,8 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.25.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.26.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
-This covers Warcryer, the Windows app built from this repository, and the service the released installer connects to (the server at `ignite.v1rtopia.com`), which is run by Warcryer. The only contact is the [Warcryer Discord](https://discord.gg/qf4meEMfhp). The service's rules are in the [terms of use](/terms/). If you build the app yourself and point it at another server (`VITE_SERVER`), that server's operator decides what is kept there.
+This covers Warcryer, the Windows app built from this repository, and the service the released installer connects to (the server at `app.warcryer.org`, earlier `ignite.v1rtopia.com`), which is run by Warcryer. The only contact is the [Warcryer Discord](https://discord.gg/qf4meEMfhp). The service's rules are in the [terms of use](/terms/). If you build the app yourself and point it at another server (`VITE_SERVER`), that server's operator decides what is kept there.
 
 ## Before you sign in
 
@@ -35,7 +35,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.25.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.26.0/src-tauri/src/input).
 
 ## Who can see what
 
