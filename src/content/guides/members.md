@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.26.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -129,6 +129,12 @@ The **History** tab shows what you came to: every operation your clan took part 
 
 Choose how far back to look at the top. The record is kept until the operation is deleted by an alliance admin or you delete your account, which removes you from every operation's record at once. Your clan's leader and officers see the same record for the time you were in their clan, and your alliance's admins see it all; other members do not.
 
+## Your points
+
+If your alliance keeps points (it may call them DKP, EP or something else), the **History** tab has a tab for them, and one more if your clan keeps its own. **My own lines** lists every change to yours, newest first: what each operation gave you, and anything given or taken by hand, always with the reason and who did it. You always see your own; whether you also see everyone's standings is your alliance's or clan's choice.
+
+Points are earned at operations, from your time in voice: how much is up to your alliance. After an operation, a leader looks over what everyone earned and posts it, so your points for an operation can take a little while to appear.
+
 ## Being moved, and asking to move
 
 - When an organiser moves you to another party, you hear a short cue, a line tells you where you went, and your voice switches within a second or two. You do nothing.
@@ -240,6 +246,6 @@ Everything here is kept on your computer, except your name, class and level and 
 
 ## What is stored about you
 
-On the server: your Discord account ID and name, your in-game name, class and level, the other characters you list, your clan membership and who approved you, your constant party, your answer to each event (coming or not, and another character or a note if you gave one), your place in each operation's roster, and when you joined and left each net. From those times, the organisers of an operation and your clan's leader and officers can see how long you were in voice during it. Voice is never recorded. Key bindings, audio settings and your per-player volumes stay on your computer.
+On the server: your Discord account ID and name, your in-game name, class and level, the other characters you list, your clan membership and who approved you, your constant party, your answer to each event (coming or not, and another character or a note if you gave one), your place in each operation's roster, when you joined and left each net, and your points if your alliance or clan keeps them. From those times, the organisers of an operation and your clan's leader and officers can see how long you were in voice during it. Voice is never recorded. Key bindings, audio settings and your per-player volumes stay on your computer.
 
 To remove all of it, open **Settings → Account → Delete my account**. It asks once more before deleting, and cannot be undone. The full details are in the [privacy policy](/privacy/).

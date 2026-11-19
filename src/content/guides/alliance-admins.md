@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.26.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -255,7 +255,25 @@ Someone who was in voice without being in one of the operation's clans (you, loo
 7. Check that every party has the right leader and that leaders have bound their Command key.
 8. Start the operation. Attendance counts from this moment.
 9. Brief everyone with Broadcast locked open, then release it before the fight.
-10. Afterwards, end it. Its board then shows **Attendance**; copy it into your sheet if you keep points.
+10. Afterwards, end it. Its board then shows **Attendance** and, if you keep points, the draft to review and post.
+
+## Points
+
+Points (DKP, EP, or whatever your alliance calls them) are set up on the **Alliance** tab under **Points**, and are off until you switch them on. Earned at operations, from the attendance Warcryer already records:
+
+- **Earned:** a set amount for being in voice at least a share of the operation (50% unless you change it), or an amount for each hour in voice.
+- **Amount:** one for any operation, and if you like a different one for each of your kinds of event (Game setup on the same tab), so a siege can be worth more than a raid.
+- **Came as they said** adds a bonus for saying "coming" and earning points; **Did not show** takes points from anyone who said "coming" and was never in voice. Both start at 0.
+- **An operation's event leader may post its points:** on by default. Off: only the alliance's admins post.
+- **Everyone sees the standings:** on by default. Off: admins see all, a clan's leader and officers their own clan, every player their own.
+
+**After an operation.** Nothing is added by itself. When an operation ends, its board shows a draft: everyone of its clans with their time in voice, what they had answered, and what the rules suggest, with the reason. Change any amount, use **Add to everyone who was in voice** for a boss kill or a won siege, then **Post**. It asks once, with the number of players and the total. Each operation is posted once. The points tab on **History** lists the operations still waiting for their points, since points were switched on, with **Review and post** beside each.
+
+**Standings and lines.** **History → (your points)** shows the standings, most first, with what came from operations and what was given by hand. Click a player for every line behind their total. As an admin you can give or take points there by hand; a reason is required, and the player sees it. Nothing is ever changed or removed: a mistake is put right with another line. Posting, adjustments and settings are all in the log.
+
+**Clans' own points.** **Clans may keep points of their own** lets each clan's leader and officers run points for the clan, on the Clan tab, beside the alliance's. Switching it off hides the clans' points without deleting them.
+
+A player who leaves the alliance keeps their lines, out of sight; if they come back, they are still there. A deleted account takes its lines with it.
 
 ## The log
 

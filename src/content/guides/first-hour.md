@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.26.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Your alliance's first hour
 
@@ -61,4 +61,4 @@ Groups that always play together are saved once. On the **Clan** tab, under **Co
 
 ## If something does not work
 
-First look at the [status page](https://app.warcryer.org/status), which says whether the service itself is working; the app links to it under **Settings → Help**. Then ask on the [Warcryer Discord](https://discord.gg/qf4meEMfhp). Say what you did and what you saw; a screenshot helps.
+First look at the [status page](/status/), which says whether the service itself is working; the app links to it under **Settings → Help**. Then ask on the [Warcryer Discord](https://discord.gg/qf4meEMfhp). Say what you did and what you saw; a screenshot helps.

@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.26.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -23,6 +23,7 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | What you write in an operation's chat, and the quick calls you send | When you send a line or press a call's key | Shown to the players on that net of that operation, and to nobody else in your alliance. Kept after the operation so that those players can read it back. |
 | Your voice | While you hold a push-to-talk key, or while voice activation is open | Relayed live to the members of that room. It is not recorded or stored. |
 | Times you joined and left voice rooms | Automatically while connected | So organisers can see who is present. For each operation, its organisers, and your clan's leader and officers, can see how long you were in voice while it ran and when you joined. When an operation ends this is written down as one line for you (time in voice, what you had answered, your party and the character you came as). Your alliance's admins, and your clan's leader and officers for the time you were in their clan, can read those lines across operations as a history; you can read your own. |
+| Points, if your alliance or clan keeps them (DKP and the like) | When an operation's points are posted, or a leader gives or takes points by hand | Each line: how many, for which operation or why, and who posted it. You always see your own lines. Who else sees your total is your alliance's (or clan's) choice: everyone in it, or only those who run the points and, for the alliance's points, your clan's leader and officers. |
 | Changes made by leaders and admins (moves, approvals, bans) | When made | An audit log of who did what. |
 | Why a connection to the server dropped: which of the server's two addresses it had used, the connection's close code, how long it had been open and silent, whether Windows had just reported a change of network, whether the window was hidden, and the voice library's own line about it | When the app has reconnected | To find faults in the service. It is written to the server's log beside your account's number and says nothing about what you were doing or saying. |
 | Operation announcements on Discord | When an operation is created, changed, started or cancelled, if a clan's leader or an alliance admin has connected a Discord channel | So players without the app open hear about events. A message carries the operation's name and start time, the names of the clans and the event leader's in-game name. It goes to Discord, to the channel that leader chose, and is then subject to Discord's own terms. Nothing else about you is sent. |
@@ -35,7 +36,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.26.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.27.0/src-tauri/src/input).
 
 ## Who can see what
 
@@ -50,6 +51,7 @@ The server clears old records by itself every night:
 | Times you sat in a lounge | 30 days |
 | An operation that has ended, with its roster and its attendance record (for each member of its clans: how long they were in voice, what they had answered, their party and the character they came as) | Until an alliance admin deletes the operation or the alliance is deleted. Your own lines in it go at once when you delete your account |
 | The exact times you joined and left each voice room during an operation | 12 months after it ended |
+| Your points and each line behind them | As long as the alliance (or the clan) whose points they are exists. If you leave, they are kept and still there if you come back. They go at once when you delete your account |
 | The log of changes made by leaders and admins | 12 months |
 | Invite links | 30 days after they expire |
 | What was written in an operation's chat | As your alliance's admins have chosen: until the operation ends, or 7 days, 30 days (unless they change it) or 12 months after it. Never longer than that, and never longer than the operation itself |

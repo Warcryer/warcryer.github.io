@@ -47,7 +47,7 @@ const FILES = [
 // becomes the site's address for the same thing.
 function rewrite(target, from) {
   if (/^(https?:|mailto:|#)/.test(target)) {
-    if (target === "https://ignite.v1rtopia.com/status") return "/status/";
+    if (/^https:\/\/(ignite\.v1rtopia\.com|app\.warcryer\.org)\/status\/?$/.test(target)) return "/status/";
     return target;
   }
   const [file, hash] = target.split("#");
