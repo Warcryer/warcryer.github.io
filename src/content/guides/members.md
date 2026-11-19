@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.28.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -67,7 +67,7 @@ Good to know:
 - Your keys are never taken from the game. The game still receives them.
 - Speaking on one net never mutes what you hear on the others.
 - While you hold a Broadcast, Command or Clan key, your voice goes only to that net; voice activation pauses.
-- **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. Others are not told either way. The compact strip has the same two buttons.
+- **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. While your headset is off, the others in your nets see a red, crossed-out headset beside your name, so they know you cannot hear them; whether your mic is off is not shown. The compact strip has the same two buttons.
 - The **Mute all** key does what the mic button does, and the **Headset** key what the headset button does, without leaving the game. Both are set in Settings → **Keys**.
 
 Change any of this in **Settings**.
@@ -134,7 +134,11 @@ Choose how far back to look at the top. The record is kept until the operation i
 
 If your alliance keeps points (it may call them DKP, EP or something else), the **History** tab has a tab for them, and one more if your clan keeps its own. **My own lines** lists every change to yours, newest first: what each operation gave you, and anything given or taken by hand, always with the reason and who did it. You always see your own; whether you also see everyone's standings is your alliance's or clan's choice.
 
-Points are earned at operations, from your time in voice: how much is up to your alliance. After an operation, a leader looks over what everyone earned and posts it, so your points for an operation can take a little while to appear.
+Points are earned at operations, from your time in voice: how much is up to your alliance, and **How (your points) are earned**, under the standings, lists every rule. Each line says why, for example "there 10, on time 2, Boss kill 5". After an operation, a leader looks over what everyone earned and posts it, so your points for an operation can take a little while to appear. If your alliance uses decay or seasons, those show as lines of their own too.
+
+## Loot
+
+**History → Loot** lists what dropped at your alliance's operations and who got it; tick **Only mine** for your own. When an item is paid for with points, the cost shows on your points' lines with the item's name, and as **On loot** in the standings. If a leader takes an item back, the cost comes back to you on a line of its own.
 
 ## Being moved, and asking to move
 

@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.28.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -259,21 +259,61 @@ Someone who was in voice without being in one of the operation's clans (you, loo
 
 ## Points
 
-Points (DKP, EP, or whatever your alliance calls them) are set up on the **Alliance** tab under **Points**, and are off until you switch them on. Earned at operations, from the attendance Warcryer already records:
+Points (DKP, EP, PAP, or whatever your alliance calls them) are set up on the **Alliance** tab under **Points**. Every game and guild runs them differently, so they are built from parts you choose, and you can keep several sets side by side: say **Raid DKP** for raids and **PvP points** for sieges.
 
-- **Earned:** a set amount for being in voice at least a share of the operation (50% unless you change it), or an amount for each hour in voice.
-- **Amount:** one for any operation, and if you like a different one for each of your kinds of event (Game setup on the same tab), so a siege can be worth more than a raid.
-- **Came as they said** adds a bonus for saying "coming" and earning points; **Did not show** takes points from anyone who said "coming" and was never in voice. Both start at 0.
+**Setting up a set.** Click **+ New set of points** and start from the preset closest to how you do it. Each fills in the rules below, and every part can be changed afterwards:
+
+- **Attendance only:** one point per operation attended, as a plain record of who turns up.
+- **Classic DKP:** a set amount per operation, extras for being on time, staying to the end and coming as said, a deduction for not showing, standby, and objectives such as boss kills.
+- **DKP by the hour:** points for each hour in voice, so a long siege earns more than a short raid.
+- **EPGP (effort points):** effort points with standby, decaying 10% a week so recent effort counts most. The gear-point side comes with the loot log, later.
+- **Fleet participation:** one point per fleet or operation a player was in at all, as space and sandbox games count participation.
+- **Custom:** start empty.
+
+A new set starts switched off, so you can look it over first. Then:
+
+- **Called:** the name your players use.
+- **Counts:** which of your kinds of event earn these points (Game setup on the same tab). Nothing picked: every kind.
+- **How they are earned:** a list of rules, each an amount and the kinds of event it is for. **For being there** (in voice at least a share of the operation), **Per hour in voice**, **On time** (in voice within some minutes of the start), **To the end** (still in voice some minutes before the end), **Came as they said**, **Did not show** (a deduction), **Standby** (ticked in the draft for players kept on the bench), and **Objective** (a named event such as a boss kill or a won siege, ticked in the draft and given to everyone who earned for being there). A rule for one kind of event takes the place of the same rule for every kind, so a siege can be worth more than a raid.
+- **Decay:** a share taken every week (Mondays) or month (the 1st), at midnight UTC, never below a floor you set. 0% for none.
+- **Cap** and **May go below zero:** the most a player may have, and whether a deduction can take them below zero. When a limit trims a line, the line says so.
 - **An operation's event leader may post its points:** on by default. Off: only the alliance's admins post.
 - **Everyone sees the standings:** on by default. Off: admins see all, a clan's leader and officers their own clan, every player their own.
+- **Start a new season:** brings everyone's points down to a share you choose (0% for a fresh start), with a line of its own for each player.
+- **Remove these points:** only while they have no lines. Once anyone has points in them, switch them off instead: what everyone has is kept.
 
-**After an operation.** Nothing is added by itself. When an operation ends, its board shows a draft: everyone of its clans with their time in voice, what they had answered, and what the rules suggest, with the reason. Change any amount, use **Add to everyone who was in voice** for a boss kill or a won siege, then **Post**. It asks once, with the number of players and the total. Each operation is posted once. The points tab on **History** lists the operations still waiting for their points, since points were switched on, with **Review and post** beside each.
+Your players can read every rule, decay and cap under the standings.
 
-**Standings and lines.** **History → (your points)** shows the standings, most first, with what came from operations and what was given by hand. Click a player for every line behind their total. As an admin you can give or take points there by hand; a reason is required, and the player sees it. Nothing is ever changed or removed: a mistake is put right with another line. Posting, adjustments and settings are all in the log.
+**After an operation.** Nothing is added by itself. When an operation ends, its board shows a draft for each set it counts for: everyone of its clans with their time in voice, what they had answered, and what the rules suggest, with why. Tick any objectives reached and anyone on standby, use **Add to everyone who earned for being there** for anything else, change any amount, then **Post**. It asks once, with the number of players and the total. Each operation is posted once to each set, and each player's line keeps why. The points tab on **History** lists the operations still waiting for their points, since the set was switched on, with **Review and post** beside each.
 
-**Clans' own points.** **Clans may keep points of their own** lets each clan's leader and officers run points for the clan, on the Clan tab, beside the alliance's. Switching it off hides the clans' points without deleting them.
+**Standings and lines.** **History → (your points)** shows the standings, most first, with what came from operations, what was given by hand, and what decay and seasons took. Click a player for every line behind their total. As an admin you can give or take points there by hand; a reason is required, and the player sees it. Nothing is ever changed or removed: a mistake is put right with another line. Posting, adjustments, decay, seasons and settings are all in the log.
+
+**Clans' own points.** **Clans may keep points of their own** lets each clan's leader and officers run sets of points for the clan, on the Clan tab, beside the alliance's. Switching it off hides the clans' points without deleting them.
 
 A player who leaves the alliance keeps their lines, out of sight; if they come back, they are still there. A deleted account takes its lines with it.
+
+## Loot
+
+What dropped, and who got it, is recorded on the operation's board under **Loot**, during the operation or after. Who may: the alliance's admins, the operation's event leader, and the leaders and officers of its clans.
+
+**Items and prices.** On the **Alliance** tab, **Items and prices** is your own list of items worth recording, so names are spelled one way and screenshots are read right. Add other spellings players use, separated by commas. Nothing comes from the game itself. For each set of points that spends by price there is a price column; leave a price empty to enter it, or the winning bid, each time. A hidden item stays on old drops but is no longer offered.
+
+**How a set of points pays for loot** is chosen in its settings, under **Loot, decay and limits**: **Not spent on loot** (attendance, fleet participation), **Spent** (the item's price is taken from the winner; this also covers auctions held in game chat, where you enter the winning bid), or **Loot council** (a record of who got what and why, at no cost). EPGP's gear points, zero-sum and Suicide Kings lists come later.
+
+**Recording drops.** On the board, **+ Add a drop by hand**, or **Read a screenshot**:
+
+1. In the game, press Print Screen with the loot window, chat line or bag showing.
+2. On the board's Loot panel, paste it with Ctrl+V, or click **Read a screenshot** and choose the picture.
+3. The drops are read for you and shown as rows: names spelled as on your item list, the amount, and who got each item when a chat line names a character (matched to your members' characters). A row the reader is unsure of is marked **Not sure: check this one**.
+4. Untick anything that is not a drop, fix names and amounts, choose who got an item if you know, and **Add**. Nothing is added until you do. Rows with a player chosen are given out at once, paid with the set you choose above the rows.
+
+The picture is shrunk on your computer, sent to our server and on to Anthropic's Claude to be read, and not kept. Each alliance has a number of reads a month by plan (100 in the beta), shown beside the button; when they are used up, enter drops by hand until the 1st. Reading is a help, not a judge: always look the rows over.
+
+**Giving out.** **Give…** on a drop: who got it (and as which character), which set pays, the cost (filled in from the price list, times the amount), and a note (a loot council's reason, say). If a set does not let points go below zero and the player cannot afford it, it is refused with the reason, never trimmed. **Keep** marks a drop kept for the guild, **Sold** as sold.
+
+**Take back** undoes a mistake: the cost is refunded with a line of its own on the player's points, and the drop can be given again. Nothing is erased; every drop, award, take-back and read is in the log.
+
+**The loot history** is on **History → Loot**: every drop, newest first, with who got it; find an item, or only your own. Everyone in the alliance sees what dropped and who got it. The cost shows to those who see that set's standings in full, and to the winner.
 
 ## The log
 
