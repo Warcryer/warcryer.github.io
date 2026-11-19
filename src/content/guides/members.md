@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.28.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -67,7 +67,8 @@ Good to know:
 - Your keys are never taken from the game. The game still receives them.
 - Speaking on one net never mutes what you hear on the others.
 - While you hold a Broadcast, Command or Clan key, your voice goes only to that net; voice activation pauses.
-- The **Mute all** key silences your mic everywhere until you press it again. The header shows **Mic muted** while it is on.
+- **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. Others are not told either way. The compact strip has the same two buttons.
+- The **Mute all** key does what the mic button does, and the **Headset** key what the headset button does, without leaving the game. Both are set in Settings → **Keys**.
 
 Change any of this in **Settings**.
 
@@ -213,7 +214,7 @@ Closing the window quits the app and takes you out of voice. If you would rather
 | --- | --- |
 | **Devices** | Your microphone and headset, the three-second test, and three clean-up switches: echo cancellation, noise suppression and auto gain. Leave them on unless something sounds wrong. |
 | **Party, Reserve and lounge** | Push-to-talk or voice activation for the nets you chat on, with the sensitivity marker and how long the mic stays open after you stop. |
-| **Keys** | One key per net you may speak on, plus **Mute all**. Mouse side buttons work. **Broadcast lock** is for event leaders only. **Ready** answers a ready check. **Quick calls** send one of your alliance's short lines to your party. **Chat** puts the keyboard in the chat window's line while the game is in front. |
+| **Keys** | One key per net you may speak on, plus **Mute all** and **Headset**. Mouse side buttons work. **Broadcast lock** is for event leaders only. **Ready** answers a ready check. **Quick calls** send one of your alliance's short lines to your party. **Chat** puts the keyboard in the chat window's line while the game is in front. |
 | **Volume** | Your own level for each net. |
 | **Priority** | Whether lower nets get quieter while a higher one is live, and how quiet. |
 | **Sounds** | The cue you hear when you are moved, and its volume. |
@@ -230,7 +231,8 @@ Everything here is kept on your computer, except your name, class and level and 
 | --- | --- |
 | Keys do nothing while the game is in front | Settings → **Key capture**: make sure **Polling** is selected. If it still fails, tick **Always start as administrator** and restart the app. |
 | A banner says the sound is held back | Click **Enable audio**. |
-| Nobody hears you | Check the level bar moves in Settings → Devices, that the right microphone is chosen, and that **Mic muted** is not showing. |
+| You hear no one | Check the headset button at the top right is not red and crossed out, and that the right speakers or headset is chosen in Settings → Devices. |
+| Nobody hears you | Check the level bar moves in Settings → Devices, that the right microphone is chosen, and that the mic button at the top right is not red and crossed out. |
 | A net says **Relinking…** | Your connection to the voice server hiccupped. You still hear the net, and anyone already talking is still heard; a key you press now is not heard until the word is gone, usually within a second or two. Nothing to do. If it happens often, see the next row. |
 | **Relinking…**, **Reconnecting…** or "Server link lost" keep coming back | The app gets its connection back by itself each time, so you can carry on. First ask whether others in your clan see it at the same moments: if they do, the fault is on the service's side, so tell us on the Discord. If it is only you, it is the connection between your computer and the server: try a network cable or sitting closer to the router, and switch off a VPN to see whether it is that. |
 | "Microphone problem" banner | Allow microphone access for the app in Windows privacy settings, then click **Try again**. |

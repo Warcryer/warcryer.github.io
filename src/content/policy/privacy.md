@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.27.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.28.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -36,7 +36,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.27.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.28.0/src-tauri/src/input).
 
 ## Who can see what
 
