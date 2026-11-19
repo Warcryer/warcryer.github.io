@@ -1,0 +1,26 @@
+---
+// A guide or policy: a contents list beside the text on wide screens, above it on narrow ones.
+import type { Doc } from "../lib/markdown";
+interface Props { doc: Doc; source: { ref: string; file: string } }
+const { doc, source } = Astro.props;
+const toc = doc.headings.filter((h) => h.depth === 2);
+---
+<div class="doc">
+  {toc.length > 3 && (
+    <nav class="toc" aria-label="On this page">
+      <details open data-toc>
+        <summary class="toc-title">On this page</summary>
+        <ol>{toc.map((h) => <li><a href={`#${h.id}`}>{h.text}</a></li>)}</ol>
+      </details>
+    </nav>
+  )}
+  <article class="prose">
+    <Fragment set:html={doc.html} />
+    <p class="fine source">The same text is in the app, under the scroll icons. This copy is from version {source.ref.replace(/^v/, "")}; <a href={`https://github.com/Warcryer/client/blob/${source.ref}/${source.file}`}>see it on GitHub</a>.</p>
+  </article>
+</div>
+<script>
+  // On a narrow screen the contents list starts folded, so the text is in view.
+  const toc = document.querySelector<HTMLDetailsElement>("[data-toc]");
+  if (toc && matchMedia("(max-width: 900px)").matches) toc.open = false;
+</script>

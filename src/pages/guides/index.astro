@@ -1,0 +1,29 @@
+---
+// The list of guides.
+import Base from "../../layouts/Base.astro";
+import Crumbs from "../../components/Crumbs.astro";
+import TryIt from "../../components/TryIt.astro";
+import { GUIDES } from "../../data/guides";
+import { DISCORD } from "../../data/site";
+---
+<Base title="Guides · Warcryer" description="How to use Warcryer: guides for members, clan leaders and officers, alliance admins and event leaders, and an alliance's first hour." bodyClass="page">
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Guides", "/guides/"]]} />
+  <h1>Guides</h1>
+  <p class="lede">Pick the one that matches what you do. Everyone should read the first. The same app serves every role: screens and buttons you are not allowed to use simply do not appear.</p>
+</section>
+<section>
+  <div class="cards two guides">
+    {GUIDES.map((g) => (
+      <article>
+        <h3><a href={`/guides/${g.slug}/`}>{g.name}</a></h3>
+        <p class="who">{g.for}</p>
+        <p>{g.covers}</p>
+        <p><a href={`/guides/${g.slug}/`}>Read the guide</a></p>
+      </article>
+    ))}
+  </div>
+  <p class="fine note">The guides are also inside the app, behind the scroll icons, in your alliance's own words. Stuck on something they do not answer? Ask on the <a href={DISCORD}>Warcryer Discord</a>.</p>
+</section>
+<TryIt />
+</Base>

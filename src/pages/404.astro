@@ -1,0 +1,16 @@
+---
+// nginx shows this for an address the site does not have.
+import Base from "../layouts/Base.astro";
+---
+<Base title="Not found · Warcryer" description="There is no page at this address." bodyClass="page" noindex>
+<section class="hero">
+  <img class="emblem small" src="/emblem.svg" alt="" width="96" height="96">
+  <h1>Nothing here</h1>
+  <p class="lede">There is no page at this address. It may have moved when the site came to warcryer.org.</p>
+  <div class="actions">
+    <a class="btn" href="/">The front page</a>
+    <a class="btn quiet" href="/guides/">Guides</a>
+    <a class="btn quiet" href="/download/">Download</a>
+  </div>
+</section>
+</Base>

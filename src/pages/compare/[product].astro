@@ -1,0 +1,104 @@
+---
+// One page per product: /compare/teamspeak/ and so on.
+import Base from "../../layouts/Base.astro";
+import Crumbs from "../../components/Crumbs.astro";
+import TryIt from "../../components/TryIt.astro";
+import { CHECKED, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS, type ProductKey } from "../../data/compare";
+import { trademarkNote } from "../../data/compare-text";
+
+export function getStaticPaths() {
+  return ORDER.map((product) => ({ params: { product } }));
+}
+
+const key = Astro.params.product as ProductKey;
+const p = PRODUCTS[key];
+const path = `/compare/${key}/`;
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: p.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+---
+<Base title={p.title} description={p.description} image={p.shot.file} type="article" bodyClass="page" footNote={trademarkNote([p.name])}>
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Compare", "/compare/"], [`vs ${p.name}`, path]]} />
+  <h1>Warcryer vs {p.name}</h1>
+  <p class="lede">{p.lede}</p>
+  <p class="fine">Checked against {p.name}'s own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
+</section>
+
+<section>
+  <h2>The short answer</h2>
+  <div class="verdict">
+    <article>
+      <h3>Choose {p.name} if</h3>
+      <ul>{p.them_if.map((x) => <li>{x}</li>)}</ul>
+    </article>
+    <article class="ours">
+      <h3>Choose Warcryer if</h3>
+      <ul>{p.us_if.map((x) => <li>{x}</li>)}</ul>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Side by side</h2>
+  <div class="table-wrap">
+  <table class="compare">
+    <thead>
+      <tr><th scope="col"><span class="sr">What</span></th><th scope="col">Warcryer</th><th scope="col">{p.name}</th></tr>
+    </thead>
+    <tbody>
+      {ROWS.map((r) => (
+        <tr><th scope="row">{r.label}</th><td data-who="Warcryer">{r.ours}</td><td data-who={p.name}>{p.cells[r.id]}</td></tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+  <p class="fine note">{p.note}</p>
+</section>
+
+<section>
+  <h2>What is different in practice</h2>
+  <div class="cards two">
+    {p.differences.map((d) => (
+      <article>
+        <h3>{d.title}</h3>
+        <p>{d.body}</p>
+      </article>
+    ))}
+  </div>
+  <figure class="wide">
+    <img src={`/shots/${p.shot.file}`} alt={p.shot.alt} width={p.shot.width} height={p.shot.height} loading="lazy">
+    <figcaption>{p.shot.caption}</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Where {p.name} is the better choice</h2>
+  <p class="intro">Warcryer does one thing, and it is young. These are its limits today.</p>
+  <ul class="plain">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
+</section>
+
+<section>
+  <h2>Coming over from {p.name}</h2>
+  <ol class="steps left">{p.moving.map((s) => <li>{s}</li>)}</ol>
+</section>
+
+<section>
+  <h2>Questions</h2>
+  <dl class="faq">
+    {p.faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+  </dl>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <p class="intro">Everything said about {p.name} here comes from its own pages, read on {CHECKED}.</p>
+  <ul class="plain">{p.sources.map((s) => <li><a href={s.url} rel="nofollow noopener">{s.label}</a></li>)}</ul>
+  <p class="fine">Also compared: {ORDER.filter((k) => k !== key).map((k, i) => (<>{i > 0 && " · "}<a href={`/compare/${k}/`}>Warcryer vs {PRODUCTS[k].name}</a></>))}</p>
+</section>
+
+<TryIt />
+</Base>

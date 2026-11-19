@@ -1,0 +1,33 @@
+---
+// One guide: /guides/members/ and so on.
+import Base from "../../layouts/Base.astro";
+import Crumbs from "../../components/Crumbs.astro";
+import DocBody from "../../components/DocBody.astro";
+import { GUIDES } from "../../data/guides";
+import { loadDoc } from "../../lib/markdown";
+import source from "../../content/source.json";
+
+export function getStaticPaths() {
+  return GUIDES.map((g) => ({ params: { guide: g.slug } }));
+}
+
+const i = GUIDES.findIndex((g) => g.slug === Astro.params.guide);
+const g = GUIDES[i];
+const doc = loadDoc(`guides/${g.slug}.md`);
+const prev = GUIDES[i - 1];
+const next = GUIDES[i + 1];
+---
+<Base title={`${doc.title} · Warcryer`} description={`${g.for} ${g.covers}`} type="article" bodyClass="page">
+<section class="hero doc-hero">
+  <Crumbs items={[["Warcryer", "/"], ["Guides", "/guides/"], [g.name, `/guides/${g.slug}/`]]} />
+  <h1>{doc.title}</h1>
+  <p class="lede">{g.for}</p>
+</section>
+<section class="doc-section">
+  <DocBody doc={doc} source={{ ref: source.ref, file: `docs/${g.slug}.md` }} />
+  <nav class="doc-next" aria-label="Other guides">
+    {prev ? <a href={`/guides/${prev.slug}/`}><span>Previous</span>{prev.name}</a> : <span />}
+    {next ? <a class="to-next" href={`/guides/${next.slug}/`}><span>Next</span>{next.name}</a> : <a class="to-next" href="/guides/"><span>All guides</span>Guides</a>}
+  </nav>
+</section>
+</Base>

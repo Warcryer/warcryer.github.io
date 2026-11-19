@@ -1,0 +1,62 @@
+---
+// The comparison hub: every product side by side, and a card for each page.
+import Base from "../../layouts/Base.astro";
+import Crumbs from "../../components/Crumbs.astro";
+import TryIt from "../../components/TryIt.astro";
+import { CHECKED, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS } from "../../data/compare";
+import { trademarkNote } from "../../data/compare-text";
+
+const names = ORDER.map((k) => PRODUCTS[k].name);
+---
+<Base
+  title="Warcryer compared with TeamSpeak, Discord, Mumble and Ventrilo"
+  description="Voice for large alliances, guilds and clans, side by side: what Warcryer does that TeamSpeak, Discord, Mumble and Ventrilo leave to you, and where each of them is the better choice."
+  type="article"
+  bodyClass="page"
+  footNote={trademarkNote(names)}
+>
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Compare", "/compare/"]]} />
+  <h1>How Warcryer compares</h1>
+  <p class="lede">TeamSpeak, Discord, Mumble and Ventrilo give you channels and leave the rest to you: who goes where, who may speak to whom, who signed up, who turned up. Warcryer starts from the event's roster and works those out for you. It also does far less than they do outside an event.</p>
+  <p class="fine">Checked against each product's own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
+</section>
+
+<section>
+  <h2>One at a time</h2>
+  <div class="cards two">
+    {ORDER.map((k) => (
+      <article>
+        <h3><a href={`/compare/${k}/`}>Warcryer vs {PRODUCTS[k].name}</a></h3>
+        <p>{PRODUCTS[k].lede}</p>
+        <p><a href={`/compare/${k}/`}>Read the comparison</a></p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section>
+  <h2>All five, side by side</h2>
+  <div class="table-wrap">
+  <table class="compare many">
+    <thead>
+      <tr><th scope="col"><span class="sr">What</span></th><th scope="col">Warcryer</th>{ORDER.map((k) => <th scope="col"><a href={`/compare/${k}/`}>{PRODUCTS[k].name}</a></th>)}</tr>
+    </thead>
+    <tbody>
+      {ROWS.map((r) => (
+        <tr><th scope="row">{r.label}</th><td>{r.ours}</td>{ORDER.map((k) => <td>{PRODUCTS[k].cells[r.id]}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+  <p class="fine note">TeamSpeak's whisper lists, priority speaker and Channel Commander are described as in TeamSpeak 3; TeamSpeak 6 is in beta. Sources are listed on each product's own comparison page.</p>
+</section>
+
+<section>
+  <h2>What Warcryer does not do</h2>
+  <p class="intro">If one of these matters to you, one of the others is the better choice, and the page for it says which.</p>
+  <ul class="plain">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
+</section>
+
+<TryIt />
+</Base>

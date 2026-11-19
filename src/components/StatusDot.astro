@@ -1,0 +1,12 @@
+---
+// A small light beside "Status" in the footer: green when the service answers
+// that everything works, red when something does not, grey until it is known.
+---
+<span class="dot" data-status-dot aria-hidden="true"></span>
+<script>
+  import { loadStatus } from "../scripts/status";
+  loadStatus().then((s) => {
+    const state = s ? (s.ok ? "up" : "down") : "unknown";
+    document.querySelectorAll<HTMLElement>("[data-status-dot]").forEach((d) => (d.dataset.state = state));
+  });
+</script>

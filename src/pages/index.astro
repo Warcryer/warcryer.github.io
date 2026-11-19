@@ -1,52 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Warcryer: voice that follows the chain of command</title>
-<meta name="description" content="A free, open-source alternative to TeamSpeak for large gaming alliances and clans. The event roster decides who hears whom, so nobody picks a channel.">
-<meta property="og:title" content="Warcryer">
-<meta property="og:description" content="Voice that follows the chain of command. A free, open-source alternative to TeamSpeak for large gaming alliances and clans.">
-<meta property="og:image" content="shots/board.jpg">
-<meta name="theme-color" content="#0b0c0f">
-<link rel="canonical" href="https://warcryer.github.io/">
-<link rel="icon" href="favicon.png">
-<link rel="preload" href="fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+// The front page.
+import Base from "../layouts/Base.astro";
+import { SITE, GITHUB, DISCORD, VIDEO_ID } from "../data/site";
 
-<header class="top">
-  <a class="brand" href="#top"><img src="emblem.svg" alt="" width="34" height="34"><span>Warcryer</span></a>
-  <nav>
-    <a href="#watch">Walkthrough</a>
-    <a href="#nets">How it works</a>
-    <a href="#planning">Planning</a>
-    <a href="#leaders">For leaders</a>
-    <a href="#alliance">Your alliance</a>
-    <a href="#open">Open source</a>
-    <a href="/compare/">Compare</a>
-    <a class="btn small" href="https://github.com/Warcryer/client/releases/latest">Download</a>
-  </nav>
-</header>
-
-<main id="top">
+const ld = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Warcryer",
+  applicationCategory: "CommunicationApplication",
+  operatingSystem: "Windows 10, Windows 11",
+  description: "Voice for large gaming alliances and clans. The event roster decides who hears whom.",
+  url: SITE,
+  downloadUrl: `${SITE}/download/`,
+  image: `${SITE}/shots/board.jpg`,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+---
+<Base
+  title="Warcryer: voice that follows the chain of command"
+  description="A free, open-source alternative to TeamSpeak for large gaming alliances and clans. The event roster decides who hears whom, so nobody picks a channel."
+  footNote="TeamSpeak, Discord, Mumble and Ventrilo are trademarks of their owners, named here only for comparison; Warcryer is not affiliated with them."
+>
+<script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
 
 <section class="hero">
-  <img class="emblem" src="emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
+  <img class="emblem" src="/emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
   <h1>Warcryer</h1>
   <p class="tagline">Voice that follows the chain of command.</p>
   <p class="lede">An open-source alternative to TeamSpeak for large alliances and clans, free while in beta. The event roster decides who hears whom, so nobody picks a channel and nobody talks over the call.</p>
   <div class="actions">
-    <a class="btn" href="https://github.com/Warcryer/client/releases/latest">Download for Windows</a>
-    <a class="btn quiet" href="https://github.com/Warcryer/client">Source on GitHub</a>
+    <a class="btn" href="/download/">Download for Windows</a>
+    <a class="btn quiet" href={GITHUB}>Source on GitHub</a>
   </div>
   <p class="fine">In beta, and free. The Windows app is open source. Windows 10 and 11. Updates itself. Not yet code-signed, so Windows warns on the first install.</p>
 </section>
 
 <section class="shot">
   <figure>
-    <img src="shots/board.jpg" alt="Two players side by side: the leader's roster board with three parties, two of them marked as constant parties, and a member's voice screen with her nets" width="1600" height="775" loading="lazy">
+    <img src="/shots/board.jpg" alt="Two players side by side: the leader's roster board with three parties, two of them marked as constant parties, and a member's voice screen with her nets" width="1600" height="775" loading="lazy">
     <figcaption>Left, the leader's roster board. Right, the nets a member was placed on. Drag a player to another party and their voice follows within a couple of seconds.</figcaption>
   </figure>
 </section>
@@ -56,11 +47,11 @@
   <p class="intro">A sixteen-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, who is coming, building the roster, going live, a briefing, a party losing its leader, attendance and the log afterwards. It has captions and no sound. The clans and players in it are made up.</p>
   <div class="video" id="video">
     <button type="button" class="play" id="play" aria-label="Play the walkthrough video">
-      <img src="shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
+      <img src="/shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
       <span class="play-mark" aria-hidden="true"></span>
     </button>
   </div>
-  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href="https://youtu.be/eUY1awAuLd0">watch it on YouTube</a>.</p>
+  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${VIDEO_ID}`}>watch it on YouTube</a>.</p>
 </section>
 
 <section id="nets">
@@ -103,14 +94,14 @@
       <p>Push-to-talk keys, including mouse side buttons, work while the game has focus. They are never taken away from the game, and no administrator rights are needed.</p>
     </div>
     <figure>
-      <img src="shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's Clan and Party nets show as lowered" width="1600" height="775" loading="lazy">
+      <img src="/shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's Clan and Party nets show as lowered" width="1600" height="775" loading="lazy">
       <figcaption>Left, the leader holds the Broadcast key. Right, a member's Clan and Party nets are lowered.</figcaption>
     </figure>
   </div>
 
   <div class="split flip">
     <figure>
-      <img src="shots/handover.jpg" alt="Two players side by side, each with a bar across the top: Orin has dropped out, Vanguard has no one on Command, who leads it now, with buttons to choose" width="1600" height="775" loading="lazy">
+      <img src="/shots/handover.jpg" alt="Two players side by side, each with a bar across the top: Orin has dropped out, Vanguard has no one on Command, who leads it now, with buttons to choose" width="1600" height="775" loading="lazy">
       <figcaption>The party's leader has dropped out. The party (right) and the clan's leader (left) are asked who leads now.</figcaption>
     </figure>
     <div>
@@ -129,7 +120,7 @@
       <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it, so it sits over a game in windowed or borderless mode.</p>
     </div>
     <figure>
-      <img src="shots/strip.jpg" alt="The voice screen with the compact strip floating over it, enlarged: a single line reading Broadcast, a clan crest and the name Morrigan" width="1600" height="775" loading="lazy">
+      <img src="/shots/strip.jpg" alt="The voice screen with the compact strip floating over it, enlarged: a single line reading Broadcast, a clan crest and the name Morrigan" width="1600" height="775" loading="lazy">
       <figcaption>The compact strip, enlarged here, while a deputy speaks on Broadcast.</figcaption>
     </figure>
   </div>
@@ -162,11 +153,11 @@
     </article>
   </div>
   <figure class="wide">
-    <img src="shots/planning.jpg" alt="The roster board of a planned castle siege: twenty coming, one cannot, three have not answered. Three parties, one full, the others listing the support roles they still need, and Reserve sorted by who is coming" width="1600" height="944" loading="lazy">
+    <img src="/shots/planning.jpg" alt="The roster board of a planned castle siege: twenty coming, one cannot, three have not answered. Three parties, one full, the others listing the support roles they still need, and Reserve sorted by who is coming" width="1600" height="944" loading="lazy">
     <figcaption>A planned operation. One party is full; the other two list what they still need.</figcaption>
   </figure>
   <figure class="wide">
-    <img src="shots/attendance.jpg" alt="The attendance table of an ended operation: it ran for one hour thirty-two minutes with twenty-one of twenty-four players in voice, each with their time, share of the operation and when they joined" width="1600" height="694" loading="lazy">
+    <img src="/shots/attendance.jpg" alt="The attendance table of an ended operation: it ran for one hour thirty-two minutes with twenty-one of twenty-four players in voice, each with their time, share of the operation and when they joined" width="1600" height="694" loading="lazy">
     <figcaption>Attendance after an operation: who was in voice, and for how long.</figcaption>
   </figure>
 </section>
@@ -217,7 +208,7 @@
     </article>
   </div>
   <figure class="wide">
-    <img src="shots/voice.jpg" alt="The voice screen: one card per net, showing who is speaking and which key talks there" width="1600" height="775" loading="lazy">
+    <img src="/shots/voice.jpg" alt="The voice screen: one card per net, showing who is speaking and which key talks there" width="1600" height="775" loading="lazy">
     <figcaption>The voice screen during an operation: one card per net, who is speaking, and the key that talks there.</figcaption>
   </figure>
 </section>
@@ -244,7 +235,7 @@
     </article>
   </div>
   <figure class="wide">
-    <img src="shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and under them the five words the app is built around, each with a box for the alliance's own word for one and for several" width="1600" height="775" loading="lazy">
+    <img src="/shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and under them the five words the app is built around, each with a box for the alliance's own word for one and for several" width="1600" height="775" loading="lazy">
     <figcaption>Game setup: your own kinds of event, and your own words for the five things the app is built around.</figcaption>
   </figure>
 </section>
@@ -255,7 +246,7 @@
     <article>
       <h3>The client is public</h3>
       <p>The Windows app is MIT licensed. Every release is built from the public repository by GitHub Actions and installed and tested on a clean Windows machine before it is published.</p>
-      <p><a href="https://github.com/Warcryer/client">Read the source</a></p>
+      <p><a href={GITHUB}>Read the source</a></p>
     </article>
     <article>
       <h3>Sign in with Discord</h3>
@@ -264,12 +255,12 @@
     <article>
       <h3>Nothing recorded</h3>
       <p>Voice is relayed live and not stored. Key presses are not logged or sent; only the keys you bind are acted on. No telemetry, no ads. The server notes when you join and leave a net, which is how an event's organisers see who attended. You can delete your account, and everything kept about you, from the app.</p>
-      <p><a href="https://github.com/Warcryer/client/blob/main/PRIVACY.md">Read the privacy policy</a></p>
+      <p><a href="/privacy/">Read the privacy policy</a></p>
     </article>
     <article>
       <h3>Signed updates</h3>
       <p>The app keeps itself up to date, and accepts an update only if it carries the project's signature. Nothing installs mid-event: an update waits for a restart you choose.</p>
-      <p><a href="https://github.com/Warcryer/client#updates">How updates work</a></p>
+      <p><a href="/guides/members/#updates-and-the-tray-icon">How updates work</a></p>
     </article>
   </div>
 </section>
@@ -292,32 +283,26 @@
   <ol class="steps">
     <li><strong>Download</strong> the Windows app and sign in with Discord.</li>
     <li><strong>Ask for a beta code</strong> on the Warcryer Discord. One code starts one alliance; the players who join it need none.</li>
-    <li><strong>Start your alliance</strong> in the app and follow <a href="https://github.com/Warcryer/client/blob/main/docs/first-hour.md">Your alliance's first hour</a>: clans, invite links for their leaders, and a first planned operation.</li>
+    <li><strong>Start your alliance</strong> in the app and follow <a href="/guides/first-hour/">Your alliance's first hour</a>: clans, invite links for their leaders, and a first planned operation.</li>
   </ol>
   <div class="actions">
-    <a class="btn" href="https://github.com/Warcryer/client/releases/latest">Download for Windows</a>
-    <a class="btn quiet" href="https://discord.gg/qf4meEMfhp">Join the Discord</a>
-    <a class="btn quiet" href="https://github.com/Warcryer/client/tree/main/docs">Read the guides</a>
+    <a class="btn" href="/download/">Download for Windows</a>
+    <a class="btn quiet" href={DISCORD}>Join the Discord</a>
+    <a class="btn quiet" href="/guides/">Read the guides</a>
   </div>
 </section>
 
-</main>
-
-<footer>
-  <p>Warcryer is a community project, MIT licensed. It is not affiliated with or endorsed by NCSOFT or any other game publisher, and it uses no game artwork; games are named only to say which starting lists exist, and their names belong to their owners. TeamSpeak is a trademark of its owner, named here only for comparison; Warcryer is not affiliated with it.</p>
-  <p><a href="/compare/">Compare</a> · <a href="https://github.com/Warcryer/client">GitHub</a> · <a href="https://github.com/Warcryer/client/releases">Releases</a> · <a href="https://discord.gg/qf4meEMfhp">Discord</a> · <a href="https://ignite.v1rtopia.com/status">Status</a> · <a href="https://github.com/Warcryer/client/blob/main/TERMS.md">Terms of use</a> · <a href="https://github.com/Warcryer/client/blob/main/PRIVACY.md">Privacy policy</a> · <a href="https://github.com/Warcryer/client#code-signing-policy">Code signing policy</a> · <a href="https://github.com/Warcryer/client/issues">Report a problem</a></p>
-</footer>
+</Base>
 
 <script>
+  import { VIDEO_ID } from "../data/site";
   // The video is fetched from YouTube only when someone asks to play it.
-  document.getElementById("play").addEventListener("click", function () {
-    var frame = document.createElement("iframe");
-    frame.src = "https://www.youtube-nocookie.com/embed/eUY1awAuLd0?autoplay=1&rel=0";
+  document.getElementById("play")?.addEventListener("click", () => {
+    const frame = document.createElement("iframe");
+    frame.src = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`;
     frame.title = "Warcryer walkthrough";
     frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
     frame.allowFullscreen = true;
-    document.getElementById("video").replaceChildren(frame);
+    document.getElementById("video")?.replaceChildren(frame);
   });
 </script>
-</body>
-</html>

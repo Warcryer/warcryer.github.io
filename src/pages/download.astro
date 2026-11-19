@@ -1,0 +1,69 @@
+---
+// The download page. The button works without JavaScript (GitHub's page for
+// the newest release); with it, the button fetches the installer itself and
+// the page names the version (src/scripts/release.ts).
+import Base from "../layouts/Base.astro";
+import Crumbs from "../components/Crumbs.astro";
+import { LATEST, RELEASES, GITHUB, DISCORD } from "../data/site";
+---
+<Base title="Download Warcryer for Windows" description="Download the Warcryer app for Windows 10 and 11: free while in beta, open source, and it keeps itself up to date." bodyClass="page" image="voice.jpg">
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Download", "/download/"]]} />
+  <img class="emblem small" src="/emblem.svg" alt="" width="96" height="96">
+  <h1>Download Warcryer</h1>
+  <p class="lede">For Windows 10 and 11, 64-bit. Free while in beta.</p>
+  <div class="actions">
+    <a class="btn big" href={LATEST} data-download>Download for Windows</a>
+  </div>
+  <p class="fine" data-release-line>The newest version, from GitHub.</p>
+</section>
+
+<section>
+  <h2>Installing</h2>
+  <ol class="steps left wide-steps">
+    <li><strong>Run the installer</strong> you downloaded. It installs for your Windows account only and asks for no administrator rights.</li>
+    <li><strong>If Windows warns you.</strong> The app is not code-signed yet, so the first time Windows SmartScreen shows a blue box saying it protected your PC. Click <em>More info</em>, then <em>Run anyway</em>. You only do this once: updates install without it.</li>
+    <li><strong>Sign in with Discord.</strong> Your browser opens; approve, and the app carries on by itself. It learns only your Discord account and name.</li>
+    <li><strong>Join your alliance</strong> with the invite link your clan leader gives you, or <a href="/guides/first-hour/">start an alliance</a> with a beta code from the <a href={DISCORD}>Warcryer Discord</a>.</li>
+  </ol>
+  <p class="intro">The <a href="/guides/members/">members' guide</a> walks through all of it, including setting up your microphone and keys.</p>
+</section>
+
+<section>
+  <div class="cards three">
+    <article>
+      <h3>It keeps itself up to date</h3>
+      <p>The app checks for a newer version when it starts and every few hours. An update waits until you choose to restart, so nothing installs in the middle of an event.</p>
+    </article>
+    <article>
+      <h3>Signed updates</h3>
+      <p>The app installs an update only if it carries the project's signature, checked against a key built into the app.</p>
+    </article>
+    <article>
+      <h3>Built in the open</h3>
+      <p>Every release is built from the <a href={GITHUB}>public source</a> by GitHub Actions, then installed and tested on a clean Windows machine before it is published.</p>
+    </article>
+  </div>
+  <p class="fine note">Older versions and the files for checking a download are on the <a href={RELEASES}>releases page</a>. No macOS, Linux or phone app yet.</p>
+</section>
+</Base>
+
+<script>
+  import { loadRelease } from "../scripts/release";
+  const day = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  loadRelease().then((r) => {
+    if (!r) return;
+    const button = document.querySelector<HTMLAnchorElement>("[data-download]");
+    if (button) button.href = r.url;
+    const line = document.querySelector("[data-release-line]");
+    if (line) {
+      const mb = (r.size / 1048576).toFixed(0);
+      line.innerHTML = "";
+      line.append(`Version ${r.version}, released ${day.format(new Date(r.date))}, ${mb} MB. `);
+      const notes = document.createElement("a");
+      notes.href = r.page;
+      notes.textContent = "Release notes";
+      line.append(notes);
+    }
+  });
+</script>

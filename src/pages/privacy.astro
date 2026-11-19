@@ -1,0 +1,26 @@
+---
+// The privacy policy: the app's, copied from its repository, after a short
+// part about this website itself.
+import Base from "../layouts/Base.astro";
+import Crumbs from "../components/Crumbs.astro";
+import DocBody from "../components/DocBody.astro";
+import { loadDoc } from "../lib/markdown";
+import source from "../content/source.json";
+import { DISCORD } from "../data/site";
+
+const doc = loadDoc("policy/privacy.md");
+---
+<Base title="Privacy policy · Warcryer" description="What Warcryer, its Windows app and this website keep about you, for how long, and how to have it deleted." bodyClass="page">
+<section class="hero doc-hero">
+  <Crumbs items={[["Warcryer", "/"], ["Privacy policy", "/privacy/"]]} />
+  <h1>{doc.title}</h1>
+</section>
+<section class="doc-section">
+  <div class="site-note">
+    <h2 id="this-website">This website</h2>
+    <p>warcryer.org sets no cookies and has no analytics, advertising or trackers. It reaches you through Cloudflare, which sees each visit as it passes; our server's log of requests holds Cloudflare's address, not yours, and is kept for at most fifteen days. The walkthrough video is loaded from YouTube (youtube-nocookie.com) only if you press play; watching it is then covered by Google's privacy policy. Questions go to the <a href={DISCORD}>Warcryer Discord</a>.</p>
+    <p>The rest of this page is the policy for the app and the service, the same text as in the app.</p>
+  </div>
+  <DocBody doc={doc} source={{ ref: source.ref, file: "PRIVACY.md" }} />
+</section>
+</Base>

@@ -1,0 +1,15 @@
+---
+// The closing call at the bottom of inner pages.
+import { DISCORD } from "../data/site";
+interface Props { title?: string }
+const { title = "Try it on your next event" } = Astro.props;
+---
+<section class="status">
+  <h2>{title}</h2>
+  <p>Warcryer is in beta and nothing is charged for it. Download the Windows app, ask for a beta code on the Warcryer Discord, and start your alliance.</p>
+  <div class="actions">
+    <a class="btn" href="/download/">Download for Windows</a>
+    <a class="btn quiet" href={DISCORD}>Join the Discord</a>
+    <a class="btn quiet" href="/">See how it works</a>
+  </div>
+</section>

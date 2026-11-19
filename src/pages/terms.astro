@@ -1,0 +1,19 @@
+---
+// The terms of use, copied from the app's repository.
+import Base from "../layouts/Base.astro";
+import Crumbs from "../components/Crumbs.astro";
+import DocBody from "../components/DocBody.astro";
+import { loadDoc } from "../lib/markdown";
+import source from "../content/source.json";
+
+const doc = loadDoc("policy/terms.md");
+---
+<Base title="Terms of use · Warcryer" description="The rules for using Warcryer and its hosted service." bodyClass="page">
+<section class="hero doc-hero">
+  <Crumbs items={[["Warcryer", "/"], ["Terms of use", "/terms/"]]} />
+  <h1>{doc.title}</h1>
+</section>
+<section class="doc-section">
+  <DocBody doc={doc} source={{ ref: source.ref, file: "TERMS.md" }} />
+</section>
+</Base>

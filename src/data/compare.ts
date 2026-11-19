@@ -1,0 +1,518 @@
+// The facts behind the comparison pages (src/pages/compare/).
+//
+// Every statement about another product must come from that product's own
+// pages and be re-checked when CHECKED is changed. Say where the other product
+// is the better choice: these pages are read by people who know it well.
+
+export const CHECKED = "18 November 2026";
+export const CHECKED_ISO = "2026-11-18";
+
+/** What Warcryer does not do, said the same way on every page. */
+export const OUR_LIMITS: string[] = [
+  "It is a Windows app. There is a browser version for a quick look, but no macOS, Linux or phone app.",
+  "It is a hosted service. The Windows app is open source; the server is not public and you cannot run your own.",
+  "It is in beta: an alliance is started with a code from the Warcryer Discord and has room for 300 approved members.",
+  "You sign in with a Discord account.",
+  "It is built for organised events. There is no video, screen sharing, file sharing or positional audio, and the text chat exists inside operations only."
+];
+
+/** The rows of every table, in order. Warcryer's side is the same on each page. */
+export const ROWS: { id: string; label: string; ours: string }[] = [
+  {
+    "id": "hears",
+    "label": "Who decides who hears whom",
+    "ours": "The event's roster. Players are placed on their nets when the operation starts and never pick a channel."
+  },
+  {
+    "id": "several",
+    "label": "Hearing several groups at once",
+    "ours": "Built in: every player is on up to five nets at once (Broadcast, Command, Clan, Party, Reserve), each with its own key."
+  },
+  {
+    "id": "over",
+    "label": "A leader's voice over the rest",
+    "ours": "Automatic: while someone speaks on a higher net, the nets below it are lowered for everyone who hears both."
+  },
+  {
+    "id": "moves",
+    "label": "Moving a player mid-fight",
+    "ours": "Drag them to another party on the roster board. Their voice follows in a second or two, with a sound to tell them."
+  },
+  {
+    "id": "planning",
+    "label": "Sign-ups, parties and what each party lacks",
+    "ours": "Built in: who is coming, constant parties, a drag-and-drop board that shows which roles a party still needs."
+  },
+  {
+    "id": "attendance",
+    "label": "Attendance",
+    "ours": "Recorded and kept with each operation: who was in voice, and for how long."
+  },
+  {
+    "id": "chat",
+    "label": "Event text chat",
+    "ours": "A channel per net, a pinned order, a ready check, and quick calls on a key, in a window that sits on the game."
+  },
+  {
+    "id": "hosting",
+    "label": "Hosting",
+    "ours": "Hosted for you. You cannot run your own server."
+  },
+  {
+    "id": "price",
+    "label": "Price",
+    "ours": "Free while in beta."
+  },
+  {
+    "id": "source",
+    "label": "Source code",
+    "ours": "The Windows app is open source (MIT). The server is not public."
+  },
+  {
+    "id": "platforms",
+    "label": "Runs on",
+    "ours": "Windows 10 and 11. A browser version for a quick look."
+  },
+  {
+    "id": "size",
+    "label": "Size",
+    "ours": "300 approved members per alliance during the beta."
+  },
+  {
+    "id": "also",
+    "label": "Beyond voice",
+    "ours": "Nothing beyond the event: no video, screen sharing or file sharing."
+  }
+];
+
+export type Product = {
+  name: string;
+  title: string;
+  description: string;
+  lede: string;
+  cells: Record<string, string>;
+  them_if: string[];
+  us_if: string[];
+  differences: { title: string; body: string }[];
+  shot: { file: string; width: number; height: number; alt: string; caption: string };
+  moving: string[];
+  faq: { q: string; a: string }[];
+  sources: { label: string; url: string }[];
+  note: string;
+};
+
+export const ORDER = ["teamspeak", "discord", "mumble", "ventrilo"] as const;
+export type ProductKey = (typeof ORDER)[number];
+
+export const PRODUCTS: Record<ProductKey, Product> = {
+  "teamspeak": {
+    "name": "TeamSpeak",
+    "title": "Warcryer vs TeamSpeak: an alternative for large alliances and clans",
+    "description": "How Warcryer compares with TeamSpeak for sieges and raids: the roster places every player on their nets, so nobody sets up whisper lists or drags channels. Where TeamSpeak is still the better choice.",
+    "lede": "TeamSpeak has carried large alliances for twenty years, with channels, whisper lists and a deep permission system that each community wires up for itself. Warcryer starts from the other end: the event's roster decides who hears whom, and the wiring is done for you.",
+    "cells": {
+      "hears": "Each player joins a channel. Admins build the channel tree and its permissions.",
+      "several": "Whisper lists in TeamSpeak 3, set up by each player on their own client.",
+      "over": "Priority speaker and Channel Commander in TeamSpeak 3, granted through permissions.",
+      "moves": "An admin drags the player to another channel.",
+      "planning": "Not part of TeamSpeak. Alliances use a spreadsheet, a website or a Discord bot.",
+      "attendance": "Not part of TeamSpeak. Usually a screenshot of the channel tree.",
+      "chat": "Global and direct text chat. No order line, ready check or calls tied to an event.",
+      "hosting": "Run your own server, rent one, or use TeamSpeak's own hosted Communities.",
+      "price": "The client is free. Servers are licensed or rented by the slot.",
+      "source": "Proprietary.",
+      "platforms": "Windows, macOS, Linux, Android and iOS.",
+      "size": "As many slots as your licence or plan has.",
+      "also": "Screen sharing, file sharing, and a server that is there all week, not only for events."
+    },
+    "them_if": [
+      "You want your own server, on your own hardware, under your own rules.",
+      "Your players are on macOS, Linux or phones.",
+      "You need one place for the whole week: open channels to sit in, screen sharing, files.",
+      "You already have a channel tree and whisper setup that your players know, and it works."
+    ],
+    "us_if": [
+      "Your events have a chain of command: an event leader, clan leaders, party leaders, parties.",
+      "You are tired of telling new players how to set up whisper keys before every siege.",
+      "You move players between parties during a fight and need their voice to follow.",
+      "You keep sign-ups, party lists and attendance in a spreadsheet beside the voice app."
+    ],
+    "differences": [
+      {
+        "title": "Nobody sets up whispers",
+        "body": "In TeamSpeak a party leader who must reach Command, their clan and their party sets up a whisper list and a key for each, on their own client, and has to change it when the roster changes. In Warcryer the leader is on Command because the roster says they lead a party. Hand the party to someone else and the new leader is on Command at once, with nothing to configure."
+      },
+      {
+        "title": "One roster instead of a channel tree",
+        "body": "A TeamSpeak siege usually means a channel per party and admins dragging names between them. Warcryer's board is the party list itself: drag a player from one party to another and their audio moves with them, they hear a sound, and their screen says where they went."
+      },
+      {
+        "title": "The call is heard",
+        "body": "TeamSpeak can give a leader priority, but someone has to grant it and players can still be talking in a channel the leader is not in. In Warcryer a Broadcast order lowers every party's chatter for as long as the leader speaks, for everyone, without anyone setting it up."
+      },
+      {
+        "title": "The event around the voice",
+        "body": "Who is coming, which party lacks a healer, who actually turned up and for how long: TeamSpeak leaves all of that to other tools. In Warcryer it is the same window, and attendance is counted from who was really in voice."
+      }
+    ],
+    "shot": {
+      "file": "lowered.jpg",
+      "width": 1600,
+      "height": 775,
+      "alt": "Left, the event leader holds the Broadcast key. Right, a member's Clan and Party nets are lowered while the order is given.",
+      "caption": "While a leader speaks on Broadcast, the nets below it are lowered for everyone."
+    },
+    "moving": [
+      "Keep your TeamSpeak server for the rest of the week if you like it. Warcryer is for the events.",
+      "Start your alliance in the app and choose the starting lists for your game: classes, party size, roles.",
+      "Create your clans and send each clan leader an invite link. Their members come in through it.",
+      "Plan the first operation, build its parties on the board, and go live. Players bind one key per net they may speak on."
+    ],
+    "faq": [
+      {
+        "q": "Is Warcryer a free alternative to TeamSpeak?",
+        "a": "It is free while it is in beta. An alliance is started with a code from the Warcryer Discord, and the players who join it need none."
+      },
+      {
+        "q": "Can I host Warcryer on my own server, as I can with TeamSpeak?",
+        "a": "No. Warcryer is a hosted service. The Windows app is open source, but the server is not public. If running your own server matters to you, TeamSpeak or Mumble is the better choice."
+      },
+      {
+        "q": "Does Warcryer have whisper lists or Channel Commander?",
+        "a": "It does not need them. Every player is on several nets at once, each with its own push-to-talk key, and which nets those are comes from their place on the roster. A higher net lowers the ones below it by itself."
+      },
+      {
+        "q": "Which games does it work with?",
+        "a": "Any game played in windowed or borderless mode. Nothing is injected into the game or read from it. There are starting lists for Lineage 2, World of Warcraft and Throne and Liberty, and an alliance can write its own."
+      }
+    ],
+    "sources": [
+      {
+        "label": "TeamSpeak: features overview",
+        "url": "https://teamspeak.com/en/features/overview/"
+      },
+      {
+        "label": "TeamSpeak: licensing",
+        "url": "https://teamspeak.com/en/features/licensing/"
+      },
+      {
+        "label": "TeamSpeak: downloads",
+        "url": "https://teamspeak.com/en/downloads/"
+      },
+      {
+        "label": "TeamSpeak: Communities",
+        "url": "https://teamspeak.com/en/solutions/communities/"
+      },
+      {
+        "label": "TeamSpeak forum: whisper lists and Channel Commander for a chain of command",
+        "url": "https://forum.teamspeak.com/threads/75933-Chain-of-Command"
+      }
+    ],
+    "note": "TeamSpeak 6 is in beta at the time of writing, beside TeamSpeak 3. Whisper lists, priority speaker and Channel Commander are described here as they work in TeamSpeak 3. TeamSpeak's site does not list prices for server licences at the moment; see its licensing page."
+  },
+  "discord": {
+    "name": "Discord",
+    "title": "Warcryer vs Discord voice for large raids, sieges and alliance events",
+    "description": "How Warcryer compares with Discord voice channels for events with hundreds of players: every player on several nets at once, placed by the roster, with attendance recorded. Where Discord is the better choice, and how the two work together.",
+    "lede": "Discord is where most alliances already live, and nothing here asks you to leave it. Its voice channels are made for a room of people talking. A siege with a chain of command is a different shape: hundreds of players, several layers of leaders, and orders that must be heard over party chatter.",
+    "cells": {
+      "hears": "Each player joins a voice channel. Moderators arrange channels and roles.",
+      "several": "No. A player is in one voice channel at a time.",
+      "over": "The Priority Speaker permission lowers others in the same channel while its holder talks with push-to-talk.",
+      "moves": "A moderator with Move Members drags the player to another channel.",
+      "planning": "Scheduled Events show who is interested. Party lists and roles need a bot or a spreadsheet.",
+      "attendance": "Not recorded. Usually a bot, or a screenshot of the channel.",
+      "chat": "Full text channels, all week. No order line, ready check or calls tied to the event's voice.",
+      "hosting": "Hosted by Discord.",
+      "price": "Free. Paid extras are optional.",
+      "source": "Proprietary.",
+      "platforms": "Windows, macOS, Linux, Android, iOS and the browser.",
+      "size": "Up to 99 people in a voice channel. Stage channels hold more, as speakers and an audience.",
+      "also": "Everything else a community needs: text channels, video, screen sharing, roles, bots."
+    },
+    "them_if": [
+      "Your events fit in one voice channel, or a few that do not need to hear each other.",
+      "Your players are on phones, macOS or Linux.",
+      "You want one tool for everything, and the event is a small part of what your community does there.",
+      "You already run sign-up bots that your players know."
+    ],
+    "us_if": [
+      "You field more people than one voice channel holds, in parties that each need their own talk.",
+      "Leaders need a channel of their own while still hearing their party.",
+      "An order from the event leader has to reach everyone, in every party, at once.",
+      "You want attendance from who was actually in voice, not from who clicked a reaction."
+    ],
+    "differences": [
+      {
+        "title": "Several nets at once, not one channel",
+        "body": "In Discord you are in one voice channel. A party leader who must hear the alliance's command channel has to leave their party's channel to do it, or run a second account. In Warcryer every player is on their party, their clan and Broadcast at the same moment, leaders on Command as well, each with its own key."
+      },
+      {
+        "title": "Past 99 without turning the alliance into an audience",
+        "body": "A Discord voice channel holds up to 99 people. Beyond that the answer is many channels, which then cannot hear one call, or a Stage channel, where most people are listeners. Warcryer's Broadcast reaches everyone in the operation while each party keeps talking among itself."
+      },
+      {
+        "title": "The roster places people",
+        "body": "On Discord someone has to get three hundred players into the right thirty channels and keep them there. In Warcryer the parties are built on a board beforehand, from who signed up, and starting the operation puts every player on their nets."
+      },
+      {
+        "title": "Works with your Discord, not against it",
+        "body": "Players sign in to Warcryer with their Discord account. Connect a channel and every new, changed or started operation is announced there, with a reminder before the start and a role to ping if you choose. Keep Discord for the community, and use Warcryer when the event starts."
+      }
+    ],
+    "shot": {
+      "file": "board.jpg",
+      "width": 1600,
+      "height": 775,
+      "alt": "Two players side by side: the leader's roster board with three parties, and a member's voice screen with her nets.",
+      "caption": "Left, the leader's roster board. Right, the nets a member was placed on when the operation started."
+    },
+    "moving": [
+      "Stay on Discord. Warcryer signs in with it and posts your events to a channel you choose.",
+      "Start your alliance in the app, create your clans, and send each clan leader an invite link.",
+      "Connect a Discord channel on the Alliance tab so operations are announced where your players already read.",
+      "Plan the next event as an operation, let players answer Coming or Can't come, build the parties, and go live."
+    ],
+    "faq": [
+      {
+        "q": "How many people can be in a Discord voice channel?",
+        "a": "Up to 99, according to Discord's developer documentation. Stage channels hold far more, but as an audience with a few speakers. A Warcryer alliance has room for 300 approved members during the beta, in parties that each keep their own talk while all of them hear Broadcast."
+      },
+      {
+        "q": "Does Warcryer replace Discord?",
+        "a": "No. It replaces Discord's voice channels for organised events. Your server, its text channels and its roles stay where they are, and Warcryer announces your events there."
+      },
+      {
+        "q": "Is there a Warcryer bot for my Discord server?",
+        "a": "No bot is needed. Announcements use a webhook that an alliance admin or clan leader pastes into the app; Warcryer never reads your server."
+      },
+      {
+        "q": "Does it work on phones?",
+        "a": "No. Warcryer is a Windows app, with a browser version for a quick look. If your players join events from phones, Discord is the better choice."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Discord developer documentation: channels (user_limit)",
+        "url": "https://docs.discord.com/developers/resources/channel"
+      },
+      {
+        "label": "Discord support: Setting up Priority Speaker",
+        "url": "https://support.discord.com/hc/en-us/articles/360011876531-Setting-up-Priority-Speaker"
+      },
+      {
+        "label": "Discord: permissions on Discord",
+        "url": "https://discord.com/community/permissions-on-discord-discord"
+      },
+      {
+        "label": "Discord support: Scheduled Events",
+        "url": "https://support.discord.com/hc/en-us/articles/4409494125719-Scheduled-Events"
+      }
+    ],
+    "note": "The limit of 99 people in a voice channel and of 10,000 in a Stage channel is from Discord's developer documentation."
+  },
+  "mumble": {
+    "name": "Mumble",
+    "title": "Warcryer vs Mumble: voice for large guilds, alliances and fleets",
+    "description": "How Warcryer compares with Mumble for large organised events: Mumble is free, open and self-hosted with fine-grained ACLs; Warcryer builds the chain of command, the roster and attendance in. Where each is the better choice.",
+    "lede": "Mumble is free, open source and very good at what it does: low-latency voice on a server you run yourself, with a permission system that can express almost anything. Warcryer gives up that freedom for one thing done for you: the event's roster decides who hears whom.",
+    "cells": {
+      "hears": "Each player joins a channel. Admins write ACLs and groups for the channel tree.",
+      "several": "Linked channels share their talk, and players can set up whisper and shout keys on their own client.",
+      "over": "Priority speaker, set by an admin for a user in a channel.",
+      "moves": "An admin drags the player to another channel.",
+      "planning": "Not part of Mumble. Alliances use a spreadsheet, a website or a bot.",
+      "attendance": "Not part of Mumble.",
+      "chat": "Text messages to channels and users. No order line, ready check or calls tied to an event.",
+      "hosting": "Run your own server, or rent one from a third party.",
+      "price": "Free.",
+      "source": "Open source, client and server.",
+      "platforms": "Windows, macOS and Linux. Phone apps are third-party.",
+      "size": "Whatever your own server can carry.",
+      "also": "Positional audio in games that support it, an in-game overlay, and a multi-channel recorder."
+    },
+    "them_if": [
+      "You want to run the server yourself and keep every byte under your own control.",
+      "Open source on both ends matters to you.",
+      "Your players are on Linux or macOS.",
+      "You want positional audio, or an overlay drawn in the game.",
+      "You have someone who enjoys writing ACLs and will keep them right."
+    ],
+    "us_if": [
+      "Nobody in your alliance wants to run a server or maintain a permission tree.",
+      "Your events have a chain of command that changes every week with the roster.",
+      "You want sign-ups, party building and attendance in the same place as the voice.",
+      "New players should be talking in the right place within a minute of joining, without a setup guide."
+    ],
+    "differences": [
+      {
+        "title": "A roster instead of ACLs",
+        "body": "Mumble's access control lists and groups can describe a fleet's command structure, and large communities have done it. Somebody has to write it and keep it matching the people. In Warcryer the structure is the roster: make someone a deputy or a party leader and their voice rights change with the role, in that moment."
+      },
+      {
+        "title": "No shout keys to hand out",
+        "body": "In Mumble a leader reaches other channels with whisper and shout shortcuts that each player sets up on their own client. In Warcryer everyone has one key per net they may speak on, and which nets those are is decided for them."
+      },
+      {
+        "title": "Nothing to host",
+        "body": "A Mumble server is yours: to install, secure, update and pay for. Warcryer is hosted, which is less freedom and less work. If self-hosting is the point for you, Mumble wins this one outright."
+      },
+      {
+        "title": "The event around the voice",
+        "body": "Mumble is a voice application and does not try to be anything else. Warcryer also asks who is coming, shows which party lacks a healer, moves players between parties with their audio, and records who attended."
+      }
+    ],
+    "shot": {
+      "file": "planning.jpg",
+      "width": 1600,
+      "height": 944,
+      "alt": "A planned operation on the roster board: one party is full, the other two list the roles they still need.",
+      "caption": "A planned operation. One party is full; the other two list what they still need."
+    },
+    "moving": [
+      "Keep your Mumble server for everyday talk if you like it. Warcryer is for the events.",
+      "Start your alliance in the app and choose the starting lists for your game, or write your own.",
+      "Create your clans and send each clan leader an invite link. No certificates or registrations to hand out.",
+      "Plan the first operation, build its parties on the board, and go live."
+    ],
+    "faq": [
+      {
+        "q": "Is Warcryer open source like Mumble?",
+        "a": "Partly. The Windows app is open source under the MIT licence and every release is built from the public repository. The server is not public. Mumble is open on both ends."
+      },
+      {
+        "q": "Can I self-host Warcryer?",
+        "a": "No. It is a hosted service. If you want your own server, Mumble is the better choice."
+      },
+      {
+        "q": "Does Warcryer have positional audio?",
+        "a": "No. Nothing is read from the game, so the app does not know where anyone stands. Voice is organised by the chain of command instead: party, clan, command, broadcast."
+      },
+      {
+        "q": "Is the latency as low as Mumble's?",
+        "a": "We have not measured the two side by side and will not claim it. Warcryer's voice runs over WebRTC with the Opus codec, as most current voice services do."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Mumble: home page and feature list",
+        "url": "https://www.mumble.info/"
+      },
+      {
+        "label": "Mumble: downloads",
+        "url": "https://www.mumble.info/downloads/"
+      },
+      {
+        "label": "Mumble: access control lists",
+        "url": "https://www.mumble.info/documentation/administration/acl/"
+      },
+      {
+        "label": "Mumble: positional audio",
+        "url": "https://www.mumble.info/documentation/user/positional-audio/"
+      },
+      {
+        "label": "Mumble 1.4 release notes: whisper and shout shortcuts",
+        "url": "https://www.mumble.info/blog/mumble-1.4.230/"
+      }
+    ],
+    "note": "Mumble 1.5.939 was the latest stable version at the time of writing. Mumble's own iOS app is no longer maintained; its site lists third-party phone apps."
+  },
+  "ventrilo": {
+    "name": "Ventrilo",
+    "title": "Warcryer vs Ventrilo: an alternative for alliances that have outgrown channels",
+    "description": "How Warcryer compares with Ventrilo for large organised events: Ventrilo is simple hosted voice with channels and phantoms; Warcryer places every player on their nets from the event's roster and records attendance.",
+    "lede": "Ventrilo is the voice many guilds raided on, and it is still here: a current client for Windows, macOS and Linux, and servers hosted by its owner. It keeps to what it always was, a server with channels and a push-to-talk key. Warcryer is built around the event instead of the channel.",
+    "cells": {
+      "hears": "Each player joins a channel on the server.",
+      "several": "Phantoms let you listen in on other channels while you stay in yours.",
+      "over": "Ranks, transmit limits and queued channels, set by the server's admin.",
+      "moves": "The player changes channel, or an admin moves them.",
+      "planning": "Not part of Ventrilo.",
+      "attendance": "Not part of Ventrilo.",
+      "chat": "Not tied to an event: no order line, ready check or calls.",
+      "hosting": "Hosted by Ventrilo's owner.",
+      "price": "A free server for 5 people online; $9.99 a month or $99.99 a year for 400.",
+      "source": "Proprietary.",
+      "platforms": "Windows, macOS and Linux.",
+      "size": "400 online at once on the paid plan.",
+      "also": "A server that is there all week, for any group and any use."
+    },
+    "them_if": [
+      "You want a plain voice server with channels, and nothing to learn.",
+      "Your players are on macOS or Linux.",
+      "You need more than 300 people, up to the 400 its paid plan holds.",
+      "Your guild has used it for years and its channel layout is second nature."
+    ],
+    "us_if": [
+      "Your events have layers: an event leader, clan leaders, party leaders, parties.",
+      "Leaders need to hear command and their own party at once, and speak to each with a different key.",
+      "You move players between parties during a fight.",
+      "You want sign-ups, party building and attendance where the voice is."
+    ],
+    "differences": [
+      {
+        "title": "Nets instead of channels",
+        "body": "On a Ventrilo server a player is in one channel, and can listen in on others with phantoms. In Warcryer every player is on their party, their clan and Broadcast at once, leaders on Command as well, and speaks to each with its own key."
+      },
+      {
+        "title": "The roster places people",
+        "body": "Ventrilo leaves it to each player to find the right channel and to an admin to move them. In Warcryer the parties are built on a board from who signed up, and starting the operation puts everyone where they belong."
+      },
+      {
+        "title": "Orders are heard",
+        "body": "While the event leader speaks on Broadcast, party and clan talk is lowered for everyone and comes back when the order ends. Nobody has to be told to be quiet."
+      },
+      {
+        "title": "The event around the voice",
+        "body": "Ventrilo is voice. Warcryer also asks who is coming, shows what each party still needs, and records who attended and for how long."
+      }
+    ],
+    "shot": {
+      "file": "voice.jpg",
+      "width": 1600,
+      "height": 775,
+      "alt": "The voice screen during an operation: one card for each net, who is speaking, and the key that talks there.",
+      "caption": "The voice screen during an operation: one card per net, who is speaking, and the key that talks there."
+    },
+    "moving": [
+      "Keep your Ventrilo server for everyday talk if you like it. Warcryer is for the events.",
+      "Start your alliance in the app and choose the starting lists for your game, or write your own.",
+      "Create your clans and send each clan leader an invite link.",
+      "Plan the first operation, build its parties on the board, and go live."
+    ],
+    "faq": [
+      {
+        "q": "Is Ventrilo still being developed?",
+        "a": "Yes. At the time of writing its site offers a version 5 client for Windows, macOS and Linux, and hosted servers."
+      },
+      {
+        "q": "Is Warcryer free?",
+        "a": "It is free while it is in beta. An alliance is started with a code from the Warcryer Discord."
+      },
+      {
+        "q": "How many players can a Warcryer alliance have?",
+        "a": "300 approved members during the beta. Ventrilo's paid plan holds 400 online at once, so for a larger group Ventrilo has more room today."
+      },
+      {
+        "q": "Does Warcryer run on macOS or Linux?",
+        "a": "No. It is a Windows app, with a browser version for a quick look. Ventrilo has clients for all three."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ventrilo: home page and hosting",
+        "url": "https://www.ventrilo.com/"
+      },
+      {
+        "label": "Ventrilo: frequently asked questions",
+        "url": "https://www.ventrilo.com/faq.php"
+      },
+      {
+        "label": "Ventrilo: downloads",
+        "url": "https://www.ventrilo.com/download.php"
+      }
+    ],
+    "note": "Prices and limits are from Ventrilo's own site at the time of writing."
+  }
+};
+

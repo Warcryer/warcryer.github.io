@@ -1,0 +1,95 @@
+---
+// Every page: the head, the header with its menu, and the footer.
+import "../styles/site.css";
+import { SITE, NAV, DISCORD, GITHUB, RELEASES, ISSUES } from "../data/site";
+import StatusDot from "../components/StatusDot.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  /** A picture in public/shots/ for link previews. */
+  image?: string;
+  type?: "website" | "article";
+  /** Extra class on <body>; "page" gives inner pages their smaller heading. */
+  bodyClass?: string;
+  /** A second paragraph for the footer, above the links (trademark notices). */
+  footNote?: string;
+  noindex?: boolean;
+}
+
+const { title, description, image = "board.jpg", type = "website", bodyClass, footNote, noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, SITE).href;
+const here = (href: string) => (href !== "/" && !href.includes("#") && path.startsWith(href) ? "page" : undefined);
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+{noindex && <meta name="robots" content="noindex">}
+<meta property="og:type" content={type}>
+<meta property="og:site_name" content="Warcryer">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={`${SITE}/shots/${image}`}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="icon" href="/favicon.png">
+<link rel="preload" href="/fonts/cinzel-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<slot name="head" />
+</head>
+<body class={bodyClass}>
+<a class="skip" href="#main">Skip to the page</a>
+
+<header class="top">
+  <a class="brand" href="/"><img src="/emblem.svg" alt="" width="34" height="34"><span>Warcryer</span></a>
+  <nav aria-label="Main">
+    {NAV.map((n) => <a href={n.href} aria-current={here(n.href)}>{n.label}</a>)}
+    <a class="btn small" href="/download/" aria-current={here("/download/")}>Download</a>
+  </nav>
+  <details class="menu">
+    <summary aria-label="Menu"><span aria-hidden="true"></span></summary>
+    <div class="menu-panel">
+      <a href="/">Home</a>
+      {NAV.map((n) => <a href={n.href} aria-current={here(n.href)}>{n.label}</a>)}
+      <a href="/download/">Download</a>
+      <a href="/status/">Status</a>
+    </div>
+  </details>
+</header>
+
+<main id="main">
+  <slot />
+</main>
+
+<footer>
+  <p>Warcryer is a community project; the Windows app is MIT licensed. It is not affiliated with or endorsed by NCSOFT or any other game publisher, and it uses no game artwork; games are named only to say which starting lists exist, and their names belong to their owners.</p>
+  {footNote && <p set:html={footNote} />}
+  <p class="links">
+    <a href="/download/">Download</a>
+    <a href="/guides/">Guides</a>
+    <a href="/compare/">Compare</a>
+    <a href="/status/"><StatusDot />Status</a>
+    <a href={DISCORD}>Discord</a>
+    <a href={GITHUB}>GitHub</a>
+    <a href={RELEASES}>Releases</a>
+    <a href="/terms/">Terms of use</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href={`${GITHUB}#code-signing-policy`}>Code signing policy</a>
+    <a href={ISSUES}>Report a problem</a>
+  </p>
+</footer>
+<script>
+  // Close the narrow-screen menu once a link in it is followed (it may lead to a section of this same page).
+  document.querySelectorAll<HTMLAnchorElement>(".menu-panel a").forEach((a) =>
+    a.addEventListener("click", () => a.closest("details")?.removeAttribute("open")),
+  );
+</script>
+</body>
+</html>

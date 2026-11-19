@@ -1,0 +1,52 @@
+---
+// Is it working? The page asks the service when it is opened.
+import Base from "../layouts/Base.astro";
+import Crumbs from "../components/Crumbs.astro";
+import { DISCORD } from "../data/site";
+---
+<Base title="Status · Warcryer" description="Whether the Warcryer service is working right now." bodyClass="page">
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Status", "/status/"]]} />
+  <h1>Status</h1>
+  <p class="lede" data-status-summary aria-live="polite">Asking the service…</p>
+</section>
+<section class="status-section">
+  <ul class="parts" data-status-parts></ul>
+  <p class="fine note" data-status-when></p>
+  <p class="fine note">This page can only say what the server sees of itself. If it does not match what you see, or if you need help, ask on the <a href={DISCORD}>Warcryer Discord</a>. When something stops working we are told automatically.</p>
+  <noscript><p class="note">This page needs JavaScript to ask the service. The app's own <a href="https://ignite.v1rtopia.com/status">status page</a> works without it.</p></noscript>
+</section>
+</Base>
+
+<script>
+  import { loadStatus } from "../scripts/status";
+  const SAYS = { up: "Working", down: "Not answering", unknown: "Cannot tell" } as const;
+  const summary = document.querySelector("[data-status-summary]")!;
+  const list = document.querySelector("[data-status-parts]")!;
+  const when = document.querySelector("[data-status-when]")!;
+  loadStatus().then((s) => {
+    if (!s) {
+      summary.textContent = "The service did not answer. Something may be down; we are told automatically when it is.";
+      summary.setAttribute("data-state", "down");
+      return;
+    }
+    summary.textContent = s.ok ? "Everything is working." : "Something is not working right now. We have been told automatically.";
+    summary.setAttribute("data-state", s.ok ? "up" : "down");
+    for (const p of s.parts) {
+      const li = document.createElement("li");
+      li.dataset.state = p.state;
+      const text = document.createElement("div");
+      const name = document.createElement("strong");
+      name.textContent = p.name;
+      const what = document.createElement("span");
+      what.textContent = p.what;
+      text.append(name, what);
+      const state = document.createElement("span");
+      state.className = "state";
+      state.textContent = SAYS[p.state] ?? SAYS.unknown;
+      li.append(text, state);
+      list.append(li);
+    }
+    when.textContent = `Checked at ${s.at.slice(11, 16)} UTC. Reload the page to check again.`;
+  });
+</script>
