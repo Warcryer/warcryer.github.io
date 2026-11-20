@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.32.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -266,7 +266,9 @@ Points (DKP, EP, PAP, or whatever your alliance calls them) are set up on the **
 - **Attendance only:** one point per operation attended, as a plain record of who turns up.
 - **Classic DKP:** a set amount per operation, extras for being on time, staying to the end and coming as said, a deduction for not showing, standby, and objectives such as boss kills.
 - **DKP by the hour:** points for each hour in voice, so a long siege earns more than a short raid.
-- **EPGP (effort points):** effort points with standby, decaying 10% a week so recent effort counts most. The gear-point side comes with the loot log, later.
+- **EPGP:** effort points (EP) for operations and standby; each item given out adds its price to the winner's gear points (GP), and priority is EP divided by GP. Both decay 10% a week, so recent effort and recent loot count most.
+- **Zero-sum DKP:** nobody earns points for turning up. An item's price is taken from the winner and shared equally among everyone else in voice at the operation, so the total always stays at zero.
+- **Suicide Kings:** no points, a list. Whoever takes an item goes to the bottom.
 - **Fleet participation:** one point per fleet or operation a player was in at all, as space and sandbox games count participation.
 - **Custom:** start empty.
 
@@ -296,9 +298,16 @@ A player who leaves the alliance keeps their lines, out of sight; if they come b
 
 What dropped, and who got it, is recorded on the operation's board under **Loot**, during the operation or after. Who may: the alliance's admins, the operation's event leader, and the leaders and officers of its clans.
 
-**Items and prices.** On the **Alliance** tab, **Items and prices** is your own list of items worth recording, so names are spelled one way and screenshots are read right. Add other spellings players use, separated by commas. Nothing comes from the game itself. For each set of points that spends by price there is a price column; leave a price empty to enter it, or the winning bid, each time. A hidden item stays on old drops but is no longer offered.
+**Items and prices.** On the **Alliance** tab, **Items and prices** is your own list of items worth recording, so names are spelled one way and screenshots are read right. Add other spellings players use, separated by commas. Nothing comes from the game itself. For each set of points that spends by price, by EPGP (the gear points an item adds) or Zero-sum there is a price column; leave a price empty to enter it, or the winning bid, each time. A hidden item stays on old drops but is no longer offered.
 
-**How a set of points pays for loot** is chosen in its settings, under **Loot, decay and limits**: **Not spent on loot** (attendance, fleet participation), **Spent** (the item's price is taken from the winner; this also covers auctions held in game chat, where you enter the winning bid), or **Loot council** (a record of who got what and why, at no cost). EPGP's gear points, zero-sum and Suicide Kings lists come later.
+**How a set of points pays for loot** is chosen in its settings, under **Loot, decay and limits**:
+
+- **Not spent on loot:** attendance, fleet participation.
+- **Spent:** the item's price is taken from the winner. This also covers auctions held in game chat, where you enter the winning bid.
+- **Loot council:** a record of who got what and why, at no cost.
+- **EPGP:** the price is added to the winner's gear points (GP); their effort points (EP) stay as they are. Priority is EP divided by (base GP + GP): everyone starts from the base (100 unless you change it), so a new player is not first in line for everything. You can also set a minimum EP: players under it come after everyone else, whatever their priority. When giving an item, the players are offered first in line first, with their priority. Decay takes the same share off GP as off EP, and a new season carries both over alike. GP can be changed by hand on a player's lines, with a reason, never below 0.
+- **Zero-sum:** the price is taken from the winner and shared equally among the set's other players who have been in voice at the operation (so far, if it is still going). Shares are whole points; when they do not divide evenly, a few players get one more, so the set always adds up to exactly zero. An item can only be given with a cost on an operation, with someone else there to share it. Leave **May go below zero** on: otherwise a player needs points before winning anything.
+- **Suicide Kings:** no cost and no points; the set is a list. Whoever takes an item goes to the bottom, and the players below them who have been in voice at the operation move up one. Those who were not there keep their place, so missing a raid does not cost anyone their spot. The list starts in name order; on **History → (the list)** you can move players up and down or **Shuffle** it to start fairly. Newcomers join at the bottom.
 
 **Recording drops.** On the board, **+ Add a drop by hand**, or **Read a screenshot**:
 
@@ -309,9 +318,9 @@ What dropped, and who got it, is recorded on the operation's board under **Loot*
 
 The picture is shrunk on your computer, sent to our server and on to Anthropic's Claude to be read, and not kept. Each alliance has a number of reads a month by plan (100 in the beta), shown beside the button; when they are used up, enter drops by hand until the 1st. Reading is a help, not a judge: always look the rows over.
 
-**Giving out.** **Give…** on a drop: who got it (and as which character), which set pays, the cost (filled in from the price list, times the amount), and a note (a loot council's reason, say). If a set does not let points go below zero and the player cannot afford it, it is refused with the reason, never trimmed. **Keep** marks a drop kept for the guild, **Sold** as sold.
+**Giving out.** **Give…** on a drop: who got it (and as which character), which set pays, the cost (filled in from the price list, times the amount), and a note (a loot council's reason, say). For EPGP the players are listed first in line first, with their priority; for a Suicide Kings list, in list order with their places and who was not there; for Zero-sum the form says how many will share the price. If a set does not let points go below zero and the player cannot afford it, it is refused with the reason, never trimmed. **Keep** marks a drop kept for the guild, **Sold** as sold.
 
-**Take back** undoes a mistake: the cost is refunded with a line of its own on the player's points, and the drop can be given again. Nothing is erased; every drop, award, take-back and read is in the log.
+**Take back** undoes a mistake: every line the award wrote is undone by a line of its own (the cost refunded, the gear points taken off, the Zero-sum shares taken back), and the drop can be given again. A Suicide Kings list goes back to how it was, unless it has changed since (another item given, or someone moved): then it is left as it is, the board says so, and you can put it in order by hand. Nothing is erased; every drop, award, take-back and read is in the log.
 
 **The loot history** is on **History → Loot**: every drop, newest first, with who got it; find an item, or only your own. Everyone in the alliance sees what dropped and who got it. The cost shows to those who see that set's standings in full, and to the winner.
 

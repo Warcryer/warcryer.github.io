@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.32.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -24,7 +24,7 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | Your voice | While you hold a push-to-talk key, or while voice activation is open | Relayed live to the members of that room. It is not recorded or stored. |
 | Whether your headset is off | When you turn it off or on in the app | Shown live beside your name to the players in the voice rooms you are in, so they know you cannot hear them. Not stored: it is gone when you turn it on again or leave. Whether your mic is off is not shown. |
 | Times you joined and left voice rooms | Automatically while connected | So organisers can see who is present. For each operation, its organisers, and your clan's leader and officers, can see how long you were in voice while it ran and when you joined. When an operation ends this is written down as one line for you (time in voice, what you had answered, your party and the character you came as). Your alliance's admins, and your clan's leader and officers for the time you were in their clan, can read those lines across operations as a history; you can read your own. |
-| Points, if your alliance or clan keeps them (DKP and the like) | When an operation's points are posted, a leader gives or takes points by hand, or decay or a new season changes them | Each line: how many, for which operation or why (the rules' parts, such as "there 10, on time 2"), and who posted it. You always see your own lines. Who else sees your total is your alliance's (or clan's) choice: everyone in it, or only those who run the points and, for the alliance's points, your clan's leader and officers. |
+| Points, if your alliance or clan keeps them (DKP, EP and GP, and the like), or your place in a loot list (Suicide Kings) | When an operation's points are posted, a leader gives or takes points by hand, decay or a new season changes them, loot is given out, or the list is put in order | Each line: how many, for which operation, item or reason (the rules' parts, such as "there 10, on time 2"; a share of another player's item), and who wrote it. A list keeps only the order. You always see your own lines. Who else sees your total is your alliance's (or clan's) choice: everyone in it, or only those who run the points and, for the alliance's points, your clan's leader and officers. |
 | Loot: what dropped at an operation, who received it and as which character, what it cost in points, and a leader's note | When a leader records or gives out a drop | Shown to your alliance's members; the cost only to those who see that set of points' standings in full, and to you. |
 | Screenshots of loot a leader asks the app to read | When a leader uses **Read a screenshot** | The picture is sent from our server to Anthropic (the maker of Claude), which reads the items in it and returns them; it may show names and chat on screen at the time. We do not keep the picture. Anthropic processes it for us under its commercial terms: by its published policy it deletes what is sent through its API within 30 days (longer only if its safety systems flag it, or the law requires), and does not use it to train its models (privacy.claude.com). We keep who asked, when, the size of the request and the list that came back. |
 | Changes made by leaders and admins (moves, approvals, bans) | When made | An audit log of who did what. |
@@ -39,7 +39,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.31.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.32.0/src-tauri/src/input).
 
 ## Who can see what
 

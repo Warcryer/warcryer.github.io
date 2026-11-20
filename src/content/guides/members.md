@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.32.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -101,7 +101,7 @@ A quick call is a short line you send with one key, without typing: "Need res", 
 
 On the Voice tab, **Open as a window over the game** turns the compact strip into a chat window: who is speaking on top, the chat underneath. It stays on top of the game, so put it where the game's own chat box is.
 
-- Drag it by its top line; size it from its edges or the bottom right corner; the slider in its top line makes it more or less see-through. **▴** folds it back into the strip, **×** closes it.
+- Drag it by its top line; size it from its edges or the bottom right corner, and it keeps that size, whatever happens in the chat, and the next time it opens. The slider in its top line makes it more or less see-through. **▴** folds it back into the strip, **×** closes it.
 - **The Chat key** (Settings → Keys) lets you type without leaving the game: press it, type, **Enter** sends and the game has the keyboard again. **Esc**, or the Chat key again, gives up. Pick a key the game does not use, because the game receives it too.
 - While you type, your talk keys are just letters: they open no mic.
 - You can also click in the line and type; Enter gives the keyboard back to the game the same way.
@@ -139,6 +139,12 @@ Points are earned at operations, from your time in voice: how much is up to your
 ## Loot
 
 **History → Loot** lists what dropped at your alliance's operations and who got it; tick **Only mine** for your own. When an item is paid for with points, the cost shows on your points' lines with the item's name, and as **On loot** in the standings. If a leader takes an item back, the cost comes back to you on a line of its own.
+
+Depending on how your alliance hands out loot:
+
+- **EPGP:** an item adds to your gear points (GP) instead of taking points. Your priority, effort points divided by gear points, decides who is first in line; it is in the standings.
+- **Zero-sum:** when someone else wins an item at an operation you were in voice for, you get a share of what they paid, on a line naming whose item it was.
+- **Suicide Kings:** the standings are a list. Taking an item sends you to the bottom; when someone above you takes one and you were there, you move up. Missing an operation does not cost you your place.
 
 ## Being moved, and asking to move
 
@@ -196,6 +202,7 @@ Your account can have one voice connection at a time. Opening the app somewhere 
 You do not have to switch to the app to see who is talking. Tick **Show the compact strip** in **Settings → Window and updates** and a small window appears that stays on top of other windows. It shows one line for each net with someone speaking: the net, the speakers with their clan's crest, and **You** while your own mic is open. When nobody is speaking it shrinks to one line saying where you are.
 
 - **Drag** it wherever suits you; it remembers the place.
+- **Make it narrower or wider** by dragging its left or right edge; it remembers the width. Its height follows what it shows.
 - **Double-click** it to bring the app forward.
 - **▾** opens it into the [chat window](#the-chat-window-over-the-game): the operation's chat under the line of who is speaking.
 - **×** closes it; switch it on again in Settings, with the Chat key, or with **Open as a window over the game** on the Voice tab.

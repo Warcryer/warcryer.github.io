@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.31.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.32.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for clan leaders and officers
 
@@ -145,13 +145,13 @@ Choose how far back to look at the top: 30 days, 3 months, a year, or everything
 
 ## Your clan's own points
 
-If your alliance's admins allow it, your clan can keep points of its own, for the clan's own loot, beside any the alliance keeps. You and your officers set them up on the **Clan** tab under **The clan's own points**, the same way the alliance's admins set up theirs: start from a preset (Attendance only, Classic DKP, DKP by the hour, EPGP, Fleet participation, or Custom), name it whatever your members say, and change any rule: points for being there, per hour, on time, to the end, coming as said, standby and named objectives, a deduction for not showing, each for every kind of event or only some. Decay, a cap, seasons and **Everyone sees the standings** are there too. You can keep more than one set, up to ten. The alliance admins' guide explains each part.
+If your alliance's admins allow it, your clan can keep points of its own, for the clan's own loot, beside any the alliance keeps. You and your officers set them up on the **Clan** tab under **The clan's own points**, the same way the alliance's admins set up theirs: start from a preset (Attendance only, Classic DKP, DKP by the hour, EPGP, Zero-sum DKP, Suicide Kings, Fleet participation, or Custom), name it whatever your members say, and change any rule: points for being there, per hour, on time, to the end, coming as said, standby and named objectives, a deduction for not showing, each for every kind of event or only some. Decay, a cap, seasons and **Everyone sees the standings** are there too. You can keep more than one set, up to ten. The alliance admins' guide explains each part.
 
 When an operation your clan took part in ends, its board, and the points tab on **History**, show a draft: each of your members with their time in voice and what the rules suggest, with why. Tick any objectives reached and anyone on standby, change any amount, then **Post**. Nothing is added until you post, and each operation is posted once. Afterwards, give or take points by hand from a member's lines, always with a reason; nothing is ever changed or removed, a mistake is put right with another line. All of it is in the clan log.
 
 If your alliance keeps points too and the standings are not open to everyone, you see your own members' points there.
 
-**Loot.** As a leader or officer of a clan taking part in an operation, you can record its drops on the board, by hand or by reading a screenshot, and give them out in your clan's points (by price, or as a loot council). Prices in your clan's points are set on the Clan tab under **Prices in the clan's points**. The alliance admins' guide explains loot in full.
+**Loot.** As a leader or officer of a clan taking part in an operation, you can record its drops on the board, by hand or by reading a screenshot, and give them out in your clan's points (by price, as a loot council, by EPGP, Zero-sum, or a Suicide Kings list). Prices in your clan's points are set on the Clan tab under **Prices in the clan's points**. The alliance admins' guide explains loot in full.
 
 ## The clan log
 
