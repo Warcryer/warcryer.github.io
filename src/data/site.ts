@@ -10,9 +10,9 @@ export const LOOT_VIDEO_ID = "DJ13PojgG9E";
 
 /** The main menu. Home-page sections are reached with /#anchor from any page. */
 export const NAV = [
-  { href: "/#nets", label: "How it works" },
   { href: "/#planning", label: "Planning" },
-  { href: "/#leaders", label: "For leaders" },
+  { href: "/#voice", label: "Voice" },
+  { href: "/#loot", label: "Points and loot" },
   { href: "/guides/", label: "Guides" },
   { href: "/compare/", label: "Compare" },
 ];

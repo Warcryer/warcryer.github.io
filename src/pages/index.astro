@@ -9,16 +9,17 @@ const ld = {
   name: "Warcryer",
   applicationCategory: "CommunicationApplication",
   operatingSystem: "Windows 10, Windows 11",
-  description: "Voice for large gaming alliances and clans. The event roster decides who hears whom.",
+  description: "Clan and alliance management for MMORPGs with voice built in: plan operations, build the roster, go live on voice that follows it, and keep attendance, points and loot.",
   url: SITE,
   downloadUrl: `${SITE}/download/`,
-  image: `${SITE}/shots/board.jpg`,
+  image: `${SITE}/shots/roster.jpg`,
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 ---
 <Base
-  title="Warcryer: voice that follows the chain of command"
-  description="A free, open-source alternative to TeamSpeak for large gaming alliances and clans. The event roster decides who hears whom, so nobody picks a channel."
+  title="Warcryer: run your alliance, voice built in"
+  description="Clan and alliance management for MMORPGs with voice built in. Plan operations, build the roster, go live on voice that follows it, and keep attendance, DKP and loot in the same app. Free while in beta."
+  image="roster.jpg"
   footNote="TeamSpeak, Discord, Mumble and Ventrilo are trademarks of their owners, named here only for comparison; Warcryer is not affiliated with them."
 >
 <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
@@ -26,20 +27,47 @@ const ld = {
 <section class="hero">
   <img class="emblem" src="/emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
   <h1>Warcryer</h1>
-  <p class="tagline">Voice that follows the chain of command.</p>
-  <p class="lede">An open-source alternative to TeamSpeak for large alliances and clans, free while in beta. The event roster decides who hears whom, so nobody picks a channel and nobody talks over the call.</p>
+  <p class="tagline">Run your alliance. Voice built in.</p>
+  <p class="lede">Clan and alliance management for MMORPGs. Plan the operation, build the roster, go live on voice that follows it, then keep the attendance, points and loot. One app, from the sign-ups to the last drop.</p>
   <div class="actions">
     <a class="btn" href="/download/">Download for Windows</a>
-    <a class="btn quiet" href={GITHUB}>Source on GitHub</a>
+    <a class="btn quiet" href="#watch">Watch the walkthrough</a>
   </div>
-  <p class="fine">In beta, and free. The Windows app is open source. Windows 10 and 11. Updates itself. Not yet code-signed, so Windows warns on the first install.</p>
+  <p class="fine">Free while in beta. Windows 10 and 11. The Windows app is open source and updates itself. Not yet code-signed, so Windows warns on the first install.</p>
 </section>
 
 <section class="shot">
   <figure>
-    <img src="/shots/board.jpg" alt="Two players side by side: the leader's roster board with three parties, two of them marked as constant parties, and a member's voice screen with her nets" width="1600" height="775" loading="lazy">
-    <figcaption>Left, the leader's roster board. Right, the nets a member was placed on. Drag a player to another party and their voice follows within a couple of seconds.</figcaption>
+    <img src="/shots/roster.jpg" alt="The roster board of a planned castle siege: three parties with their members, class and level, the support roles each party still needs, and Reserve listing who has not been placed" width="1600" height="775" loading="lazy">
+    <figcaption>The roster board of a planned siege. When it goes live, every player is put on the voice nets their place gives them.</figcaption>
   </figure>
+</section>
+
+<section id="evening">
+  <h2>One evening, start to finish</h2>
+  <p class="intro">Most alliances run an event across a sign-up sheet, a Discord channel, a voice server and a points site. In Warcryer each step knows about the one before it.</p>
+  <ol class="flow">
+    <li>
+      <h3>Plan</h3>
+      <p>Create the operation. Every member of its clans is asked if they are coming, in the app and on Discord.</p>
+    </li>
+    <li>
+      <h3>Build</h3>
+      <p>Drag players into parties on the board, or place a constant party with one click.</p>
+    </li>
+    <li>
+      <h3>Go live</h3>
+      <p>Everyone is pulled onto their nets at once: Broadcast, Command, Clan, Party.</p>
+    </li>
+    <li>
+      <h3>Call it</h3>
+      <p>Orders that cut through, a pinned order, ready checks and quick calls, all over the game.</p>
+    </li>
+    <li>
+      <h3>Keep it</h3>
+      <p>Who was there and for how long, the points it earned, and who got the loot.</p>
+    </li>
+  </ol>
 </section>
 
 <section id="watch">
@@ -64,20 +92,51 @@ const ld = {
   <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LOOT_VIDEO_ID}`}>watch it on YouTube</a>.</p>
 </section>
 
-<section id="nets">
-  <h2>Five nets, one microphone</h2>
-  <p class="intro">During an event every player is on several voice nets at once. Each net you may speak on has its own push-to-talk key, and you only ever hear the nets your place on the roster gives you.</p>
+<section id="planning">
+  <h2>Plan the operation</h2>
+  <p class="intro">Sign-ups, characters, parties and announcements live on one board, and it knows who is actually in voice.</p>
+  <div class="cards three">
+    <article>
+      <h3>Who is coming</h3>
+      <p>When an operation is created, every member of its clans is asked in the app, and one click answers. A player bringing a different character says which, for that event only.</p>
+    </article>
+    <article>
+      <h3>Mains, alts and boxes</h3>
+      <p>Each player keeps the characters they play, with class and level, and marks the ones they box. Organisers see on the board what someone can bring without asking.</p>
+    </article>
+    <article>
+      <h3>What each party needs</h3>
+      <p>Each party shows whether it is full and which support roles it still lacks. Click a missing role to list the unplaced players who can fill it.</p>
+    </article>
+    <article>
+      <h3>Constant parties</h3>
+      <p>Groups that always fight together are saved once, in order, with a leader. One click places them, and their leader can sign the whole party up.</p>
+    </article>
+    <article>
+      <h3>Start from last time</h3>
+      <p>A new operation can begin with the parties, leaders and deputies of an earlier one. Players who have left or been banned since are left out.</p>
+    </article>
+    <article>
+      <h3>Told on Discord</h3>
+      <p>Connect a channel and every new, changed, started or cancelled operation is announced there, in each reader's own time zone, with a reminder before the start.</p>
+    </article>
+  </div>
+</section>
+
+<section id="voice">
+  <h2>Voice that follows the roster</h2>
+  <p class="intro">Nobody picks a channel. Your place on the roster decides which nets you hear and which you may speak on, each with its own push-to-talk key, and moving a player moves their voice.</p>
 
   <ol class="nets">
     <li style="--net:#e2553f">
       <h3>Broadcast</h3>
       <p class="who">Event leader and deputies speak</p>
-      <p>The call everyone hears. Used for the orders that move the whole alliance.</p>
+      <p>The call everyone hears, for the orders that move the whole alliance.</p>
     </li>
     <li style="--net:#e6c77a">
       <h3>Command</h3>
       <p class="who">Leaders only</p>
-      <p>Event leader, deputies, clan leaders and party leaders plan here without the rank and file hearing it.</p>
+      <p>Event, clan and party leaders plan here without the rank and file hearing it.</p>
     </li>
     <li style="--net:#8c86ff">
       <h3>Clan</h3>
@@ -87,7 +146,7 @@ const ld = {
     <li style="--net:#5fd35f">
       <h3>Party</h3>
       <p class="who">Everyone in the party speaks</p>
-      <p>Where the fighting is called. Push-to-talk or voice activation, your choice.</p>
+      <p>Where the fighting is called. Push-to-talk or voice activation.</p>
     </li>
     <li style="--net:#9a968c">
       <h3>Reserve</h3>
@@ -99,128 +158,141 @@ const ld = {
   <div class="split">
     <div>
       <h3>A leader's voice cuts through</h3>
-      <p>While someone speaks on a higher net, the nets below it drop to a murmur and come back when the call ends. A Broadcast order is heard over party chatter without silencing it, and the lowered nets say so on screen.</p>
+      <p>While someone speaks on a higher net, the nets below it drop to a murmur and come back when the call ends. Nothing is muted, and the lowered nets say so on screen.</p>
       <h3>Keys that work in the game</h3>
-      <p>Push-to-talk keys, including mouse side buttons, work while the game has focus. They are never taken away from the game, and no administrator rights are needed.</p>
+      <p>Push-to-talk keys, mouse side buttons included, work while the game has focus. They are never taken from the game, and no administrator rights are needed.</p>
     </div>
     <figure>
-      <img src="/shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's Clan and Party nets show as lowered" width="1600" height="775" loading="lazy">
-      <figcaption>Left, the leader holds the Broadcast key. Right, a member's Clan and Party nets are lowered.</figcaption>
+      <img src="/shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's party net is marked as lowered" width="1600" height="775" loading="lazy">
+      <figcaption>Left, the leader holds the Broadcast key. Right, the member's party net is lowered under the order.</figcaption>
     </figure>
   </div>
 
   <div class="split flip">
     <figure>
       <img src="/shots/handover.jpg" alt="Two players side by side, each with a bar across the top: Orin has dropped out, Vanguard has no one on Command, who leads it now, with buttons to choose" width="1600" height="775" loading="lazy">
-      <figcaption>The party's leader has dropped out. The party (right) and the clan's leader (left) are asked who leads now.</figcaption>
+      <figcaption>The party's leader has dropped out. The party and the clan's leader are asked who leads now.</figcaption>
     </figure>
     <div>
       <h3>A party is never cut off</h3>
-      <p>A party's leader is its only voice on Command. If the leader's game crashes or their connection dies, the party and the clan's officers are asked after about thirty seconds who leads now. One click settles it.</p>
+      <p>If a party leader's game crashes, the party and the clan's officers are asked after about thirty seconds who leads now. One click settles it.</p>
       <h3>And if nobody answers</h3>
-      <p>After thirty seconds more the next member in party order is promoted automatically. The new leader is told, and is on Command at once.</p>
+      <p>Thirty seconds later the next member in party order is promoted, told, and on Command at once.</p>
     </div>
-  </div>
-
-  <div class="split">
-    <div>
-      <h3>See who is talking without leaving the game</h3>
-      <p>The compact strip is a small window that stays on top of others: one line for each net with someone speaking, with the speaker's crest and name, and "You" while your own mic is open.</p>
-      <h3>A window, not an overlay</h3>
-      <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it, so it sits over a game in windowed or borderless mode.</p>
-    </div>
-    <figure>
-      <img src="/shots/strip.jpg" alt="The voice screen with the compact strip floating over it, enlarged: a single line reading Broadcast, a clan crest and the name Morrigan" width="1600" height="775" loading="lazy">
-      <figcaption>The compact strip, enlarged here, while a deputy speaks on Broadcast.</figcaption>
-    </figure>
   </div>
 </section>
 
-<section id="planning">
-  <h2>Plan the event, then see who came</h2>
-  <p class="intro">The spreadsheet an alliance keeps for sign-ups, party lists and attendance is built in, and it knows who is actually in voice.</p>
+<section id="chat">
+  <h2>Orders that stay on screen</h2>
+  <p class="intro">Every operation has a text chat with a channel for each net you are on. What was said by voice can be pinned, checked and answered without anyone typing in the middle of a fight.</p>
+  <div class="split">
+    <div>
+      <h3>A pinned order</h3>
+      <p>The event leader pins an order on Broadcast. It stays at the top of everyone's chat and on their strip until it changes.</p>
+      <h3>Ready checks</h3>
+      <p>One click asks everyone; the answers count up as they come in: ready, not ready, no answer.</p>
+      <h3>Quick calls</h3>
+      <p>Need res, Need heal, Out of mana: a short line sent with one click or one key. The alliance sets its own calls.</p>
+    </div>
+    <figure>
+      <img src="/shots/chat.jpg" alt="Two players side by side: the leader's chat with a pinned order and a ready check counting answers, and a member's party chat with quick calls" width="1600" height="775" loading="lazy">
+      <figcaption>Left, the leader's chat: a pinned order and a ready check. Right, a member's party chat with quick calls.</figcaption>
+    </figure>
+  </div>
 
-  <div class="cards">
+  <div class="split flip">
+    <figure>
+      <img src="/shots/ingame.jpg" alt="A real game with the Warcryer chat window in the lower left corner, showing the operation's channels, a ready check button and quick calls" width="1600" height="900" loading="lazy">
+      <figcaption>The chat window over a real game. Names are blurred.</figcaption>
+    </figure>
+    <div>
+      <h3>Over the game, not in it</h3>
+      <p>The compact strip shows who is talking on which net, and the chat can open in the same small window. It stays on top of the game in windowed or borderless mode.</p>
+      <h3>Nothing read, nothing injected</h3>
+      <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="loot">
+  <h2>Points and loot, from the same evening</h2>
+  <p class="intro">Points come from who was really in voice, loot goes to the right player, and everyone can check the standings. No second site to keep in step.</p>
+  <div class="cards three">
     <article>
-      <h3>Who is coming</h3>
-      <p>When an event is created, every member of its clans is asked in the app, and one click answers. A player bringing a different character says which, for that event only. The leader of a constant party can sign the whole party up.</p>
+      <h3>Your way of sharing</h3>
+      <p>Start from a preset: attendance only, classic DKP, DKP by the hour, EPGP, Zero-sum, Suicide Kings, fleet participation, or your own rules. A loot council needs no points at all.</p>
     </article>
     <article>
-      <h3>Mains, alts and boxes</h3>
-      <p>Each player keeps a standing list of the characters they play beside their main, with class and level, and marks the ones they box. Their clan sees it on the roster and organisers on the board, so a leader knows what someone can bring without asking.</p>
+      <h3>Earned from attendance</h3>
+      <p>When an operation ends, the app drafts everyone's points from their time in voice, with the reason beside each amount. Change anything, then post.</p>
     </article>
     <article>
-      <h3>What each party needs</h3>
-      <p>Players choose their class and level once, from the alliance's own lists. Each party then shows whether it is full and which support roles it still has nobody for. Click a missing role to list the unplaced players who can fill it.</p>
+      <h3>Standings everyone can read</h3>
+      <p>Balances highest first, and every line that made them. A change by hand is a line of its own with its reason, so nothing is quietly edited.</p>
     </article>
     <article>
-      <h3>Attendance</h3>
-      <p>After the event, the board lists who was in voice and for how long, counted from the moment the operation started. Late arrivals, early leavers and players who said they were coming and never showed are plain to see.</p>
+      <h3>Drops read from a screenshot</h3>
+      <p>Give the app a screenshot of the drops in the game's chat. It lists each item and how many, spelled as on your item list, for you to check and add.</p>
     </article>
     <article>
-      <h3>Kept for you</h3>
-      <p>Every operation keeps its roster and its attendance. The History tab reads them across operations: turnout from one event to the next, and how often each player comes. Admins see everyone, clan leaders their own clan, each player their own record.</p>
+      <h3>Give it out</h3>
+      <p>Who got it, which character, which points pay, and the price from your list. A mistake is put right with Take back, and the log says so.</p>
+    </article>
+    <article>
+      <h3>Decay and seasons</h3>
+      <p>Take a share off every balance each week or month so old points do not rule for ever, and start a new season with part carried over or none.</p>
     </article>
   </div>
   <figure class="wide">
-    <img src="/shots/planning.jpg" alt="The roster board of a planned castle siege: twenty coming, one cannot, three have not answered. Three parties, one full, the others listing the support roles they still need, and Reserve sorted by who is coming" width="1600" height="944" loading="lazy">
-    <figcaption>A planned operation. One party is full; the other two list what they still need.</figcaption>
+      <img src="/shots/loot-read.jpg" alt="An operation's loot panel reading a real screenshot of a raid boss's drops from the game's chat, shown beside it" width="1600" height="775" loading="lazy">
+      <figcaption>A real screenshot of a Queen Ant kill, given to the app on the operation's loot panel.</figcaption>
   </figure>
   <figure class="wide">
-    <img src="/shots/attendance.jpg" alt="The attendance table of an ended operation: it ran for one hour thirty-two minutes with twenty-one of twenty-four players in voice, each with their time, share of the operation and when they joined" width="1600" height="694" loading="lazy">
-    <figcaption>Attendance after an operation: who was in voice, and for how long.</figcaption>
+      <img src="/shots/points-draft.jpg" alt="The points draft after an operation: each player's time in voice, whether they said they were coming, the reason for their points and the amount" width="1600" height="775" loading="lazy">
+      <figcaption>The points draft after an operation: time in voice, the reason, and the points.</figcaption>
   </figure>
+</section>
+
+<section id="kept">
+  <h2>Everything is kept</h2>
+  <p class="intro">Every operation keeps its roster, its attendance, its points and its loot, for as long as the alliance wants them.</p>
+  <div class="split">
+    <div>
+      <h3>Attendance</h3>
+      <p>Who was in voice and for how long, counted from the start. Late arrivals, early leavers and players who said they were coming and never showed are plain to see.</p>
+      <h3>History</h3>
+      <p>Turnout from one operation to the next, and every player's record: how often they come, how long they stay, when they were last there.</p>
+      <h3>The log</h3>
+      <p>Every approval, move, role change, ban, points line and drop, with who did it, in plain sentences. Admins see everything, clan leaders their clan, each player their own.</p>
+    </div>
+    <figure>
+      <img src="/shots/history.jpg" alt="The History tab: six operations in three months, average turnout of 65 percent, and a turnout chart with one column per operation" width="1600" height="775" loading="lazy">
+      <figcaption>The History tab: turnout per operation over three months.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <section id="leaders">
   <h2>Run the alliance from the same window</h2>
-  <p class="intro">No bouncing between a website, a spreadsheet and a voice app. Each screen offers only what your role allows, and the server checks every action again.</p>
+  <p class="intro">Each screen offers only what your role allows, and the server checks every action again.</p>
   <div class="cards">
     <article>
-      <h3>Operations</h3>
-      <p>Create a siege or raid, choose the clans taking part, build parties on a drag-and-drop board, then go live. Everyone on the roster is pulled into their nets at once.</p>
-    </article>
-    <article>
-      <h3>Change of plan</h3>
-      <p>Rename an operation, move its start, hand it to another event leader or change which clans take part. Players with the app open see it at once, and one made by mistake can be deleted.</p>
-    </article>
-    <article>
-      <h3>Told on Discord</h3>
-      <p>Connect a Discord channel and every new, changed, started or cancelled operation is announced there, with the start shown in each reader's own time zone, for the players who do not have the app open. A reminder follows before the start, with how many are coming, and you choose whether a role is pinged.</p>
-    </article>
-    <article>
-      <h3>Constant parties</h3>
-      <p>Groups that always fight together are saved once, in order, with a leader. On the board one click places them all, which for most events is most of the roster.</p>
-    </article>
-    <article>
-      <h3>Start from last time</h3>
-      <p>A new operation can begin with the parties, leaders and deputies of an earlier one. Players who have left or been banned since are left out automatically.</p>
-    </article>
-    <article>
       <h3>Clans and invite links</h3>
-      <p>Players come in by an invite link from their clan's leader, with a set number of uses and days; it lets them straight in or puts them on a waiting list to approve. A clan's crest appears beside each member's name when they speak.</p>
+      <p>Players come in by an invite link from their clan's leader, with a set number of uses and days, straight in or on a waiting list.</p>
+    </article>
+    <article>
+      <h3>Roles that mean something</h3>
+      <p>Owner, admins, clan leaders and officers, event leaders and deputies, party leaders. Voice rights change with the role.</p>
     </article>
     <article>
       <h3>The lounge</h3>
-      <p>Between events each clan has a lounge to sit and talk in. When an operation ends, everyone is returned there automatically.</p>
-    </article>
-    <article>
-      <h3>Moves that stick</h3>
-      <p>Move a player mid-fight and their audio follows. Send someone to Reserve, hand over a party, appoint a deputy: voice rights change with the role.</p>
+      <p>Between events each clan has a lounge to sit and talk in. When an operation ends, everyone is returned there.</p>
     </article>
     <article>
       <h3>Briefings</h3>
-      <p>The event leader can lock Broadcast open and talk without holding a key. A bar across the app says everyone is listening, and it releases itself if forgotten.</p>
-    </article>
-    <article>
-      <h3>The log</h3>
-      <p>Every approval, move, role change and ban is recorded with who did it, and readable in plain sentences: all of it for alliance admins, their own clan's part for clan leaders.</p>
+      <p>The event leader can lock Broadcast open and talk without holding a key. It releases itself if forgotten.</p>
     </article>
   </div>
-  <figure class="wide">
-    <img src="/shots/voice.jpg" alt="The voice screen: one card per net, showing who is speaking and which key talks there" width="1600" height="775" loading="lazy">
-    <figcaption>The voice screen during an operation: one card per net, who is speaking, and the key that talks there.</figcaption>
-  </figure>
 </section>
 
 <section id="alliance">
@@ -229,24 +301,24 @@ const ld = {
   <div class="cards">
     <article>
       <h3>An alliance of your own</h3>
-      <p>Start an alliance from the app with a name and a game. You own it: create its clans, send each leader an invite link, appoint admins, and hand it on if you step down. Nobody can find it or ask to join from outside.</p>
+      <p>Start one from the app with a name and a game. You own it: create its clans, appoint admins, and hand it on if you step down. Nobody can find it or ask to join from outside.</p>
     </article>
     <article>
       <h3>Fits your game</h3>
-      <p>Classes and what each does, how big a party is, which roles every party should have, level or gear bands, your own kinds of event. Start from the lists for Lineage 2, World of Warcraft or Throne and Liberty, or from nothing, and change what you like.</p>
+      <p>Classes and roles, party size, level or gear bands, your own kinds of event. Start from the lists for Lineage 2, World of Warcraft or Throne and Liberty, or from nothing.</p>
     </article>
     <article>
       <h3>In your own words</h3>
-      <p>If your players say guild where the app says clan, or raid where it says operation, say so once. The app, its guides, the invite page and the Discord announcements then speak your way, and the names you typed stay as you typed them.</p>
+      <p>If your players say guild where the app says clan, or raid where it says operation, say so once. The app, its guides and the Discord announcements then speak your way.</p>
     </article>
     <article>
       <h3>Kept apart</h3>
-      <p>Clans, players, operations, voice and the log belong to one alliance. Every release is tested by having one alliance's players try everything against another's, and all of it must be refused.</p>
+      <p>Every release is tested by having one alliance's players try everything against another's, and all of it must be refused.</p>
     </article>
   </div>
   <figure class="wide">
-    <img src="/shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and under them the five words the app is built around, each with a box for the alliance's own word for one and for several" width="1600" height="775" loading="lazy">
-    <figcaption>Game setup: your own kinds of event, and your own words for the five things the app is built around.</figcaption>
+    <img src="/shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and the words the app is built around, each with a box for the alliance's own word" width="1600" height="775" loading="lazy">
+    <figcaption>Game setup: your own kinds of event, and your own words for what the app is built around.</figcaption>
   </figure>
 </section>
 
@@ -255,21 +327,21 @@ const ld = {
   <div class="cards">
     <article>
       <h3>The client is public</h3>
-      <p>The Windows app is MIT licensed. Every release is built from the public repository by GitHub Actions and installed and tested on a clean Windows machine before it is published.</p>
+      <p>The Windows app is MIT licensed. Every release is built from the public repository and installed and tested on a clean Windows machine before it is published.</p>
       <p><a href={GITHUB}>Read the source</a></p>
     </article>
     <article>
       <h3>Sign in with Discord</h3>
-      <p>Sign-in happens in your own browser. The app asks Discord only who you are: no email address, no server list, no messages. It never sees your password.</p>
+      <p>Sign-in happens in your own browser. The app asks Discord only who you are: no email address, no server list, no messages.</p>
     </article>
     <article>
       <h3>Nothing recorded</h3>
-      <p>Voice is relayed live and not stored. Key presses are not logged or sent; only the keys you bind are acted on. No telemetry, no ads. The server notes when you join and leave a net, which is how an event's organisers see who attended. You can delete your account, and everything kept about you, from the app.</p>
+      <p>Voice is relayed live and not stored. Key presses are not logged or sent. No telemetry, no ads. A drop screenshot a leader asks to have read is sent to Anthropic for reading and not kept. You can delete your account from the app.</p>
       <p><a href="/privacy/">Read the privacy policy</a></p>
     </article>
     <article>
       <h3>Signed updates</h3>
-      <p>The app keeps itself up to date, and accepts an update only if it carries the project's signature. Nothing installs mid-event: an update waits for a restart you choose.</p>
+      <p>The app keeps itself up to date and accepts an update only if it carries the project's signature. Nothing installs mid-event.</p>
       <p><a href="/guides/members/#updates-and-the-tray-icon">How updates work</a></p>
     </article>
   </div>
@@ -289,7 +361,7 @@ const ld = {
 
 <section id="status" class="status">
   <h2>Free while in beta</h2>
-  <p>Warcryer is in beta and nothing is charged for it. An alliance has room for 300 approved members, and what is inside it is seen and heard by nobody outside it. It is still being tested: expect rough edges, and tell us about them.</p>
+  <p>Warcryer is in beta and nothing is charged for it. An alliance has room for 300 approved members. It is still being tested: expect rough edges, and tell us about them.</p>
   <ol class="steps">
     <li><strong>Download</strong> the Windows app and sign in with Discord.</li>
     <li><strong>Ask for a beta code</strong> on the Warcryer Discord. One code starts one alliance; the players who join it need none.</li>

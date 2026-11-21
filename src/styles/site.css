@@ -93,6 +93,13 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 .play:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 .video-note { margin-top: 1em; }
 .video-more { margin-top: 2.5em; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
+.flow li { background: var(--bg-1); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 2px; padding: 18px 16px 6px; counter-increment: step; }
+.flow h3::before { content: counter(step) ". "; color: var(--gold); }
+.flow p { font-size: .92rem; color: var(--muted); }
+@media (max-width: 960px) { .flow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .flow { grid-template-columns: 1fr; } }
+
 
 /* Nets */
 .nets { list-style: none; margin: 0 0 3em; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
