@@ -9,7 +9,6 @@ import { trademarkNote } from "../../data/compare-text";
 
 const names = ORDER.map((k) => PRODUCTS[k].name);
 const firstSentence = (t: string) => t.split(/(?<=\.)\s/)[0];
-const builtIn = (k: (typeof ORDER)[number]) => ROWS.filter((r) => r.mark === "yes" && PRODUCTS[k].marks[r.id] && PRODUCTS[k].marks[r.id] !== "yes").length;
 ---
 <Base
   title="Warcryer compared with TeamSpeak, Discord, Mumble and Ventrilo"
@@ -37,7 +36,7 @@ const builtIn = (k: (typeof ORDER)[number]) => ROWS.filter((r) => r.mark === "ye
         </span>
         <h3>Warcryer vs {PRODUCTS[k].name}</h3>
         <p>{firstSentence(PRODUCTS[k].lede)}</p>
-        <span class="chip chip-yes">{builtIn(k)} things built in that {PRODUCTS[k].name} leaves to you</span>
+        <p class="headline"><span aria-hidden="true">◆</span> {PRODUCTS[k].headline}</p>
         <span class="more">Read the comparison →</span>
       </a>
     ))}

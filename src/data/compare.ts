@@ -125,6 +125,8 @@ export type Product = {
   title: string;
   description: string;
   lede: string;
+  /** The one difference that matters most, for the card on the comparison hub. */
+  headline: string;
   cells: Record<string, string>;
   marks: Record<string, Mark>;
   them_if: string[];
@@ -146,6 +148,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     "title": "Warcryer vs TeamSpeak: an alternative for large alliances and clans",
     "description": "How Warcryer compares with TeamSpeak for sieges and raids: the roster places every player on their nets, so nobody sets up whisper lists or drags channels. Where TeamSpeak is still the better choice.",
     "lede": "TeamSpeak has carried large alliances for twenty years, with channels, whisper lists and a deep permission system that each community wires up for itself. Warcryer starts from the other end: the event's roster decides who hears whom, and the wiring is done for you.",
+    "headline": "No whisper lists to set up: the roster puts each leader on Command and moves them when it changes.",
     "cells": {
       "hears": "Each player joins a channel. Admins build the channel tree and its permissions.",
       "several": "Whisper lists in TeamSpeak 3, set up by each player on their own client.",
@@ -265,6 +268,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     "title": "Warcryer vs Discord voice for large raids, sieges and alliance events",
     "description": "How Warcryer compares with Discord voice channels for events with hundreds of players: every player on several nets at once, placed by the roster, with attendance recorded. Where Discord is the better choice, and how the two work together.",
     "lede": "Discord is where most alliances already live, and nothing here asks you to leave it. Its voice channels are made for a room of people talking. A siege with a chain of command is a different shape: hundreds of players, several layers of leaders, and orders that must be heard over party chatter.",
+    "headline": "Five nets at once instead of one voice channel, and one Broadcast that reaches past 99 players.",
     "cells": {
       "hears": "Each player joins a voice channel. Moderators arrange channels and roles.",
       "several": "No. A player is in one voice channel at a time.",
@@ -385,6 +389,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     "title": "Warcryer vs Mumble: voice for large guilds, alliances and fleets",
     "description": "How Warcryer compares with Mumble for large organised events: Mumble is free, open and self-hosted with fine-grained ACLs; Warcryer builds the chain of command, the roster and attendance in. Where each is the better choice.",
     "lede": "Mumble is free, open source and very good at what it does: low-latency voice on a server you run yourself, with a permission system that can express almost anything. Warcryer gives up that freedom for one thing done for you: the event's roster decides who hears whom.",
+    "headline": "A roster instead of ACLs to write and keep right, and no server to run.",
     "cells": {
       "hears": "Each player joins a channel. Admins write ACLs and groups for the channel tree.",
       "several": "Linked channels share their talk, and players can set up whisper and shout keys on their own client.",
@@ -505,6 +510,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     "title": "Warcryer vs Ventrilo: an alternative for alliances that have outgrown channels",
     "description": "How Warcryer compares with Ventrilo for large organised events: Ventrilo is simple hosted voice with channels and phantoms; Warcryer places every player on their nets from the event's roster and records attendance.",
     "lede": "Ventrilo is the voice many guilds raided on, and it is still here: a current client for Windows, macOS and Linux, and servers hosted by its owner. It keeps to what it always was, a server with channels and a push-to-talk key. Warcryer is built around the event instead of the channel.",
+    "headline": "Every player on party, clan and Broadcast at once, placed by the roster, instead of channels and phantoms.",
     "cells": {
       "hears": "Each player joins a channel on the server.",
       "several": "Phantoms let you listen in on other channels while you stay in yours.",
