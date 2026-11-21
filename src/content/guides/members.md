@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.33.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.34.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -34,6 +34,18 @@ The **Voice** tab always shows where you are and who is there.
 | The operation ends | Back in the lounge automatically |
 
 If the alliance has switched on the **alliance lounge**, you hear two lounges between events: your clan's and one shared by every clan. Your key and voice go to one of them at a time; click **Talk here** on the other to switch.
+
+### Groups
+
+Between operations you can sit in a **group**: a small room for a few of you, for a dungeon, farming, crafting or just a chat. The **Groups** panel under the lounge on the Voice tab lists them.
+
+- **Start a group** with an optional name ("Catacombs"); without one it goes by your name. Anyone in the alliance can start one.
+- **Join** any group of the alliance, whatever your clan. You are in one group at a time: joining another moves you.
+- In a group your Party key (or your voice, on voice activation) goes to the group, and you still hear your clan's lounge underneath, quieter. Click **Talk here** on the lounge to speak there instead, and on the group to go back. How loud the lounge stays is in **Settings**, under Priority; at 0 you do not hear it at all.
+- **Leave** when you are done. A group ends when its last player leaves, or when none of its players has had the app open for ten minutes.
+- A live operation still pulls you onto its nets. When it ends you are back in your group, if it is still there.
+- A clan's leader and officers can take their own members out of a group, and the alliance's admins anyone.
+- Nothing about a group is kept, and time in one counts for nothing: not attendance, not points.
 
 When there are operations, a **You are in** picker appears at the top. Use it to sit a live operation out in the lounge, or to join a planned operation early. If you choose the lounge during a live operation, you stay there for that operation; the next one that starts pulls you in again.
 

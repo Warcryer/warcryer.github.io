@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.33.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.34.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -19,6 +19,7 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | Your other characters: each one's name, class and level, and whether you play it beside your main | When you list them in Settings | Shown to your clan on its roster and to the members on an event's roster, so organisers know what you can bring. |
 | Your answer to an event: coming or not, and another character's name, class and level or a note if you give them | When you sign up | Shown to the members on that event's roster, so the organiser can build parties. |
 | Clan membership, join requests, constant party and roster places, clan crest images | When you or your leaders change them | To decide which voice rooms you belong in. |
+| The group you sit in between events, and its name if its starter gave one | When you start, join or leave a group | Shown to your alliance's members on the Voice tab, so they can join you. Not kept: it goes when you leave or the group ends. Time in a group is not written down anywhere. If a leader takes you out of a group, the alliance's log says so. |
 | Which leader or officer let you in | When you are approved, or use an invite link that lets you straight in | So a clan knows who vouched for each member. |
 | What you write in an operation's chat, and the quick calls you send | When you send a line or press a call's key | Shown to the players on that net of that operation, and to nobody else in your alliance. Kept after the operation so that those players can read it back. |
 | Your voice | While you hold a push-to-talk key, or while voice activation is open | Relayed live to the members of that room. It is not recorded or stored. |
@@ -39,7 +40,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.33.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.34.0/src-tauri/src/input).
 
 ## Who can see what
 

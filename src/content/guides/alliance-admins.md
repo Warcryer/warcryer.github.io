@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.33.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.34.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -51,6 +51,7 @@ The first section of the tab carries the alliance's name and its own switches:
 
 - **Rename** changes the name players see in the app's header and on invite links.
 - **Shared lounge:** one extra lounge shared by every clan of the alliance. It is off by default, because it lets every approved member of any clan hear whoever is talking there. Turn it on if the clans should mix between events.
+- **Groups** need no switch: between operations anyone in the alliance can start a small group, and anyone in the alliance can join it, whatever the shared lounge says (see the [members' guide](/guides/members/#groups)). As an admin you can take anyone out of a group with the **×** beside their name in the Groups panel; the log records it. An alliance can have 50 groups at once, of up to 50 players each.
 - **Hand it to…** (owner only) makes another player of the alliance its owner, after you confirm. You stay as an alliance admin.
 - **Delete alliance** (owner only) removes the alliance with its clans, operations, attendance, bans and log, for good. Its players keep their accounts and are left in no alliance. It cannot be deleted while one of its operations is running.
 
