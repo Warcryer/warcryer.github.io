@@ -3,7 +3,9 @@
 import Base from "../../layouts/Base.astro";
 import Crumbs from "../../components/Crumbs.astro";
 import TryIt from "../../components/TryIt.astro";
-import { CHECKED, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS, type ProductKey } from "../../data/compare";
+import Versus from "../../components/Versus.astro";
+import MarkChip from "../../components/MarkChip.astro";
+import { CHECKED, CHECKED_ISO, COMMON_FAQ, OUR_LIMITS, ROWS, ORDER, PRODUCTS, type ProductKey } from "../../data/compare";
 import { trademarkNote } from "../../data/compare-text";
 
 export function getStaticPaths() {
@@ -13,24 +15,34 @@ export function getStaticPaths() {
 const key = Astro.params.product as ProductKey;
 const p = PRODUCTS[key];
 const path = `/compare/${key}/`;
+const faq = [...p.faq, ...COMMON_FAQ];
+// Rows where Warcryer builds in what the other product leaves to you or to setup.
+const ahead = ROWS.filter((r) => r.mark === "yes" && p.marks[r.id] && p.marks[r.id] !== "yes");
+const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: p.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 ---
-<Base title={p.title} description={p.description} image={p.shot.file} type="article" bodyClass="page" footNote={trademarkNote([p.name])}>
+<Base title={p.title} description={p.description} image={p.shot.file} type="article" bodyClass="page compare-page" footNote={trademarkNote([p.name])}>
 <section class="hero">
   <Crumbs items={[["Warcryer", "/"], ["Compare", "/compare/"], [`vs ${p.name}`, path]]} />
+  <Versus name={p.name} />
   <h1>Warcryer vs {p.name}</h1>
   <p class="lede">{p.lede}</p>
+  <div class="glance">
+    <a href="#side-by-side"><strong>{ahead.length}</strong><span>things built in that {p.name} leaves to you or to setup</span></a>
+    <a href="#better"><strong>{OUR_LIMITS.length}</strong><span>limits of ours, listed openly, where {p.name} may suit you better</span></a>
+    <a href="/download/"><strong>Free</strong><span>while Warcryer is in beta</span></a>
+  </div>
   <p class="fine">Checked against {p.name}'s own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
 </section>
 
 <section>
   <h2>The short answer</h2>
   <div class="verdict">
-    <article>
+    <article class="theirs">
       <h3>Choose {p.name} if</h3>
       <ul>{p.them_if.map((x) => <li>{x}</li>)}</ul>
     </article>
@@ -41,7 +53,7 @@ const faqLd = {
   </div>
 </section>
 
-<section>
+<section id="side-by-side">
   <h2>Side by side</h2>
   <div class="table-wrap">
   <table class="compare">
@@ -50,7 +62,7 @@ const faqLd = {
     </thead>
     <tbody>
       {ROWS.map((r) => (
-        <tr><th scope="row">{r.label}</th><td data-who="Warcryer">{r.ours}</td><td data-who={p.name}>{p.cells[r.id]}</td></tr>
+        <tr><th scope="row">{r.label}</th><td data-who="Warcryer"><MarkChip mark={r.mark} />{r.ours}</td><td data-who={p.name}><MarkChip mark={p.marks[r.id]} />{p.cells[r.id]}</td></tr>
       ))}
     </tbody>
   </table>
@@ -60,9 +72,10 @@ const faqLd = {
 
 <section>
   <h2>What is different in practice</h2>
-  <div class="cards two">
-    {p.differences.map((d) => (
+  <div class="cards two numbered">
+    {p.differences.map((d, i) => (
       <article>
+        <span class="num" aria-hidden="true">{ROMAN[i]}</span>
         <h3>{d.title}</h3>
         <p>{d.body}</p>
       </article>
@@ -74,22 +87,22 @@ const faqLd = {
   </figure>
 </section>
 
-<section>
+<section id="better">
   <h2>Where {p.name} is the better choice</h2>
-  <p class="intro">Warcryer does one thing, and it is young. These are its limits today.</p>
-  <ul class="plain">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
+  <p class="intro">Warcryer is built for organised play, and it is young. These are its limits today.</p>
+  <ul class="limits">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
 </section>
 
 <section>
   <h2>Coming over from {p.name}</h2>
-  <ol class="steps left">{p.moving.map((s) => <li>{s}</li>)}</ol>
+  <ol class="path">{p.moving.map((s) => <li>{s}</li>)}</ol>
 </section>
 
 <section>
   <h2>Questions</h2>
-  <dl class="faq">
-    {p.faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
-  </dl>
+  <div class="faq">
+    {faq.map((f) => (<details><summary>{f.q}</summary><p>{f.a}</p></details>))}
+  </div>
   <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </section>
 

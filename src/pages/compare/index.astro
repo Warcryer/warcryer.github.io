@@ -3,34 +3,43 @@
 import Base from "../../layouts/Base.astro";
 import Crumbs from "../../components/Crumbs.astro";
 import TryIt from "../../components/TryIt.astro";
+import MarkChip from "../../components/MarkChip.astro";
 import { CHECKED, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS } from "../../data/compare";
 import { trademarkNote } from "../../data/compare-text";
 
 const names = ORDER.map((k) => PRODUCTS[k].name);
+const firstSentence = (t: string) => t.split(/(?<=\.)\s/)[0];
+const builtIn = (k: (typeof ORDER)[number]) => ROWS.filter((r) => r.mark === "yes" && PRODUCTS[k].marks[r.id] && PRODUCTS[k].marks[r.id] !== "yes").length;
 ---
 <Base
   title="Warcryer compared with TeamSpeak, Discord, Mumble and Ventrilo"
   description="Voice for large alliances, guilds and clans, side by side: what Warcryer does that TeamSpeak, Discord, Mumble and Ventrilo leave to you, and where each of them is the better choice."
   type="article"
-  bodyClass="page"
+  bodyClass="page compare-page"
   footNote={trademarkNote(names)}
 >
 <section class="hero">
   <Crumbs items={[["Warcryer", "/"], ["Compare", "/compare/"]]} />
   <h1>How Warcryer compares</h1>
-  <p class="lede">TeamSpeak, Discord, Mumble and Ventrilo give you channels and leave the rest to you: who goes where, who may speak to whom, who signed up, who turned up. Warcryer starts from the event's roster and works those out for you. It also does far less than they do outside an event.</p>
+  <p class="lede">TeamSpeak, Discord, Mumble and Ventrilo give you channels and leave the rest to you: who goes where, who may speak to whom, who signed up, who turned up, who earned what. Warcryer starts from the event's roster and works those out for you. It also does far less than they do outside organised play.</p>
   <p class="fine">Checked against each product's own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
 </section>
 
 <section>
   <h2>One at a time</h2>
-  <div class="cards two">
+  <div class="matchups">
     {ORDER.map((k) => (
-      <article>
-        <h3><a href={`/compare/${k}/`}>Warcryer vs {PRODUCTS[k].name}</a></h3>
-        <p>{PRODUCTS[k].lede}</p>
-        <p><a href={`/compare/${k}/`}>Read the comparison</a></p>
-      </article>
+      <a class="matchup" href={`/compare/${k}/`}>
+        <span class="matchup-head" aria-hidden="true">
+          <img src="/emblem.svg" alt="" width="44" height="44">
+          <span class="vs">VS</span>
+          <span class="them">{PRODUCTS[k].name.charAt(0)}</span>
+        </span>
+        <h3>Warcryer vs {PRODUCTS[k].name}</h3>
+        <p>{firstSentence(PRODUCTS[k].lede)}</p>
+        <span class="chip chip-yes">{builtIn(k)} things built in that {PRODUCTS[k].name} leaves to you</span>
+        <span class="more">Read the comparison →</span>
+      </a>
     ))}
   </div>
 </section>
@@ -44,7 +53,7 @@ const names = ORDER.map((k) => PRODUCTS[k].name);
     </thead>
     <tbody>
       {ROWS.map((r) => (
-        <tr><th scope="row">{r.label}</th><td>{r.ours}</td>{ORDER.map((k) => <td>{PRODUCTS[k].cells[r.id]}</td>)}</tr>
+        <tr><th scope="row">{r.label}</th><td><MarkChip mark={r.mark} />{r.ours}</td>{ORDER.map((k) => <td><MarkChip mark={PRODUCTS[k].marks[r.id]} />{PRODUCTS[k].cells[r.id]}</td>)}</tr>
       ))}
     </tbody>
   </table>
@@ -55,7 +64,7 @@ const names = ORDER.map((k) => PRODUCTS[k].name);
 <section>
   <h2>What Warcryer does not do</h2>
   <p class="intro">If one of these matters to you, one of the others is the better choice, and the page for it says which.</p>
-  <ul class="plain">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
+  <ul class="limits">{OUR_LIMITS.map((l) => <li>{l}</li>)}</ul>
 </section>
 
 <TryIt />

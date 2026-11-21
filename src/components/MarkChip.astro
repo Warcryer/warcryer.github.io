@@ -1,0 +1,9 @@
+---
+// A small at-a-glance mark in a comparison table cell: built in, partly, not offered.
+// The word is always shown beside the symbol, so it never relies on colour.
+import { MARK_TEXT, type Mark } from "../data/compare";
+interface Props { mark?: Mark }
+const { mark } = Astro.props;
+const symbol = { yes: "✓", part: "◐", no: "—" };
+---
+{mark && <span class={`chip chip-${mark}`}><span aria-hidden="true">{symbol[mark]}</span> {MARK_TEXT[mark]}</span>}
