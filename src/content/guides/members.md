@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.1/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -14,7 +14,7 @@ You never pick a voice channel in this app. Your place in the roster decides wha
 5. **Join your alliance and clan.** An alliance is the group of clans that plays together; everything in the app (clans, operations, voice) belongs to one alliance and is seen by nobody outside it. You come in with an **invite link** from your clan's leader or an officer. Open the link and click **Open in Warcryer**; the app names the clan and its alliance and asks before it joins you. Or paste the link on the **Clan** tab under **Have an invite link?**. Depending on how the link was made, you are let in at once or wait for a leader or officer to approve you. Until then you cannot hear anything.
    - **No link, and your alliance does not use the app yet?** Start it yourself: on the **Clan** tab, under **Or start your own**, give it a name and pick the game. During the beta you also type a beta code, which you get by asking on the [Warcryer Discord](https://discord.gg/qf4meEMfhp). You become its owner. The [alliance admins guide](/guides/alliance-admins/#your-alliance) takes it from there.
    - You are in one alliance at a time.
-6. **Your class and level.** Once you are in an alliance, a bar at the top asks **Which class do you play?** Click **Choose class** and pick your main character's class and level from the lists. They are your alliance's own lists, set up for the game you play; an alliance that does not use levels will not ask for one. Both are shown beside your name on rosters, so organisers can see which parties still need a buffer or a healer. Change them any time in **Settings**, at the bottom; move the level up when you reach the next band.
+6. **Your class and level.** Once you are in an alliance, the line under the tabs asks **Which class do you play?** Click **Choose class** and pick your main character's class and level from the lists. They are your alliance's own lists, set up for the game you play; an alliance that does not use levels will not ask for one. Both are shown beside your name on rosters, so organisers can see which parties still need a buffer or a healer. Change them any time in **Settings**, at the bottom; move the level up when you reach the next band.
 
 Once approved you land in your clan's lounge automatically.
 
@@ -25,7 +25,13 @@ Once approved you land in your clan's lounge automatically.
 
 ## Where you are
 
-The **Voice** tab always shows where you are and who is there.
+The **Voice** tab always shows where you are and who is there. It has three parts:
+
+- **Left, your nets:** everything you hear, one line each for who is speaking and how you speak there. Click a net to see who is on it.
+- **Middle, your room:** its name, everyone in it, and under it the room's chat.
+- **Right, your alliance right now:** its groups and who else is online. During an operation this side shows the operation and its parties instead.
+
+Anything that waits for your answer (an operation asking whether you are coming, a player asking to join your party, a new version, a key still to bind) is on **one line under the tabs**. When more than one thing waits, the line shows the most pressing and a count; click the count for the rest.
 
 | Situation | Where you are |
 | --- | --- |
@@ -37,11 +43,11 @@ If the alliance has switched on the **alliance lounge**, you hear two lounges be
 
 ### Groups
 
-Between operations you can sit in a **group**: a small room for a few of you, for a dungeon, farming, crafting or just a chat. The **Groups** panel under the lounge on the Voice tab lists them.
+Between operations you can sit in a **group**: a small room for a few of you, for a dungeon, farming, crafting or just a chat. The panel on the right of the Voice tab lists them, your own first.
 
 - **Start a group** with an optional name ("Catacombs"); without one it goes by your name. Anyone in the alliance can start one.
 - **Join** any group of the alliance, whatever your clan. You are in one group at a time: joining another moves you.
-- Each group is one line: its name, how many are in it, and their names as far as they fit. Click the line to see its players one by one.
+- Each group shows its name, how many are in it, and their names as far as they fit. Click it to see its players one by one.
 - In a group your Party key (or your voice, on voice activation) goes to the group, and you still hear your clan's lounge underneath, quieter. Click **Talk here** on the lounge to speak there instead, and on the group to go back. How loud the lounge stays is in **Settings**, under Priority; at 0 you do not hear it at all.
 - **Leave** when you are done. A group ends when its last player leaves, or when none of its players has had the app open for ten minutes.
 - A live operation still pulls you onto its nets. When it ends you are back in your group, if it is still there.
@@ -56,7 +62,7 @@ When something will not wait (a world boss, a castle under attack), an alliance 
 
 ### Who is online, and away
 
-Between operations, the **Online** panel under your nets lists everyone in your alliance who has the app open, whatever their clan: in the lounge, in a group, in an operation, or away.
+Between operations, the panel on the right of the Voice tab shows your alliance as it is now, whatever the clan: the groups with the players in them, and under them everyone else who has the app open, in the lounge, in an operation, or away. Click a heading to fold its list away.
 
 - **Set me away** shows you as away; **I'm back** clears it. On the desktop app you are also shown as away when your computer has had no key or mouse input for 15 minutes, and back as soon as you use it again. The app asks Windows only how long it has been idle, never which keys.
 - Away changes nothing about voice: you still hear and can be heard.
@@ -64,14 +70,17 @@ Between operations, the **Online** panel under your nets lists everyone in your 
 
 ### Chat between operations
 
-The lounges and groups have a chat too, under the Groups panel: a tab for your group, your clan's lounge, and the alliance's lounge if it is on.
+The lounges and groups have a chat too, under your room: a tab for your group, your clan's lounge, and the alliance's lounge if it is on.
 
 - Everyone in a room can write in it, and only those in it read it.
 - Quick calls go to your group, or to your clan's lounge when you are in none. **Open as a window over the game** works here too.
+- Drag the chat's top edge to make it taller or shorter (double-click the edge to put it back). **Fold** puts its lines away and keeps the line you write in; an order and a ready check still show.
 - Point at your own line to remove it. Your clan's leader and officers can remove lines in its lounge, and the alliance's admins anywhere.
 - A lounge's lines are kept as long as your alliance keeps an operation's, and at least a day. A group's go when the group ends.
 
-When there are operations, a **You are in** picker appears at the top. Use it to sit a live operation out in the lounge, or to join a planned operation early. If you choose the lounge during a live operation, you stay there for that operation; the next one that starts pulls you in again.
+When there are operations, a **You are in** picker appears at the top of the panel on the right. Use it to sit a live operation out in the lounge, or to join a planned operation early. If you choose the lounge during a live operation, you stay there for that operation; the next one that starts pulls you in again.
+
+During an operation the panel on the right shows the operation itself: whether it is live, **Open the roster board**, the **You are in** picker, and its **parties** at a glance, with who leads each and how full it is; yours is marked. Click a party to see its players. Other players' moves show there within about twenty seconds, your own within a second or two.
 
 ## Nets
 

@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.1/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Your alliance's first hour
 
@@ -15,7 +15,7 @@ Warcryer is in beta and free. You need a **beta code** to start an alliance: ask
 ## 2. Start the alliance (2 minutes)
 
 1. On the **Clan** tab, under **Or start your own**, type the alliance's name, pick your game and type your beta code. Click **Create alliance**.
-2. You land on the **Alliance** tab as its owner. A bar asks which class you play: answer it.
+2. You land on the **Alliance** tab as its owner. The line under the tabs asks which class you play: answer it.
 
 ## 3. Fit it to your game (5 minutes, or later)
 
@@ -40,7 +40,7 @@ Each clan's leader does this for their own clan, on their **Clan** tab:
 2. Post it in the clan's own Discord channel with one line: "Install Warcryer, open this link, click Open in Warcryer."
 3. Approve the names that appear under **Waiting for approval**.
 
-Members land in their clan's lounge as soon as they are in. Tell them to answer the bar that asks for their class: the roster board uses it.
+Members land in their clan's lounge as soon as they are in. Tell them to answer the line that asks for their class: the roster board uses it.
 
 ## 6. Save your constant parties (10 minutes)
 

@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.1/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -68,7 +68,7 @@ The owner cannot leave the alliance or delete their account while they own it: h
 
 For something that will not wait: on the **Voice** tab, between operations, **Call to arms** (admins only) starts an operation at once.
 
-1. Click **Start one**, give it a name if you like (it is called "Call to arms" otherwise), and untick any clan that should not be pulled in.
+1. Click **Call to arms** at the foot of the panel on the right, give it a name if you like (it is called "Call to arms" otherwise), and untick any clan that should not be pulled in.
 2. Leave **Make the groups its parties** ticked to turn each group into a party: its players who belong to the ticked clans, in the order they joined, the first of them leading. Everyone else of those clans waits in Reserve.
 3. Click **Start it now**, then again to confirm. You lead it; every player of its clans with the app open is moved onto its nets within a second or two.
 
