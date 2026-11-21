@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.35.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -51,6 +51,7 @@ The first section of the tab carries the alliance's name and its own switches:
 
 - **Rename** changes the name players see in the app's header and on invite links.
 - **Shared lounge:** one extra lounge shared by every clan of the alliance. It is off by default, because it lets every approved member of any clan hear whoever is talking there. Turn it on if the clans should mix between events.
+- **Admins' broadcast between operations:** off by default. When it is on, the alliance's admins (and its owner) can speak to everyone in the alliance with their Broadcast key between operations, over the lounges and groups, as an event leader does on Broadcast in an operation. Clans' leaders and officers always have their own Clan net between operations; it needs no switch.
 - **Groups** need no switch: between operations anyone in the alliance can start a small group, and anyone in the alliance can join it, whatever the shared lounge says (see the [members' guide](/guides/members/#groups)). As an admin you can take anyone out of a group with the **×** beside their name in the Groups panel; the log records it. An alliance can have 50 groups at once, of up to 50 players each.
 - **Hand it to…** (owner only) makes another player of the alliance its owner, after you confirm. You stay as an alliance admin.
 - **Delete alliance** (owner only) removes the alliance with its clans, operations, attendance, bans and log, for good. Its players keep their accounts and are left in no alliance. It cannot be deleted while one of its operations is running.
@@ -63,7 +64,17 @@ The owner cannot leave the alliance or delete their account while they own it: h
 - If the alliance needs more room, ask on the [Warcryer Discord](https://discord.gg/qf4meEMfhp).
 - An alliance that is over its limit, or whose operations the service has paused, keeps its members and lounges and cannot create or start an operation until that is put right. A running operation can always be ended.
 
-### Clans
+### Call to arms
+
+For something that will not wait: on the **Voice** tab, between operations, **Call to arms** (admins only) starts an operation at once.
+
+1. Click **Start one**, give it a name if you like (it is called "Call to arms" otherwise), and untick any clan that should not be pulled in.
+2. Leave **Make the groups its parties** ticked to turn each group into a party: its players who belong to the ticked clans, in the order they joined, the first of them leading. Everyone else of those clans waits in Reserve.
+3. Click **Start it now**, then again to confirm. You lead it; every player of its clans with the app open is moved onto its nets within a second or two.
+
+It is an ordinary operation: change it on its roster board, and end it there. Attendance, points and loot work as for one planned ahead, and Discord is told if you have set that up. When it ends, players go back to their groups.
+
+## Clans
 
 - **Create a clan:** enter a name and a tag, click **Create clan**. The tag is a short form of the name, 1 to 8 letters or digits (for example DRG). It is shown in brackets beside every member's name in voice and on roster boards until the clan's leader uploads a crest, which then takes its place; in an operation with several clans the tag also names each clan's own net ("Clan DRG").
 - **Invite links:** opens the clan's invite links beside it, where you can make, copy and revoke them as its leader can. This is how a clan's first member, usually its leader, comes into the alliance.

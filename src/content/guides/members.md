@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.35.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -46,6 +46,12 @@ Between operations you can sit in a **group**: a small room for a few of you, fo
 - A live operation still pulls you onto its nets. When it ends you are back in your group, if it is still there.
 - A clan's leader and officers can take their own members out of a group, and the alliance's admins anyone.
 - Nothing about a group is kept, and time in one counts for nothing: not attendance, not points.
+
+### Your leaders between operations
+
+Between operations you are also on your clan's **Clan** net, as you are during an operation: your clan's leader and officers speak there with their Clan key, and you listen. While they speak, your lounge and group are made quieter so the call is heard, and come back when it ends. If your alliance has switched it on, an **Alliance broadcast** net works the same way for the alliance's admins.
+
+When something will not wait (a world boss, a castle under attack), an alliance admin can start a **Call to arms**: an operation that goes live at once and pulls you onto its nets. Your group becomes its party; if you are in none, you wait in Reserve. When it ends you are back where you were.
 
 ### Who is online, and away
 
