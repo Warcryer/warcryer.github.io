@@ -92,6 +92,7 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 .play:hover .play-mark, .play:focus-visible .play-mark { border-color: var(--gold-bright); box-shadow: 0 0 28px rgb(200 164 90 / .45); transform: scale(1.05); }
 .play:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 .video-note { margin-top: 1em; }
+.video-more { margin-top: 2.5em; }
 
 /* Nets */
 .nets { list-style: none; margin: 0 0 3em; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }

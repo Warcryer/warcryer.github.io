@@ -1,7 +1,7 @@
 ---
 // The front page.
 import Base from "../layouts/Base.astro";
-import { SITE, GITHUB, DISCORD, VIDEO_ID } from "../data/site";
+import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID } from "../data/site";
 
 const ld = {
   "@context": "https://schema.org",
@@ -44,14 +44,24 @@ const ld = {
 
 <section id="watch">
   <h2>Watch an evening of it</h2>
-  <p class="intro">A sixteen-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, who is coming, building the roster, going live, a briefing, a party losing its leader, attendance and the log afterwards. It has captions and no sound. The clans and players in it are made up.</p>
-  <div class="video" id="video">
-    <button type="button" class="play" id="play" aria-label="Play the walkthrough video">
+  <p class="intro">A nineteen-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, the lounge, building the roster, going live, the operation chat with orders, ready checks and calls, a look at it over a real game, a briefing, a party losing its leader, the compact strip, attendance and history. It has captions and no sound. The clans and players in it are made up.</p>
+  <div class="video" data-video={VIDEO_ID}>
+    <button type="button" class="play" aria-label="Play the walkthrough video">
       <img src="/shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
       <span class="play-mark" aria-hidden="true"></span>
     </button>
   </div>
   <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${VIDEO_ID}`}>watch it on YouTube</a>.</p>
+
+  <h3 class="video-more">Points and loot</h3>
+  <p class="intro">Five minutes on DKP and loot: a set of points from a preset, points from an operation's attendance, the standings, your item list, a real screenshot of the drops read by the app, giving out loot, and EPGP, Zero-sum, Suicide Kings and loot councils.</p>
+  <div class="video" data-video={LOOT_VIDEO_ID}>
+    <button type="button" class="play" aria-label="Play the points and loot video">
+      <img src="/shots/loot-video.jpg" alt="The video's opening card: Points and loot" width="1600" height="900" loading="lazy">
+      <span class="play-mark" aria-hidden="true"></span>
+    </button>
+  </div>
+  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LOOT_VIDEO_ID}`}>watch it on YouTube</a>.</p>
 </section>
 
 <section id="nets">
@@ -295,14 +305,15 @@ const ld = {
 </Base>
 
 <script>
-  import { VIDEO_ID } from "../data/site";
-  // The video is fetched from YouTube only when someone asks to play it.
-  document.getElementById("play")?.addEventListener("click", () => {
-    const frame = document.createElement("iframe");
-    frame.src = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`;
-    frame.title = "Warcryer walkthrough";
-    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-    frame.allowFullscreen = true;
-    document.getElementById("video")?.replaceChildren(frame);
-  });
+  // A video is fetched from YouTube only when someone asks to play it.
+  for (const box of document.querySelectorAll<HTMLElement>("[data-video]")) {
+    box.querySelector(".play")?.addEventListener("click", () => {
+      const frame = document.createElement("iframe");
+      frame.src = `https://www.youtube-nocookie.com/embed/${box.dataset.video}?autoplay=1&rel=0`;
+      frame.title = box.querySelector(".play")?.getAttribute("aria-label")?.replace(/^Play the /, "") ?? "Warcryer video";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      frame.allowFullscreen = true;
+      box.replaceChildren(frame);
+    });
+  }
 </script>

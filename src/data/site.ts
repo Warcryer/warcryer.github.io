@@ -5,7 +5,8 @@ export const GITHUB = "https://github.com/Warcryer/client";
 export const RELEASES = `${GITHUB}/releases`;
 export const LATEST = `${GITHUB}/releases/latest`;
 export const ISSUES = `${GITHUB}/issues`;
-export const VIDEO_ID = "eUY1awAuLd0";
+export const VIDEO_ID = "D6xEhmd3Qr8";
+export const LOOT_VIDEO_ID = "DJ13PojgG9E";
 
 /** The main menu. Home-page sections are reached with /#anchor from any page. */
 export const NAV = [
