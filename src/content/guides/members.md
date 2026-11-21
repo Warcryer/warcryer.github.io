@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.1/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -41,6 +41,7 @@ Between operations you can sit in a **group**: a small room for a few of you, fo
 
 - **Start a group** with an optional name ("Catacombs"); without one it goes by your name. Anyone in the alliance can start one.
 - **Join** any group of the alliance, whatever your clan. You are in one group at a time: joining another moves you.
+- Each group is one line: its name, how many are in it, and their names as far as they fit. Click the line to see its players one by one.
 - In a group your Party key (or your voice, on voice activation) goes to the group, and you still hear your clan's lounge underneath, quieter. Click **Talk here** on the lounge to speak there instead, and on the group to go back. How loud the lounge stays is in **Settings**, under Priority; at 0 you do not hear it at all.
 - **Leave** when you are done. A group ends when its last player leaves, or when none of its players has had the app open for ten minutes.
 - A live operation still pulls you onto its nets. When it ends you are back in your group, if it is still there.
@@ -102,7 +103,7 @@ Good to know:
 - Your keys are never taken from the game. The game still receives them.
 - Speaking on one net never mutes what you hear on the others.
 - While you hold a Broadcast, Command or Clan key, your voice goes only to that net; voice activation pauses.
-- **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. While your headset is off, the others in your nets see a red, crossed-out headset beside your name, so they know you cannot hear them; whether your mic is off is not shown. The compact strip has the same two buttons.
+- **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. The microphone turns green while your mic is open, and the foot of the Voice tab says on which net. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. While your headset is off, the others in your nets see a red, crossed-out headset beside your name, so they know you cannot hear them; whether your mic is off is not shown. The compact strip has the same two buttons.
 - The **Mute all** key does what the mic button does, and the **Headset** key what the headset button does, without leaving the game. Both are set in Settings → **Keys**.
 
 Change any of this in **Settings**.

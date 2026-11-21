@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.36.1/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for clan leaders and officers
 
@@ -71,7 +71,7 @@ The leader clicks **Make officer** beside a member, or **Remove officer** to und
 - **Command net (leader only):** you coordinate with the event leader and the other leaders. You count as a senior voice there: while you, the event leader or a deputy speaks, party leaders are made quieter for everyone listening.
 - **Lounge:** between operations everyone in the clan can talk freely there.
 - **Clan net between operations:** your Clan key works between operations too. Everyone in your clan hears you, in the lounge or in a group, and their own talk is made quieter while you speak. Use it to gather the clan: "World boss up at the ruins, everyone come."
-- **Groups:** between operations anyone in the alliance can start or join a small group (see the [members' guide](/guides/members/#groups)). You and your officers can take one of your own members out of a group with the **×** beside their name in the Groups panel; the alliance's log records it. Members of other clans are their own leaders' to manage.
+- **Groups:** between operations anyone in the alliance can start or join a small group (see the [members' guide](/guides/members/#groups)). You and your officers can take one of your own members out of a group: click the group's row in the Groups panel to open its players out, then the **×** beside the name; the alliance's log records it. Members of other clans are their own leaders' to manage.
 
 ## Constant parties
 
