@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.34.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.35.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -21,6 +21,8 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | Clan membership, join requests, constant party and roster places, clan crest images | When you or your leaders change them | To decide which voice rooms you belong in. |
 | The group you sit in between events, and its name if its starter gave one | When you start, join or leave a group | Shown to your alliance's members on the Voice tab, so they can join you. Not kept: it goes when you leave or the group ends. Time in a group is not written down anywhere. If a leader takes you out of a group, the alliance's log says so. |
 | Which leader or officer let you in | When you are approved, or use an invite link that lets you straight in | So a clan knows who vouched for each member. |
+| What you write in a lounge's or a group's chat between operations, and the quick calls you send there | When you send a line or press a call's key | Shown to the players in that room, and to nobody else in your alliance. A lounge's lines are kept so that those players can read them back; a group's go when the group ends. |
+| Whether you are away | When you switch it on, or your computer has had no key or mouse input for 15 minutes | Shown to your alliance's members in the list of who is online. The app reads from Windows only how long the computer has been idle, never which keys; it sends only "away" or "back". Not stored: it is gone when you come back or close the app. |
 | What you write in an operation's chat, and the quick calls you send | When you send a line or press a call's key | Shown to the players on that net of that operation, and to nobody else in your alliance. Kept after the operation so that those players can read it back. |
 | Your voice | While you hold a push-to-talk key, or while voice activation is open | Relayed live to the members of that room. It is not recorded or stored. |
 | Whether your headset is off | When you turn it off or on in the app | Shown live beside your name to the players in the voice rooms you are in, so they know you cannot hear them. Not stored: it is gone when you turn it on again or leave. Whether your mic is off is not shown. |
@@ -40,7 +42,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.34.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.35.0/src-tauri/src/input).
 
 ## Who can see what
 
@@ -61,6 +63,7 @@ The server clears old records by itself every night:
 | The log of changes made by leaders and admins | 12 months |
 | Invite links | 30 days after they expire |
 | What was written in an operation's chat | As your alliance's admins have chosen: until the operation ends, or 7 days, 30 days (unless they change it) or 12 months after it. Never longer than that, and never longer than the operation itself |
+| What was written in a lounge's chat | As long as an operation's (above), and at least a day. A group's lines go when the group ends |
 | Sign-in sessions and sign-in codes | Until they expire |
 
 Your account, your in-game name, class and level, your other characters, and your clan membership are kept for as long as you have the account. Nothing is sold or shared with anyone else.

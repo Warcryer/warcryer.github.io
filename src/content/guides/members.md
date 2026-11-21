@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.34.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.35.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -46,6 +46,23 @@ Between operations you can sit in a **group**: a small room for a few of you, fo
 - A live operation still pulls you onto its nets. When it ends you are back in your group, if it is still there.
 - A clan's leader and officers can take their own members out of a group, and the alliance's admins anyone.
 - Nothing about a group is kept, and time in one counts for nothing: not attendance, not points.
+
+### Who is online, and away
+
+Between operations, the **Online** panel under your nets lists everyone in your alliance who has the app open, whatever their clan: in the lounge, in a group, in an operation, or away.
+
+- **Set me away** shows you as away; **I'm back** clears it. On the desktop app you are also shown as away when your computer has had no key or mouse input for 15 minutes, and back as soon as you use it again. The app asks Windows only how long it has been idle, never which keys.
+- Away changes nothing about voice: you still hear and can be heard.
+- Players of other alliances never see you there.
+
+### Chat between operations
+
+The lounges and groups have a chat too, under the Groups panel: a tab for your group, your clan's lounge, and the alliance's lounge if it is on.
+
+- Everyone in a room can write in it, and only those in it read it.
+- Quick calls go to your group, or to your clan's lounge when you are in none. **Open as a window over the game** works here too.
+- Point at your own line to remove it. Your clan's leader and officers can remove lines in its lounge, and the alliance's admins anywhere.
+- A lounge's lines are kept as long as your alliance keeps an operation's, and at least a day. A group's go when the group ends.
 
 When there are operations, a **You are in** picker appears at the top. Use it to sit a live operation out in the lounge, or to join a planned operation early. If you choose the lounge during a live operation, you stay there for that operation; the next one that starts pulls you in again.
 
