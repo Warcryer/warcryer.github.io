@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.32.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.33.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -58,7 +58,7 @@ A plain member hears Broadcast, Clan and their Party. Each card shows who is spe
 Party, Reserve and the lounge work the same way, and you choose one of two modes:
 
 - **Push-to-talk.** Hold a key and speak. Mouse side buttons work. One key, the **Party** key, is used for your party and for the lounge.
-- **Voice activation.** The mic opens when you speak. Set the marker on the level bar above your keyboard noise and below your voice, or click **Auto** and stay quiet for five seconds.
+- **Voice activation.** The mic opens when you speak. Set the marker on the level bar above your background noise and below your voice, or click **Auto** and stay quiet for five seconds. Short sounds such as a key click or a knock on the desk do not open it.
 
 Broadcast, Command and Clan are always push-to-talk, each with its own key. If you are given a role that can speak on one of them, the app asks you to bind a key for it.
 
@@ -211,7 +211,7 @@ It sits over a game that runs in a window or in borderless mode. A game in exclu
 
 ## Updates and the tray icon
 
-When you open the app, a sword fills with red for about three seconds while it connects, then the app appears. The Windows app also keeps itself up to date: if a new version is waiting when you start it, the sword shows the download, the update installs (a few seconds) and the app opens by itself afterwards. If one arrives while the app is running, a bar offers **Restart to update**; nothing restarts until you click it, so it never interrupts an operation.
+When you open the app, a sword fills with red for about three seconds while it connects, then the app appears. The Windows app also keeps itself up to date: if a new version is waiting when you start it, the sword shows the download, the update installs (a few seconds) and the app opens by itself afterwards. If one arrives while the app is running, a bar offers **Restart to update**; nothing restarts until you click it, so it never interrupts an operation. The version you are running is shown at the top of **Settings**, beside the title.
 
 While the app runs, its horn icon sits in the Windows tray beside the clock. Click it to bring the window to the front; right-click it for **Quit**.
 
@@ -229,7 +229,7 @@ Closing the window quits the app and takes you out of voice. If you would rather
 | **Volume** | Your own level for each net. |
 | **Priority** | Whether lower nets get quieter while a higher one is live, and how quiet. |
 | **Sounds** | The cue you hear when you are moved, and its volume. |
-| **Key capture** | How keys are read while the game is in front. Leave it on **Polling** unless told otherwise. |
+| **Key capture** | How keys are read while the game is in front. Leave it on **Automatic**, which uses Polling and Raw Input together, unless told otherwise. |
 | **Window and updates** | The compact strip, keeping the app running in the tray, automatic updates, and **Check for updates**. |
 | **Help** | Opens these guides, and **Is the service working?** opens the status page, which says whether the service itself is up. |
 | **Account** | Your in-game name, class and level, your other characters, **Sign out**, and **Delete my account**. |
@@ -240,7 +240,7 @@ Everything here is kept on your computer, except your name, class and level and 
 
 | Problem | What to do |
 | --- | --- |
-| Keys do nothing while the game is in front | Settings → **Key capture**: make sure **Polling** is selected. If it still fails, tick **Always start as administrator** and restart the app. |
+| Keys do nothing while the game is in front | Settings → **Key capture**: make sure **Automatic** is selected. If it still fails, tick **Always start as administrator** and restart the app. |
 | A banner says the sound is held back | Click **Enable audio**. |
 | You hear no one | Check the headset button at the top right is not red and crossed out, and that the right speakers or headset is chosen in Settings → Devices. |
 | Nobody hears you | Check the level bar moves in Settings → Devices, that the right microphone is chosen, and that the mic button at the top right is not red and crossed out. |
