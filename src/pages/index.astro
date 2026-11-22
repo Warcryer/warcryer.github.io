@@ -1,7 +1,7 @@
 ---
 // The front page.
 import Base from "../layouts/Base.astro";
-import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID } from "../data/site";
+import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID, LANG_VIDEO_ID } from "../data/site";
 
 const ld = {
   "@context": "https://schema.org",
@@ -227,10 +227,23 @@ const ld = {
       <p>Translation is your own switch. What you write is never changed for you, and a clan mate with it off reads your line exactly as you typed it.</p>
     </div>
     <figure>
-      <img src="/shots/languages.jpg" alt="Two players side by side in the same chat: one reads every line in English, the other reads the same lines in Russian, each translated line marked as translated" width="1600" height="775" loading="lazy">
-      <figcaption>The same chat on two screens. Left, a player who reads English. Right, one who reads Russian.</figcaption>
+      <img src="/shots/languages.jpg" alt="Two chat windows over a game, showing the same five lines: on the left every line is in English, on the right in Russian, and each line that was translated carries a small mark" width="1600" height="775" loading="lazy">
+      <figcaption>The same chat in two players' windows over the game. Left, a player who reads English. Right, one who reads Russian.</figcaption>
     </figure>
   </div>
+  {LANG_VIDEO_ID && (
+    <>
+      <h3 class="video-more">Watch it: two minutes</h3>
+      <p class="intro">One clan whose players write in Russian, Polish, Greek and Portuguese, seen from the seat of a player who reads English and one who reads Russian, over a real game. The translations are the ones the app made while it was recorded.</p>
+      <div class="video" data-video={LANG_VIDEO_ID}>
+        <button type="button" class="play" aria-label="Play the video Chat in your language">
+          <img src="/shots/languages-video.jpg" alt="The video's opening card: Chat in your language" width="1600" height="900" loading="lazy">
+          <span class="play-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LANG_VIDEO_ID}`}>watch it on YouTube</a>.</p>
+    </>
+  )}
   <div class="cards three">
     <article>
       <h3>The app in twelve languages</h3>
