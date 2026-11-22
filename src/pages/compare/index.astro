@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 import Crumbs from "../../components/Crumbs.astro";
 import TryIt from "../../components/TryIt.astro";
 import MarkChip from "../../components/MarkChip.astro";
-import { CHECKED, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS } from "../../data/compare";
+import { CHECKED, CHECKED_LANGUAGES, CHECKED_ISO, OUR_LIMITS, ROWS, ORDER, PRODUCTS } from "../../data/compare";
 import { trademarkNote } from "../../data/compare-text";
 
 const names = ORDER.map((k) => PRODUCTS[k].name);
@@ -21,7 +21,7 @@ const firstSentence = (t: string) => t.split(/(?<=\.)\s/)[0];
   <Crumbs items={[["Warcryer", "/"], ["Compare", "/compare/"]]} />
   <h1>How Warcryer compares</h1>
   <p class="lede">TeamSpeak, Discord, Mumble and Ventrilo give you channels and leave the rest to you: who goes where, who may speak to whom, who signed up, who turned up, who earned what. Warcryer starts from the event's roster and works those out for you. It also does far less than they do outside organised play.</p>
-  <p class="fine">Checked against each product's own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
+  <p class="fine">Checked against each product's own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>; the rows on translation and languages on {CHECKED_LANGUAGES}. Warcryer is in beta.</p>
 </section>
 
 <section>

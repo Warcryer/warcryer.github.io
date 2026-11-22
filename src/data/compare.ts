@@ -5,6 +5,8 @@
 // is the better choice: these pages are read by people who know it well.
 
 export const CHECKED = "18 November 2026";
+/** The rows on translation and languages were read later than the rest. */
+export const CHECKED_LANGUAGES = "22 November 2026";
 export const CHECKED_ISO = "2026-11-18";
 
 /** What Warcryer does not do, said the same way on every page. */
@@ -13,6 +15,7 @@ export const OUR_LIMITS: string[] = [
   "It is a hosted service. The Windows app is open source; the server is not public and you cannot run your own.",
   "It is in beta: an alliance is started with a code from the Warcryer Discord and has room for 300 approved members.",
   "You sign in with a Discord account.",
+  "The app and the chat are translated by a machine, and nobody who speaks each language has read every line. The guides, and what the app posts to Discord, are in English.",
   "It is built for organised play: events, rosters, points and loot. There is no video, screen sharing, file sharing or positional audio, and the text chat is a chat for each room, not a place for threads, pictures or files."
 ];
 
@@ -75,8 +78,26 @@ export const ROWS: { id: string; label: string; ours: string; mark?: Mark }[] = 
   {
     "id": "chat",
     "mark": "yes",
-    "label": "Event text chat",
-    "ours": "A channel per net, a pinned order, a ready check, and quick calls on a key, in a window that sits on the game."
+    "label": "Text chat",
+    "ours": "A chat for every room. An operation has a channel per net, a pinned order, a ready check and quick calls on a key; each lounge and group has its own. It can sit on the game as a small window."
+  },
+  {
+    "id": "translate",
+    "mark": "yes",
+    "label": "Chat translated for each reader",
+    "ours": "Each player chooses the language they read. A line appears as written and, about a second later, in that language, with the original one click away. Fourteen languages; a machine translates."
+  },
+  {
+    "id": "languages",
+    "mark": "yes",
+    "label": "The app in your language",
+    "ours": "Fourteen languages, chosen by each player: English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian, Turkish, and Chinese, Simplified and Traditional. The guides are in English."
+  },
+  {
+    "id": "between",
+    "mark": "yes",
+    "label": "Between events",
+    "ours": "A lounge for each clan, groups any member can start, who is online across the alliance, and a Call to arms that makes it a live operation at once."
   },
   {
     "id": "hosting",
@@ -114,6 +135,10 @@ export const ROWS: { id: string; label: string; ours: string; mark?: Mark }[] = 
 
 /** Questions every comparison page answers the same way, after its own. */
 export const COMMON_FAQ: { q: string; a: string }[] = [
+  {
+    "q": "Our clans speak different languages. Can they share one chat?",
+    "a": "Yes. Each player chooses the language they read, and the chat is translated into it for them: a line appears as it was written and, about a second later, in their language, with the original one click away. The app itself is in fourteen languages, Chinese in both written forms among them. A machine does the translating and is sometimes wrong, so an order that matters is worth a second look at the original."
+  },
   {
     "q": "Can Warcryer keep our DKP and loot?",
     "a": "Yes. An alliance sets up points from a preset (attendance only, DKP, DKP by the hour, EPGP, Zero-sum, Suicide Kings) or its own rules, or runs a loot council with no points. After each operation the app drafts everyone's points from their time in voice, and drops can be read from a screenshot of the game's chat."
@@ -159,6 +184,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "Not part of TeamSpeak. Alliances use a DKP site, a spreadsheet or a bot.",
       "history": "Not part of TeamSpeak.",
       "chat": "Global and direct text chat. No order line, ready check or calls tied to an event.",
+      "translate": "Not offered.",
+      "languages": "The new client comes in eight languages, Simplified Chinese, Russian and Polish among them, translated by its community.",
+      "between": "Channels anyone can sit in, all week.",
       "hosting": "Run your own server, rent one, or use TeamSpeak's own hosted Communities.",
       "price": "The client is free. Servers are licensed or rented by the slot.",
       "source": "Proprietary.",
@@ -175,6 +203,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "no",
       "history": "no",
       "chat": "part",
+      "translate": "no",
+      "languages": "yes",
+      "between": "yes",
       "platforms": "yes",
       "also": "yes"
     },
@@ -241,6 +272,14 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     ],
     "sources": [
       {
+        "label": "TeamSpeak: downloads (the client's language files)",
+        "url": "https://www.teamspeak.com/en/downloads/"
+      },
+      {
+        "label": "TeamSpeak community: translation",
+        "url": "https://community.teamspeak.com/t/teamspeak-community-translation/43571"
+      },
+      {
         "label": "TeamSpeak: features overview",
         "url": "https://teamspeak.com/en/features/overview/"
       },
@@ -279,6 +318,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "Not part of Discord. Alliances use a DKP bot, a website or a spreadsheet.",
       "history": "Not part of Discord.",
       "chat": "Full text channels, all week. No order line, ready check or calls tied to the event's voice.",
+      "translate": "Not part of Discord itself, going by its own pages. A server can add a translation app or bot.",
+      "languages": "About thirty languages, with Chinese in both written forms, Russian, Polish, Greek and Turkish.",
+      "between": "Voice channels anyone can join, all week.",
       "hosting": "Hosted by Discord.",
       "price": "Free. Paid extras are optional.",
       "source": "Proprietary.",
@@ -295,6 +337,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "no",
       "history": "no",
       "chat": "part",
+      "translate": "part",
+      "languages": "yes",
+      "between": "yes",
       "platforms": "yes",
       "also": "yes"
     },
@@ -366,6 +411,14 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     ],
     "sources": [
       {
+        "label": "Discord developer reference: locales",
+        "url": "https://docs.discord.com/developers/reference"
+      },
+      {
+        "label": "Discord: patch notes, 9 November 2026",
+        "url": "https://discord.com/blog/discord-patch-notes-november-9-2026"
+      },
+      {
         "label": "Discord developer documentation: channels (user_limit)",
         "url": "https://docs.discord.com/developers/resources/channel"
       },
@@ -400,6 +453,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "Not part of Mumble.",
       "history": "Not part of Mumble.",
       "chat": "Text messages to channels and users. No order line, ready check or calls tied to an event.",
+      "translate": "Not offered.",
+      "languages": "Translated by its community into more than forty languages; how complete each one is varies.",
+      "between": "Channels anyone can sit in, all week.",
       "hosting": "Run your own server, or rent one from a third party.",
       "price": "Free.",
       "source": "Open source, client and server.",
@@ -416,6 +472,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "no",
       "history": "no",
       "chat": "part",
+      "translate": "no",
+      "languages": "yes",
+      "between": "yes",
       "platforms": "yes",
       "also": "yes"
     },
@@ -483,6 +542,10 @@ export const PRODUCTS: Record<ProductKey, Product> = {
     ],
     "sources": [
       {
+        "label": "Mumble: translation status",
+        "url": "https://hosted.weblate.org/projects/mumble/mumble-client/"
+      },
+      {
         "label": "Mumble: home page and feature list",
         "url": "https://www.mumble.info/"
       },
@@ -521,6 +584,9 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "Not part of Ventrilo.",
       "history": "Not part of Ventrilo.",
       "chat": "Not tied to an event: no order line, ready check or calls.",
+      "translate": "Not offered. It can read chat aloud.",
+      "languages": "Its own pages name no language but English.",
+      "between": "Channels anyone can sit in, all week.",
       "hosting": "Hosted by Ventrilo's owner.",
       "price": "A free server for 5 people online; $9.99 a month or $99.99 a year for 400.",
       "source": "Proprietary.",
@@ -537,6 +603,8 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "points": "no",
       "history": "no",
       "chat": "part",
+      "translate": "no",
+      "between": "yes",
       "platforms": "yes",
       "also": "part"
     },
@@ -602,6 +670,10 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       }
     ],
     "sources": [
+      {
+        "label": "Ventrilo: frequently asked questions",
+        "url": "https://www.ventrilo.com/faq.php"
+      },
       {
         "label": "Ventrilo: home page and hosting",
         "url": "https://www.ventrilo.com/"
