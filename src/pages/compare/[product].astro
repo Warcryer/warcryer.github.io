@@ -5,7 +5,7 @@ import Crumbs from "../../components/Crumbs.astro";
 import TryIt from "../../components/TryIt.astro";
 import Versus from "../../components/Versus.astro";
 import MarkChip from "../../components/MarkChip.astro";
-import { CHECKED, CHECKED_ISO, COMMON_FAQ, OUR_LIMITS, ROWS, ORDER, PRODUCTS, type ProductKey } from "../../data/compare";
+import { CHECKED, CHECKED_LANGUAGES, CHECKED_ISO, COMMON_FAQ, OUR_LIMITS, ROWS, ORDER, PRODUCTS, type ProductKey } from "../../data/compare";
 import { trademarkNote } from "../../data/compare-text";
 
 export function getStaticPaths() {
@@ -36,7 +36,7 @@ const faqLd = {
     <a href="#better"><strong>{OUR_LIMITS.length}</strong><span>limits of ours, listed openly, where {p.name} may suit you better</span></a>
     <a href="/download/"><strong>Free</strong><span>while Warcryer is in beta</span></a>
   </div>
-  <p class="fine">Checked against {p.name}'s own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>. Warcryer is in beta.</p>
+  <p class="fine">Checked against {p.name}'s own pages on <time datetime={CHECKED_ISO}>{CHECKED}</time>; the rows on translation and languages on {CHECKED_LANGUAGES}. Warcryer is in beta.</p>
 </section>
 
 <section>
