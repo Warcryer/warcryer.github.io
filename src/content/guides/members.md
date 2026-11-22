@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.38.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -152,6 +152,25 @@ On the Voice tab, **Open as a window over the game** turns the compact strip int
 - You can also click in the line and type; Enter gives the keyboard back to the game the same way.
 - Like the strip, it is a window and not an overlay: a game in exclusive full screen hides it, so run the game windowed or borderless.
 
+### Chat in your language
+
+Players of different countries share one chat. You can have it translated into the language you read.
+
+1. Open **Settings → Language** and choose **Your language**. (The app itself is in English for now; this choice is what the chat is translated into.)
+2. Tick **Translate the chat into my language**.
+
+From then on, in the lounges, in groups and in operations:
+
+- A line written in another language appears at once, as it was written. A second or so later it changes to your language and is marked **translated**.
+- Click **translated** to see the line as it was written; click again for the translation.
+- Lines in your own language, and lines with nothing to translate (names, numbers, "gg", a link), stay as they are. Quick calls and orders are translated like any line.
+- What you write is never changed for you. Each reader's own switch decides what they see, so a clan mate with translation off reads your line exactly as you typed it.
+- Lines written before you switched translation on, or while nobody who reads your language was on that net, stay as written.
+
+A machine does the translating. It keeps game talk the way players write it ("buff", "res", class abbreviations, names), and it is sometimes wrong, more often with slang and in the smaller languages. When a line matters, look at the original.
+
+To translate a line, it is sent from our server to Anthropic (the maker of Claude) when at least one reader on that net has translation on; no name or account goes with it. Your alliance's admins can switch translation off for the whole alliance, and then nothing is sent. The [privacy notice](/privacy/) has the details.
+
 ## When a higher net is live
 
 While someone speaks on a higher net, the nets below it get quieter for you (30% by default) and return when the higher net goes quiet. So a Broadcast call cuts through party chatter without silencing it. Turn this off or change the level in **Settings → Priority**.
@@ -270,6 +289,7 @@ Closing the window quits the app and takes you out of voice. If you would rather
 | --- | --- |
 | **Devices** | Your microphone and headset, the three-second test, and three clean-up switches: echo cancellation, noise suppression and auto gain. Leave them on unless something sounds wrong. |
 | **Party, Reserve and lounge** | Push-to-talk or voice activation for the nets you chat on, with the sensitivity marker and how long the mic stays open after you stop. |
+| **Language** | The language you read, and **Translate the chat into my language**. See [Chat in your language](#chat-in-your-language). |
 | **Keys** | One key per net you may speak on, plus **Mute all** and **Headset**. Mouse side buttons work. **Broadcast lock** is for event leaders only. **Ready** answers a ready check. **Quick calls** send one of your alliance's short lines to your party. **Chat** puts the keyboard in the chat window's line while the game is in front. |
 | **Volume** | Your own level for each net. |
 | **Priority** | Whether lower nets get quieter while a higher one is live, and how quiet. |

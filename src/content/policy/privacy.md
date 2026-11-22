@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.38.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -29,6 +29,8 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | Times you joined and left voice rooms | Automatically while connected | So organisers can see who is present. For each operation, its organisers, and your clan's leader and officers, can see how long you were in voice while it ran and when you joined. When an operation ends this is written down as one line for you (time in voice, what you had answered, your party and the character you came as). Your alliance's admins, and your clan's leader and officers for the time you were in their clan, can read those lines across operations as a history; you can read your own. |
 | Points, if your alliance or clan keeps them (DKP, EP and GP, and the like), or your place in a loot list (Suicide Kings) | When an operation's points are posted, a leader gives or takes points by hand, decay or a new season changes them, loot is given out, or the list is put in order | Each line: how many, for which operation, item or reason (the rules' parts, such as "there 10, on time 2"; a share of another player's item), and who wrote it. A list keeps only the order. You always see your own lines. Who else sees your total is your alliance's (or clan's) choice: everyone in it, or only those who run the points and, for the alliance's points, your clan's leader and officers. |
 | Loot: what dropped at an operation, who received it and as which character, what it cost in points, and a leader's note | When a leader records or gives out a drop | Shown to your alliance's members; the cost only to those who see that set of points' standings in full, and to you. |
+| The language you read, and whether you want the chat translated into it | When you choose them in **Settings → Language** | So the chat can be translated for you, and so the app can be shown in your language once it has others than English. Kept with your account. Other players are not shown your choice. |
+| Chat lines, when someone reading them has translation on | When a line is written on a net where at least one other reader has **Translate the chat into my language** switched on, in an alliance whose admins allow translation | The line's text is sent from our server to Anthropic (the maker of Claude) to be translated, with the language its writer has chosen and the list of languages to translate into, and with the alliance's game setup (class names, kinds of event, quick calls) and its admins' own list of words, so that game talk is read correctly. No name, account or clan is sent with it. This happens to a line whether or not its writer uses translation: it is the reader's switch that decides. Lines with nothing to translate (numbers, "gg", a link) are not sent, and nothing is sent in an alliance whose admins have switched translation off. Anthropic processes the text for us under its commercial terms: by its published policy it deletes what is sent through its API within 30 days (longer only if its safety systems flag it, or the law requires), and does not use it to train its models (privacy.claude.com). The translations are kept with the line, for as long as the line, so that its readers can read it back. We also keep, per alliance and day, how many lines were translated and how much text that was; never whose lines. |
 | Screenshots of loot a leader asks the app to read | When a leader uses **Read a screenshot** | The picture is sent from our server to Anthropic (the maker of Claude), which reads the items in it and returns them; it may show names and chat on screen at the time. We do not keep the picture. Anthropic processes it for us under its commercial terms: by its published policy it deletes what is sent through its API within 30 days (longer only if its safety systems flag it, or the law requires), and does not use it to train its models (privacy.claude.com). We keep who asked, when, the size of the request and the list that came back. |
 | Changes made by leaders and admins (moves, approvals, bans) | When made | An audit log of who did what. |
 | Why a connection to the server dropped: which of the server's two addresses it had used, the connection's close code, how long it had been open and silent, whether Windows had just reported a change of network, whether the window was hidden, and the voice library's own line about it | When the app has reconnected | To find faults in the service. It is written to the server's log beside your account's number and says nothing about what you were doing or saying. |
@@ -42,7 +44,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.37.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.38.0/src-tauri/src/input).
 
 ## Who can see what
 
@@ -64,6 +66,8 @@ The server clears old records by itself every night:
 | Invite links | 30 days after they expire |
 | What was written in an operation's chat | As your alliance's admins have chosen: until the operation ends, or 7 days, 30 days (unless they change it) or 12 months after it. Never longer than that, and never longer than the operation itself |
 | What was written in a lounge's chat | As long as an operation's (above), and at least a day. A group's lines go when the group ends |
+| Translations of chat lines | As long as the line they belong to; they go when it goes |
+| How many lines each alliance had translated, by day (counts only) | 12 months |
 | Sign-in sessions and sign-in codes | Until they expire |
 
 Your account, your in-game name, class and level, your other characters, and your clan membership are kept for as long as you have the account. Nothing is sold or shared with anyone else.
@@ -91,4 +95,5 @@ Whoever runs the service has a page listing every alliance: its name, its owner'
 
 - Discord, for sign-in: <https://discord.com/privacy>
 - Cloudflare, in front of the site (not of voice): <https://www.cloudflare.com/privacypolicy/>
+- Anthropic, the maker of Claude, when a leader has a loot screenshot read or a chat line is translated (see the table above): privacy.claude.com
 - The app displays its interface with Microsoft Edge WebView2, part of Windows: <https://privacy.microsoft.com/privacystatement>

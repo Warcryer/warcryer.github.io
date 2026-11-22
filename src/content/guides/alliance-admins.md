@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.37.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.38.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -166,6 +166,17 @@ Every operation has a text chat, with a channel for each net ([members' guide](/
 - **Kept:** how long an operation's lines stay after it has ended: until it ends, 7 days, 30 days (unless you change it), or a year. Choosing a shorter time removes older lines at once.
 
 Keeping order: the event leader, the deputies and you can remove any line you can read (point at it), and switch a player's writing off for that operation; they go on reading, and it ends with the operation. Both are written to the log, without what the line said. A party's channel is read only by that party, during and after: you do not see it unless you are in it.
+
+### Chat translation
+
+Your members may read in different languages. Each of them can choose their language in **Settings → Language** and have the chat translated into it; a line always appears as written first, and the translation follows a second or so later (see the [members' guide](/guides/members/#chat-in-your-language)). On the **Alliance** tab, **Chat translation** is where you decide how that works for your alliance.
+
+- **Members may have the chat translated into their language.** On when your alliance starts. Off: nobody's chat is translated, and no line of your alliance is sent to be translated. The log records the change.
+- **What is sent.** To translate a line, its text goes from our server to Anthropic (the maker of Claude) when at least one reader on that net has translation on. That includes lines written by members who do not use translation themselves; no name, account or clan goes with a line. If your alliance does not want that, switch translation off.
+- **Your alliance's own words.** Slang the translator should read correctly, and names it must leave alone, one per line: `soski = soulshots`, `Cruma = a place, keep it`. Up to 60 lines. Your game setup (classes, kinds of event) and your quick calls are already known to it, so the list is only for what is yours. The log records that the list changed, not what it says.
+- **The month's limit.** The box shows how many lines were translated this month, of the limit for your alliance (20,000 during the beta). Lines with nothing to translate, lines nobody needs in another language, and words translated before do not count. Past the limit, lines stay as written until the next month.
+
+Translation is done by a machine and is sometimes wrong, more often with slang and in the smaller languages. Tell your members to click **translated** on a line that matters to see it as it was written, and add words that keep going wrong to your list.
 
 ### Quick calls: your alliance's own list
 
