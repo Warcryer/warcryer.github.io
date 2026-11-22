@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.39.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.40.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -154,10 +154,11 @@ On the Voice tab, **Open as a window over the game** turns the compact strip int
 
 ### The app in your language
 
-Open **Settings → Language** and choose **Your language**. The screens you use every day change to it at once: signing in, set-up, **Voice** with its nets and panels, the chat, the notices, **Settings** and the compact strip. The choice belongs to your account, so it follows you to another computer.
+Open **Settings → Language** and choose **Your language**. The app changes to it at once: every tab, the chat, the notices, **Settings**, the compact strip, and what the server answers when it refuses something. The choice belongs to your account, so it follows you to another computer.
 
 - Twelve languages: English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian and Turkish.
-- The other tabs (Operations, Clan, Alliance, History, Guides) and these guides are still in English. They will follow.
+- Still in English: these guides, the log that admins and clan leaders read, what the app posts to Discord, and the web pages you pass when signing in or using an invite link. They will follow.
+- What your alliance set up for its game is shown as your admins wrote it: classes, roles, kinds of event, quick calls, the names of its points.
 - Names people chose stay as they are: a clan's, a party's, a group's, an operation's. If your alliance has its own words for "clan" or "party", those are used in English; other languages use their usual game words.
 - The translations were made by a machine and nobody has checked every line. If something reads wrong or odd in your language, use **Tell us on the Warcryer Discord** under the language choice in Settings: say the language, the screen and what it should say.
 
