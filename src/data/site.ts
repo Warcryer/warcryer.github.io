@@ -12,6 +12,7 @@ export const LOOT_VIDEO_ID = "DJ13PojgG9E";
 export const NAV = [
   { href: "/#planning", label: "Planning" },
   { href: "/#voice", label: "Voice" },
+  { href: "/#languages", label: "Languages" },
   { href: "/#loot", label: "Points and loot" },
   { href: "/guides/", label: "Guides" },
   { href: "/compare/", label: "Compare" },

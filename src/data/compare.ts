@@ -13,7 +13,7 @@ export const OUR_LIMITS: string[] = [
   "It is a hosted service. The Windows app is open source; the server is not public and you cannot run your own.",
   "It is in beta: an alliance is started with a code from the Warcryer Discord and has room for 300 approved members.",
   "You sign in with a Discord account.",
-  "It is built for organised play: events, rosters, points and loot. There is no video, screen sharing, file sharing or positional audio, and the text chat exists inside operations only."
+  "It is built for organised play: events, rosters, points and loot. There is no video, screen sharing, file sharing or positional audio, and the text chat is a chat for each room, not a place for threads, pictures or files."
 ];
 
 /**

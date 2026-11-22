@@ -9,7 +9,7 @@ const ld = {
   name: "Warcryer",
   applicationCategory: "CommunicationApplication",
   operatingSystem: "Windows 10, Windows 11",
-  description: "Clan and alliance management for MMORPGs with voice built in: plan operations, build the roster, go live on voice that follows it, and keep attendance, points and loot.",
+  description: "Clan and alliance management for MMORPGs with voice built in: plan operations, build the roster, go live on voice that follows it, and keep attendance, points and loot. In twelve languages, with the chat translated for each reader.",
   url: SITE,
   downloadUrl: `${SITE}/download/`,
   image: `${SITE}/shots/roster.jpg`,
@@ -18,7 +18,7 @@ const ld = {
 ---
 <Base
   title="Warcryer: run your alliance, voice built in"
-  description="Clan and alliance management for MMORPGs with voice built in. Plan operations, build the roster, go live on voice that follows it, and keep attendance, DKP and loot in the same app. Free while in beta."
+  description="Clan and alliance management for MMORPGs with voice built in. Plan operations, build the roster, go live on voice that follows it, and keep attendance, DKP and loot in the same app. In twelve languages, with the chat translated for each reader. Free while in beta."
   image="roster.jpg"
   footNote="TeamSpeak, Discord, Mumble and Ventrilo are trademarks of their owners, named here only for comparison; Warcryer is not affiliated with them."
 >
@@ -28,7 +28,7 @@ const ld = {
   <img class="emblem" src="/emblem.svg" alt="The Warcryer emblem: a war horn sounding" width="168" height="168">
   <h1>Warcryer</h1>
   <p class="tagline">Run your alliance. Voice built in.</p>
-  <p class="lede">Clan and alliance management for MMORPGs. Plan the operation, build the roster, go live on voice that follows it, then keep the attendance, points and loot. One app, from the sign-ups to the last drop.</p>
+  <p class="lede">Clan and alliance management for MMORPGs. Plan the operation, build the roster, go live on voice that follows it, then keep the attendance, points and loot. One app, from the sign-ups to the last drop, in twelve languages, with the chat translated for each reader.</p>
   <div class="actions">
     <a class="btn" href="/download/">Download for Windows</a>
     <a class="btn quiet" href="#watch">Watch the walkthrough</a>
@@ -184,7 +184,7 @@ const ld = {
 
 <section id="chat">
   <h2>Orders that stay on screen</h2>
-  <p class="intro">Every operation has a text chat with a channel for each net you are on. What was said by voice can be pinned, checked and answered without anyone typing in the middle of a fight.</p>
+  <p class="intro">Every room has a text chat: an operation has a channel for each net you are on, and the lounges and groups have theirs. What was said by voice can be pinned, checked and answered without anyone typing in the middle of a fight.</p>
   <div class="split">
     <div>
       <h3>A pinned order</h3>
@@ -211,6 +211,39 @@ const ld = {
       <h3>Nothing read, nothing injected</h3>
       <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it.</p>
     </div>
+  </div>
+</section>
+
+<section id="languages">
+  <h2>One alliance, many languages</h2>
+  <p class="intro">An alliance is clans from different countries sharing one chat. In Warcryer each player reads that chat, and the app itself, in their own language.</p>
+  <div class="split">
+    <div>
+      <h3>The chat, in each reader's language</h3>
+      <p>A line appears at once, as it was written. About a second later it is in your language and marked as translated. Click the mark to see the original.</p>
+      <h3>Game talk stays game talk</h3>
+      <p>Buff, res, class abbreviations and names are kept the way players write them. An alliance can add its own slang and the names that must be left alone.</p>
+      <h3>Each reader decides</h3>
+      <p>Translation is your own switch. What you write is never changed for you, and a clan mate with it off reads your line exactly as you typed it.</p>
+    </div>
+    <figure>
+      <img src="/shots/languages.jpg" alt="Two players side by side in the same chat: one reads every line in English, the other reads the same lines in Russian, each translated line marked as translated" width="1600" height="775" loading="lazy">
+      <figcaption>The same chat on two screens. Left, a player who reads English. Right, one who reads Russian.</figcaption>
+    </figure>
+  </div>
+  <div class="cards three">
+    <article>
+      <h3>The app in twelve languages</h3>
+      <p>English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian and Turkish. Every tab, the notices and the compact strip, chosen by each player for themselves.</p>
+    </article>
+    <article>
+      <h3>Orders and calls too</h3>
+      <p>A pinned order and a quick call are translated like any other line, and a ready check asks each player in their own language, in the app and in the chat window over the game.</p>
+    </article>
+    <article>
+      <h3>Honest about the machine</h3>
+      <p>The translating is done by Claude, a language model, and it is sometimes wrong. The original is always one click away, and an alliance's admins can switch translation off for everyone.</p>
+    </article>
   </div>
 </section>
 
@@ -272,6 +305,41 @@ const ld = {
   </div>
 </section>
 
+<section id="between">
+  <h2>Between operations</h2>
+  <p class="intro">Most evenings are not a siege. The same app is where the alliance sits the rest of the time, and one screen shows it: your nets on the left, your room in the middle, your alliance as it is right now on the right.</p>
+  <div class="cards three">
+    <article>
+      <h3>Groups</h3>
+      <p>Any member starts a small room for a dungeon, a farming spot or a chat, and anyone in the alliance can join it, whatever their clan. The clan's lounge stays audible underneath, quieter.</p>
+    </article>
+    <article>
+      <h3>Who is online</h3>
+      <p>Every group with the players in it, and everyone else who has the app open: in the lounge, in an operation, or away.</p>
+    </article>
+    <article>
+      <h3>Chat in every room</h3>
+      <p>The lounges and groups have a chat of their own, with quick calls, and it can sit over the game like the operation's.</p>
+    </article>
+    <article>
+      <h3>Leaders are still heard</h3>
+      <p>A clan's leader and officers speak to their clan between events as they do during one, and an alliance can give its admins a net that reaches every clan.</p>
+    </article>
+    <article>
+      <h3>Call to arms</h3>
+      <p>A world boss is up, or a castle is under attack. An admin starts an operation that is live at once: every group becomes a party and everyone is on its nets.</p>
+    </article>
+    <article>
+      <h3>One line for what waits</h3>
+      <p>An event asking if you are coming, a player asking to join your party, a new version: one line under the tabs, the most pressing first.</p>
+    </article>
+  </div>
+  <figure class="wide">
+    <img src="/shots/between.jpg" alt="The Voice tab between operations: the player's nets on the left, the clan's lounge with its chat in the middle, and on the right the alliance's groups and who is online" width="1600" height="775" loading="lazy">
+    <figcaption>An ordinary evening: your nets, your room and its chat, and the alliance's groups and who is online.</figcaption>
+  </figure>
+</section>
+
 <section id="leaders">
   <h2>Run the alliance from the same window</h2>
   <p class="intro">Each screen offers only what your role allows, and the server checks every action again.</p>
@@ -286,7 +354,7 @@ const ld = {
     </article>
     <article>
       <h3>The lounge</h3>
-      <p>Between events each clan has a lounge to sit and talk in. When an operation ends, everyone is returned there.</p>
+      <p>Each clan has a lounge to sit and talk in, and the alliance can open one shared by every clan. When an operation ends, everyone is returned there.</p>
     </article>
     <article>
       <h3>Briefings</h3>
