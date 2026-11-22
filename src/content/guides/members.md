@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.38.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.39.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -152,11 +152,20 @@ On the Voice tab, **Open as a window over the game** turns the compact strip int
 - You can also click in the line and type; Enter gives the keyboard back to the game the same way.
 - Like the strip, it is a window and not an overlay: a game in exclusive full screen hides it, so run the game windowed or borderless.
 
+### The app in your language
+
+Open **Settings → Language** and choose **Your language**. The screens you use every day change to it at once: signing in, set-up, **Voice** with its nets and panels, the chat, the notices, **Settings** and the compact strip. The choice belongs to your account, so it follows you to another computer.
+
+- Twelve languages: English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian and Turkish.
+- The other tabs (Operations, Clan, Alliance, History, Guides) and these guides are still in English. They will follow.
+- Names people chose stay as they are: a clan's, a party's, a group's, an operation's. If your alliance has its own words for "clan" or "party", those are used in English; other languages use their usual game words.
+- The translations were made by a machine and nobody has checked every line. If something reads wrong or odd in your language, use **Tell us on the Warcryer Discord** under the language choice in Settings: say the language, the screen and what it should say.
+
 ### Chat in your language
 
 Players of different countries share one chat. You can have it translated into the language you read.
 
-1. Open **Settings → Language** and choose **Your language**. (The app itself is in English for now; this choice is what the chat is translated into.)
+1. Open **Settings → Language** and choose **Your language**. (The same choice sets the language the app is shown in: see [The app in your language](#the-app-in-your-language).)
 2. Tick **Translate the chat into my language**.
 
 From then on, in the lounges, in groups and in operations:
@@ -289,7 +298,7 @@ Closing the window quits the app and takes you out of voice. If you would rather
 | --- | --- |
 | **Devices** | Your microphone and headset, the three-second test, and three clean-up switches: echo cancellation, noise suppression and auto gain. Leave them on unless something sounds wrong. |
 | **Party, Reserve and lounge** | Push-to-talk or voice activation for the nets you chat on, with the sensitivity marker and how long the mic stays open after you stop. |
-| **Language** | The language you read, and **Translate the chat into my language**. See [Chat in your language](#chat-in-your-language). |
+| **Language** | The language the app is shown in, and **Translate the chat into my language**. See [The app in your language](#the-app-in-your-language) and [Chat in your language](#chat-in-your-language). |
 | **Keys** | One key per net you may speak on, plus **Mute all** and **Headset**. Mouse side buttons work. **Broadcast lock** is for event leaders only. **Ready** answers a ready check. **Quick calls** send one of your alliance's short lines to your party. **Chat** puts the keyboard in the chat window's line while the game is in front. |
 | **Volume** | Your own level for each net. |
 | **Priority** | Whether lower nets get quieter while a higher one is live, and how quiet. |
