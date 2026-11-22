@@ -5,10 +5,10 @@ export const GITHUB = "https://github.com/Warcryer/client";
 export const RELEASES = `${GITHUB}/releases`;
 export const LATEST = `${GITHUB}/releases/latest`;
 export const ISSUES = `${GITHUB}/issues`;
-export const VIDEO_ID = "D6xEhmd3Qr8";
+export const VIDEO_ID = "AB89ha-nK24";
 export const LOOT_VIDEO_ID = "DJ13PojgG9E";
-/** "Chat in your language" (recorded at 0.40). Empty until it is on YouTube: the front page then leaves its player out. */
-export const LANG_VIDEO_ID = "";
+/** "Chat in your language" (recorded at 0.41). */
+export const LANG_VIDEO_ID = "tE7yxrjKxj0";
 
 /** The main menu. Home-page sections are reached with /#anchor from any page. */
 export const NAV = [
