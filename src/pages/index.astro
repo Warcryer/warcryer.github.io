@@ -72,333 +72,387 @@ const ld = {
 
 <section id="watch">
   <h2>Watch an evening of it</h2>
-  <p class="intro">A twenty-two-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, the lounge, groups and who is online, building the roster, going live, the chat with orders, ready checks and calls, a look at it over a real game, a briefing, a party losing its leader, the compact strip, attendance and history, and every player reading in their own language. It has captions and no sound. The clans and players in it are made up.</p>
-  <div class="video" data-video={VIDEO_ID}>
-    <button type="button" class="play" aria-label="Play the walkthrough video">
-      <img src="/shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
-      <span class="play-mark" aria-hidden="true"></span>
-    </button>
-  </div>
-  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${VIDEO_ID}`}>watch it on YouTube</a>.</p>
-
-  <h3 class="video-more">Chat in your language: two minutes</h3>
-  <p class="intro">One clan whose players write in Russian, Polish, Greek, Portuguese and Chinese, seen from the seat of a player who reads English and one who reads Russian, over a real game. The translations are the ones the app made while it was recorded.</p>
-  <div class="video" data-video={LANG_VIDEO_ID}>
-    <button type="button" class="play" aria-label="Play the video Chat in your language">
-      <img src="/shots/languages-video.jpg" alt="The video's opening card: Chat in your language" width="1600" height="900" loading="lazy">
-      <span class="play-mark" aria-hidden="true"></span>
-    </button>
-  </div>
-  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LANG_VIDEO_ID}`}>watch it on YouTube</a>.</p>
-
-  <h3 class="video-more">Points and loot</h3>
-  <p class="intro">Five minutes on DKP and loot: a set of points from a preset, points from an operation's attendance, the standings, your item list, a real screenshot of the drops read by the app, giving out loot, and EPGP, Zero-sum, Suicide Kings and loot councils.</p>
-  <div class="video" data-video={LOOT_VIDEO_ID}>
-    <button type="button" class="play" aria-label="Play the points and loot video">
-      <img src="/shots/loot-video.jpg" alt="The video's opening card: Points and loot" width="1600" height="900" loading="lazy">
-      <span class="play-mark" aria-hidden="true"></span>
-    </button>
-  </div>
-  <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LOOT_VIDEO_ID}`}>watch it on YouTube</a>.</p>
-</section>
-
-<section id="planning">
-  <h2>Plan the operation</h2>
-  <p class="intro">Sign-ups, characters, parties and announcements live on one board, and it knows who is actually in voice.</p>
-  <div class="cards three">
-    <article>
-      <h3>Who is coming</h3>
-      <p>When an operation is created, every member of its clans is asked in the app, and one click answers. A player bringing a different character says which, for that event only.</p>
-    </article>
-    <article>
-      <h3>Mains, alts and boxes</h3>
-      <p>Each player keeps the characters they play, with class and level, and marks the ones they box. Organisers see on the board what someone can bring without asking.</p>
-    </article>
-    <article>
-      <h3>What each party needs</h3>
-      <p>Each party shows whether it is full and which support roles it still lacks. Click a missing role to list the unplaced players who can fill it.</p>
-    </article>
-    <article>
-      <h3>Constant parties</h3>
-      <p>Groups that always fight together are saved once, in order, with a leader. One click places them, and their leader can sign the whole party up.</p>
-    </article>
-    <article>
-      <h3>Start from last time</h3>
-      <p>A new operation can begin with the parties, leaders and deputies of an earlier one. Players who have left or been banned since are left out.</p>
-    </article>
-    <article>
-      <h3>Told on Discord</h3>
-      <p>Connect a channel and every new, changed, started or cancelled operation is announced there, in each reader's own time zone, with a reminder before the start.</p>
-    </article>
-  </div>
-</section>
-
-<section id="voice">
-  <h2>Voice that follows the roster</h2>
-  <p class="intro">Nobody picks a channel. Your place on the roster decides which nets you hear and which you may speak on, each with its own push-to-talk key, and moving a player moves their voice.</p>
-
-  <ol class="nets">
-    <li style="--net:#e2553f">
-      <h3>Broadcast</h3>
-      <p class="who">Event leader and deputies speak</p>
-      <p>The call everyone hears, for the orders that move the whole alliance.</p>
-    </li>
-    <li style="--net:#e6c77a">
-      <h3>Command</h3>
-      <p class="who">Leaders only</p>
-      <p>Event, clan and party leaders plan here without the rank and file hearing it.</p>
-    </li>
-    <li style="--net:#8c86ff">
-      <h3>Clan</h3>
-      <p class="who">Clan leader and officers speak</p>
-      <p>Each clan's own orders, heard by that clan alone.</p>
-    </li>
-    <li style="--net:#5fd35f">
-      <h3>Party</h3>
-      <p class="who">Everyone in the party speaks</p>
-      <p>Where the fighting is called. Push-to-talk or voice activation.</p>
-    </li>
-    <li style="--net:#9a968c">
-      <h3>Reserve</h3>
-      <p class="who">Players waiting for a party</p>
-      <p>Latecomers wait here with the organisers until they are placed.</p>
-    </li>
-  </ol>
-
-  <div class="split">
-    <div>
-      <h3>A leader's voice cuts through</h3>
-      <p>While someone speaks on a higher net, the nets below it drop to a murmur and come back when the call ends. Nothing is muted, and the lowered nets say so on screen.</p>
-      <h3>Keys that work in the game</h3>
-      <p>Push-to-talk keys, mouse side buttons included, work while the game has focus. They are never taken from the game, and no administrator rights are needed.</p>
+  <div class="reel" role="group" aria-label="Video to watch">
+    <input class="pick" type="radio" name="reel" id="v-walk" checked>
+    <label class="reel-pick" for="v-walk">
+      <img src="/shots/video.jpg" alt="" width="1600" height="900" loading="lazy">
+      <span><strong>The walkthrough</strong> 22 minutes</span>
+    </label>
+    <div class="reel-panel">
+      <div class="video" data-video={VIDEO_ID}>
+        <button type="button" class="play" aria-label="Play the walkthrough video">
+          <img src="/shots/video.jpg" alt="The walkthrough's opening card: Warcryer, a walkthrough for alliance and clan leaders" width="1600" height="900" loading="lazy">
+          <span class="play-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="intro">A twenty-two-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, the lounge, groups and who is online, building the roster, going live, the chat with orders, ready checks and calls, a look at it over a real game, a briefing, a party losing its leader, the compact strip, attendance and history, and every player reading in their own language. It has captions and no sound. The clans and players in it are made up.</p>
+      <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${VIDEO_ID}`}>watch it on YouTube</a>.</p>
     </div>
-    <figure>
-      <img src="/shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's party net is marked as lowered" width="1600" height="775" loading="lazy">
-      <figcaption>Left, the leader holds the Broadcast key. Right, the member's party net is lowered under the order.</figcaption>
-    </figure>
-  </div>
 
-  <div class="split flip">
-    <figure>
-      <img src="/shots/handover.jpg" alt="Two players side by side, each with a bar across the top: Orin has dropped out, Vanguard has no one on Command, who leads it now, with buttons to choose" width="1600" height="775" loading="lazy">
-      <figcaption>The party's leader has dropped out. The party and the clan's leader are asked who leads now.</figcaption>
-    </figure>
-    <div>
-      <h3>A party is never cut off</h3>
-      <p>If a party leader's game crashes, the party and the clan's officers are asked after about thirty seconds who leads now. One click settles it.</p>
-      <h3>And if nobody answers</h3>
-      <p>Thirty seconds later the next member in party order is promoted, told, and on Command at once.</p>
+    <input class="pick" type="radio" name="reel" id="v-lang">
+    <label class="reel-pick" for="v-lang">
+      <img src="/shots/languages-video.jpg" alt="" width="1600" height="900" loading="lazy">
+      <span><strong>Chat in your language</strong> 2 minutes</span>
+    </label>
+    <div class="reel-panel">
+      <div class="video" data-video={LANG_VIDEO_ID}>
+        <button type="button" class="play" aria-label="Play the video Chat in your language">
+          <img src="/shots/languages-video.jpg" alt="The video's opening card: Chat in your language" width="1600" height="900" loading="lazy">
+          <span class="play-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="intro">One clan whose players write in Russian, Polish, Greek, Portuguese and Chinese, seen from the seat of a player who reads English and one who reads Russian, over a real game. The translations are the ones the app made while it was recorded.</p>
+      <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LANG_VIDEO_ID}`}>watch it on YouTube</a>.</p>
+    </div>
+
+    <input class="pick" type="radio" name="reel" id="v-loot">
+    <label class="reel-pick" for="v-loot">
+      <img src="/shots/loot-video.jpg" alt="" width="1600" height="900" loading="lazy">
+      <span><strong>Points and loot</strong> 5 minutes</span>
+    </label>
+    <div class="reel-panel">
+      <div class="video" data-video={LOOT_VIDEO_ID}>
+        <button type="button" class="play" aria-label="Play the points and loot video">
+          <img src="/shots/loot-video.jpg" alt="The video's opening card: Points and loot" width="1600" height="900" loading="lazy">
+          <span class="play-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="intro">Five minutes on DKP and loot: a set of points from a preset, points from an operation's attendance, the standings, your item list, a real screenshot of the drops read by the app, giving out loot, and EPGP, Zero-sum, Suicide Kings and loot councils.</p>
+      <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${LOOT_VIDEO_ID}`}>watch it on YouTube</a>.</p>
     </div>
   </div>
 </section>
 
-<section id="chat">
-  <h2>Orders that stay on screen</h2>
-  <p class="intro">Every room has a text chat: an operation has a channel for each net you are on, and the lounges and groups have theirs. What was said by voice can be pinned, checked and answered without anyone typing in the middle of a fight.</p>
-  <div class="split">
-    <div>
-      <h3>A pinned order</h3>
-      <p>The event leader pins an order on Broadcast. It stays at the top of everyone's chat and on their strip until it changes.</p>
-      <h3>Ready checks</h3>
-      <p>One click asks everyone; the answers count up as they come in: ready, not ready, no answer.</p>
-      <h3>Quick calls</h3>
-      <p>Need res, Need heal, Out of mana: a short line sent with one click or one key. The alliance sets its own calls.</p>
+<section id="tour">
+  <h2>A closer look</h2>
+  <p class="intro">The same app, one part at a time. Pick the part you want to read about.</p>
+  <div class="tour" role="group" aria-label="Part of the app to read about">
+
+    <input class="pick" type="radio" name="tour" id="t-voice" checked>
+    <label class="tab" for="t-voice">Voice</label>
+    <div class="panel" id="voice">
+      <h3 class="panel-title">Voice that follows the roster</h3>
+      <p class="intro">Nobody picks a channel. Your place on the roster decides which nets you hear and which you may speak on, each with its own push-to-talk key, and moving a player moves their voice.</p>
+
+      <ol class="nets">
+        <li style="--net:#e2553f">
+          <h4>Broadcast</h4>
+          <p class="who">Event leader and deputies speak</p>
+          <p>The call everyone hears, for the orders that move the whole alliance.</p>
+        </li>
+        <li style="--net:#e6c77a">
+          <h4>Command</h4>
+          <p class="who">Leaders only</p>
+          <p>Event, clan and party leaders plan here without the rank and file hearing it.</p>
+        </li>
+        <li style="--net:#8c86ff">
+          <h4>Clan</h4>
+          <p class="who">Clan leader and officers speak</p>
+          <p>Each clan's own orders, heard by that clan alone.</p>
+        </li>
+        <li style="--net:#5fd35f">
+          <h4>Party</h4>
+          <p class="who">Everyone in the party speaks</p>
+          <p>Where the fighting is called. Push-to-talk or voice activation.</p>
+        </li>
+        <li style="--net:#9a968c">
+          <h4>Reserve</h4>
+          <p class="who">Players waiting for a party</p>
+          <p>Latecomers wait here with the organisers until they are placed.</p>
+        </li>
+      </ol>
+
+      <div class="split">
+        <div>
+          <h4>A leader's voice cuts through</h4>
+          <p>While someone speaks on a higher net, the nets below it drop to a murmur and come back when the call ends. Nothing is muted, and the lowered nets say so on screen.</p>
+          <h4>Keys that work in the game</h4>
+          <p>Push-to-talk keys, mouse side buttons included, work while the game has focus. They are never taken from the game, and no administrator rights are needed.</p>
+        </div>
+        <figure>
+          <img src="/shots/lowered.jpg" alt="Two players side by side: the leader holds Broadcast while the member's party net is marked as lowered" width="1600" height="775" loading="lazy">
+          <figcaption>Left, the leader holds the Broadcast key. Right, the member's party net is lowered under the order.</figcaption>
+        </figure>
+      </div>
+
+      <div class="split flip">
+        <figure>
+          <img src="/shots/handover.jpg" alt="Two players side by side, each with a bar across the top: Orin has dropped out, Vanguard has no one on Command, who leads it now, with buttons to choose" width="1600" height="775" loading="lazy">
+          <figcaption>The party's leader has dropped out. The party and the clan's leader are asked who leads now.</figcaption>
+        </figure>
+        <div>
+          <h4>A party is never cut off</h4>
+          <p>If a party leader's game crashes, the party and the clan's officers are asked after about thirty seconds who leads now. One click settles it.</p>
+          <h4>And if nobody answers</h4>
+          <p>Thirty seconds later the next member in party order is promoted, told, and on Command at once.</p>
+        </div>
+      </div>
+      <p class="next"><label for="t-planning">Next: Planning</label></p>
     </div>
-    <figure>
-      <img src="/shots/chat.jpg" alt="Two players side by side: the leader's chat with a pinned order and a ready check counting answers, and a member's party chat with quick calls" width="1600" height="775" loading="lazy">
-      <figcaption>Left, the leader's chat: a pinned order and a ready check counting its answers. Right, a member's party chat with quick calls.</figcaption>
-    </figure>
-  </div>
 
-  <div class="split flip">
-    <figure>
-      <img src="/shots/ingame.jpg" alt="A real game with the Warcryer chat window in the lower left corner, showing the operation's channels, a ready check button and quick calls" width="1600" height="900" loading="lazy">
-      <figcaption>The chat window over a real game. Names are blurred.</figcaption>
-    </figure>
-    <div>
-      <h3>Over the game, not in it</h3>
-      <p>The compact strip shows who is talking on which net, and the chat can open in the same small window. It stays on top of the game in windowed or borderless mode.</p>
-      <h3>Nothing read, nothing injected</h3>
-      <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it.</p>
+    <input class="pick" type="radio" name="tour" id="t-planning">
+    <label class="tab" for="t-planning">Planning</label>
+    <div class="panel" id="planning">
+      <h3 class="panel-title">Plan the operation</h3>
+      <p class="intro">Sign-ups, characters, parties and announcements live on one board, and it knows who is actually in voice.</p>
+      <div class="cards three">
+        <article>
+          <h4>Who is coming</h4>
+          <p>When an operation is created, every member of its clans is asked in the app, and one click answers. A player bringing a different character says which, for that event only.</p>
+        </article>
+        <article>
+          <h4>Mains, alts and boxes</h4>
+          <p>Each player keeps the characters they play, with class and level, and marks the ones they box. Organisers see on the board what someone can bring without asking.</p>
+        </article>
+        <article>
+          <h4>What each party needs</h4>
+          <p>Each party shows whether it is full and which support roles it still lacks. Click a missing role to list the unplaced players who can fill it.</p>
+        </article>
+        <article>
+          <h4>Constant parties</h4>
+          <p>Groups that always fight together are saved once, in order, with a leader. One click places them, and their leader can sign the whole party up.</p>
+        </article>
+        <article>
+          <h4>Start from last time</h4>
+          <p>A new operation can begin with the parties, leaders and deputies of an earlier one. Players who have left or been banned since are left out.</p>
+        </article>
+        <article>
+          <h4>Told on Discord</h4>
+          <p>Connect a channel and every new, changed, started or cancelled operation is announced there, in each reader's own time zone, with a reminder before the start.</p>
+        </article>
+      </div>
+      <p class="next"><label for="t-chat">Next: Chat</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-chat">
+    <label class="tab" for="t-chat">Chat</label>
+    <div class="panel" id="chat">
+      <h3 class="panel-title">Orders that stay on screen</h3>
+      <p class="intro">Every room has a text chat: an operation has a channel for each net you are on, and the lounges and groups have theirs. What was said by voice can be pinned, checked and answered without anyone typing in the middle of a fight.</p>
+      <div class="split">
+        <div>
+          <h4>A pinned order</h4>
+          <p>The event leader pins an order on Broadcast. It stays at the top of everyone's chat and on their strip until it changes.</p>
+          <h4>Ready checks</h4>
+          <p>One click asks everyone; the answers count up as they come in: ready, not ready, no answer.</p>
+          <h4>Quick calls</h4>
+          <p>Need res, Need heal, Out of mana: a short line sent with one click or one key. The alliance sets its own calls.</p>
+        </div>
+        <figure>
+          <img src="/shots/chat.jpg" alt="Two players side by side: the leader's chat with a pinned order and a ready check counting answers, and a member's party chat with quick calls" width="1600" height="775" loading="lazy">
+          <figcaption>Left, the leader's chat: a pinned order and a ready check counting its answers. Right, a member's party chat with quick calls.</figcaption>
+        </figure>
+      </div>
+
+      <div class="split flip">
+        <figure>
+          <img src="/shots/ingame.jpg" alt="A real game with the Warcryer chat window in the lower left corner, showing the operation's channels, a ready check button and quick calls" width="1600" height="900" loading="lazy">
+          <figcaption>The chat window over a real game. Names are blurred.</figcaption>
+        </figure>
+        <div>
+          <h4>Over the game, not in it</h4>
+          <p>The compact strip shows who is talking on which net, and the chat can open in the same small window. It stays on top of the game in windowed or borderless mode.</p>
+          <h4>Nothing read, nothing injected</h4>
+          <p>It is an ordinary window you drag where you like. Nothing is drawn into the game and nothing is read from it.</p>
+        </div>
+      </div>
+      <p class="next"><label for="t-languages">Next: Languages</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-languages">
+    <label class="tab" for="t-languages">Languages</label>
+    <div class="panel" id="languages">
+      <h3 class="panel-title">One alliance, many languages</h3>
+      <p class="intro">An alliance is clans from different countries sharing one chat. In Warcryer each player reads that chat, and the app itself, in their own language.</p>
+      <div class="split">
+        <div>
+          <h4>The chat, in each reader's language</h4>
+          <p>A line appears at once, as it was written. About a second later it is in your language and marked as translated. Click the mark to see the original.</p>
+          <h4>Game talk stays game talk</h4>
+          <p>Buff, res, class abbreviations and names are kept the way players write them. An alliance can add its own slang and the names that must be left alone.</p>
+          <h4>Each reader decides</h4>
+          <p>Translation is your own switch. What you write is never changed for you, and a clan mate with it off reads your line exactly as you typed it.</p>
+        </div>
+        <figure>
+          <img src="/shots/languages.jpg" alt="Two chat windows over a game, showing the same six lines: on the left every line is in English, on the right in Russian, and each line that was translated carries a small mark" width="1600" height="775" loading="lazy">
+          <figcaption>The same chat in two players' windows over the game. Left, a player who reads English. Right, one who reads Russian.</figcaption>
+        </figure>
+      </div>
+      <p class="intro">There is a <a href="#watch" data-reel="v-lang">two-minute video</a> of it over a real game.</p>
+      <div class="cards three">
+        <article>
+          <h4>The app in fourteen languages</h4>
+          <p>English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian, Turkish, and Chinese, Simplified and Traditional. Every tab, the notices and the compact strip, chosen by each player for themselves.</p>
+        </article>
+        <article>
+          <h4>Orders and calls too</h4>
+          <p>A pinned order and a quick call are translated like any other line, and a ready check asks each player in their own language, in the app and in the chat window over the game.</p>
+        </article>
+        <article>
+          <h4>Honest about the machine</h4>
+          <p>The translating is done by Claude, a language model, and it is sometimes wrong. The original is always one click away, and an alliance's admins can switch translation off for everyone.</p>
+        </article>
+      </div>
+      <p class="next"><label for="t-loot">Next: Points and loot</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-loot">
+    <label class="tab" for="t-loot">Points and loot</label>
+    <div class="panel" id="loot">
+      <h3 class="panel-title">Points and loot, from the same evening</h3>
+      <p class="intro">Points come from who was really in voice, loot goes to the right player, and everyone can check the standings. No second site to keep in step.</p>
+      <div class="cards three">
+        <article>
+          <h4>Your way of sharing</h4>
+          <p>Start from a preset: attendance only, classic DKP, DKP by the hour, EPGP, Zero-sum, Suicide Kings, fleet participation, or your own rules. A loot council needs no points at all.</p>
+        </article>
+        <article>
+          <h4>Earned from attendance</h4>
+          <p>When an operation ends, the app drafts everyone's points from their time in voice, with the reason beside each amount. Change anything, then post.</p>
+        </article>
+        <article>
+          <h4>Standings everyone can read</h4>
+          <p>Balances highest first, and every line that made them. A change by hand is a line of its own with its reason, so nothing is quietly edited.</p>
+        </article>
+        <article>
+          <h4>Drops read from a screenshot</h4>
+          <p>Give the app a screenshot of the drops in the game's chat. It lists each item and how many, spelled as on your item list, for you to check and add.</p>
+        </article>
+        <article>
+          <h4>Give it out</h4>
+          <p>Who got it, which character, which points pay, and the price from your list. A mistake is put right with Take back, and the log says so.</p>
+        </article>
+        <article>
+          <h4>Decay and seasons</h4>
+          <p>Take a share off every balance each week or month so old points do not rule for ever, and start a new season with part carried over or none.</p>
+        </article>
+      </div>
+      <figure class="wide">
+          <img src="/shots/loot-read.jpg" alt="An operation's loot panel reading a real screenshot of a raid boss's drops from the game's chat, shown beside it" width="1600" height="775" loading="lazy">
+          <figcaption>A real screenshot of a Queen Ant kill, given to the app on the operation's loot panel.</figcaption>
+      </figure>
+      <figure class="wide">
+          <img src="/shots/points-draft.jpg" alt="The points draft after an operation: each player's time in voice, whether they said they were coming, the reason for their points and the amount" width="1600" height="775" loading="lazy">
+          <figcaption>The points draft after an operation: time in voice, the reason, and the points.</figcaption>
+      </figure>
+      <p class="next"><label for="t-kept">Next: History</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-kept">
+    <label class="tab" for="t-kept">History</label>
+    <div class="panel" id="kept">
+      <h3 class="panel-title">Everything is kept</h3>
+      <p class="intro">Every operation keeps its roster, its attendance, its points and its loot, for as long as the alliance wants them.</p>
+      <div class="split">
+        <div>
+          <h4>Attendance</h4>
+          <p>Who was in voice and for how long, counted from the start. Late arrivals, early leavers and players who said they were coming and never showed are plain to see.</p>
+          <h4>History</h4>
+          <p>Turnout from one operation to the next, and every player's record: how often they come, how long they stay, when they were last there.</p>
+          <h4>The log</h4>
+          <p>Every approval, move, role change, ban, points line and drop, with who did it, in plain sentences. Admins see everything, clan leaders their clan, each player their own.</p>
+        </div>
+        <figure>
+          <img src="/shots/history.jpg" alt="The History tab: six operations in three months, average turnout of 65 percent, and a turnout chart with one column per operation" width="1600" height="775" loading="lazy">
+          <figcaption>The History tab: turnout per operation over three months.</figcaption>
+        </figure>
+      </div>
+      <p class="next"><label for="t-between">Next: Between operations</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-between">
+    <label class="tab" for="t-between">Between operations</label>
+    <div class="panel" id="between">
+      <h3 class="panel-title">Between operations</h3>
+      <p class="intro">Most evenings are not a siege. The same app is where the alliance sits the rest of the time, and one screen shows it: your nets on the left, your room in the middle, your alliance as it is right now on the right.</p>
+      <div class="cards three">
+        <article>
+          <h4>Groups</h4>
+          <p>Any member starts a small room for a dungeon, a farming spot or a chat, and anyone in the alliance can join it, whatever their clan. The clan's lounge stays audible underneath, quieter.</p>
+        </article>
+        <article>
+          <h4>Who is online</h4>
+          <p>Every group with the players in it, and everyone else who has the app open: in the lounge, in an operation, or away.</p>
+        </article>
+        <article>
+          <h4>Chat in every room</h4>
+          <p>The lounges and groups have a chat of their own, with quick calls, and it can sit over the game like the operation's.</p>
+        </article>
+        <article>
+          <h4>Leaders are still heard</h4>
+          <p>A clan's leader and officers speak to their clan between events as they do during one, and an alliance can give its admins a net that reaches every clan.</p>
+        </article>
+        <article>
+          <h4>Call to arms</h4>
+          <p>A world boss is up, or a castle is under attack. An admin starts an operation that is live at once: every group becomes a party and everyone is on its nets.</p>
+        </article>
+        <article>
+          <h4>One line for what waits</h4>
+          <p>An event asking if you are coming, a player asking to join your party, a new version: one line under the tabs, the most pressing first.</p>
+        </article>
+      </div>
+      <figure class="wide">
+        <img src="/shots/between.jpg" alt="The Voice tab between operations: the player's nets on the left, the clan's lounge with its chat in the middle, and on the right the alliance's groups and who is online" width="1600" height="775" loading="lazy">
+        <figcaption>An ordinary evening: your nets, your room and its chat, and the alliance's groups and who is online.</figcaption>
+      </figure>
+      <p class="next"><label for="t-leaders">Next: Leaders</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-leaders">
+    <label class="tab" for="t-leaders">Leaders</label>
+    <div class="panel" id="leaders">
+      <h3 class="panel-title">Run the alliance from the same window</h3>
+      <p class="intro">Each screen offers only what your role allows, and the server checks every action again.</p>
+      <div class="cards">
+        <article>
+          <h4>Clans and invite links</h4>
+          <p>Players come in by an invite link from their clan's leader, with a set number of uses and days, straight in or on a waiting list.</p>
+        </article>
+        <article>
+          <h4>Roles that mean something</h4>
+          <p>Owner, admins, clan leaders and officers, event leaders and deputies, party leaders. Voice rights change with the role.</p>
+        </article>
+        <article>
+          <h4>The lounge</h4>
+          <p>Each clan has a lounge to sit and talk in, and the alliance can open one shared by every clan. When an operation ends, everyone is returned there.</p>
+        </article>
+        <article>
+          <h4>Briefings</h4>
+          <p>The event leader can lock Broadcast open and talk without holding a key. It releases itself if forgotten.</p>
+        </article>
+      </div>
+      <p class="next"><label for="t-alliance">Next: Your game</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-alliance">
+    <label class="tab" for="t-alliance">Your game</label>
+    <div class="panel" id="alliance">
+      <h3 class="panel-title">Your alliance, your game, your words</h3>
+      <p class="intro">Nothing about any one game is built in. An alliance sets the app up for the game it plays, and what is inside an alliance is seen and heard by nobody outside it.</p>
+      <div class="cards">
+        <article>
+          <h4>An alliance of your own</h4>
+          <p>Start one from the app with a name and a game. You own it: create its clans, appoint admins, and hand it on if you step down. Nobody can find it or ask to join from outside.</p>
+        </article>
+        <article>
+          <h4>Fits your game</h4>
+          <p>Classes and roles, party size, level or gear bands, your own kinds of event. Start from the lists for Lineage 2, World of Warcraft or Throne and Liberty, or from nothing.</p>
+        </article>
+        <article>
+          <h4>In your own words</h4>
+          <p>If your players say guild where the app says clan, or raid where it says operation, say so once. The app, its guides and the Discord announcements then speak your way.</p>
+        </article>
+        <article>
+          <h4>Kept apart</h4>
+          <p>Every release is tested by having one alliance's players try everything against another's, and all of it must be refused.</p>
+        </article>
+      </div>
+      <figure class="wide">
+        <img src="/shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and the words the app is built around, each with a box for the alliance's own word" width="1600" height="775" loading="lazy">
+        <figcaption>Game setup: your own kinds of event, and your own words for what the app is built around.</figcaption>
+      </figure>
     </div>
   </div>
-</section>
-
-<section id="languages">
-  <h2>One alliance, many languages</h2>
-  <p class="intro">An alliance is clans from different countries sharing one chat. In Warcryer each player reads that chat, and the app itself, in their own language.</p>
-  <div class="split">
-    <div>
-      <h3>The chat, in each reader's language</h3>
-      <p>A line appears at once, as it was written. About a second later it is in your language and marked as translated. Click the mark to see the original.</p>
-      <h3>Game talk stays game talk</h3>
-      <p>Buff, res, class abbreviations and names are kept the way players write them. An alliance can add its own slang and the names that must be left alone.</p>
-      <h3>Each reader decides</h3>
-      <p>Translation is your own switch. What you write is never changed for you, and a clan mate with it off reads your line exactly as you typed it.</p>
-    </div>
-    <figure>
-      <img src="/shots/languages.jpg" alt="Two chat windows over a game, showing the same six lines: on the left every line is in English, on the right in Russian, and each line that was translated carries a small mark" width="1600" height="775" loading="lazy">
-      <figcaption>The same chat in two players' windows over the game. Left, a player who reads English. Right, one who reads Russian.</figcaption>
-    </figure>
-  </div>
-  <p class="intro">There is a <a href="#watch">two-minute video</a> of it over a real game.</p>
-  <div class="cards three">
-    <article>
-      <h3>The app in fourteen languages</h3>
-      <p>English, French, German, Spanish, Brazilian Portuguese, Romanian, Polish, Lithuanian, Greek, Russian, Ukrainian, Turkish, and Chinese, Simplified and Traditional. Every tab, the notices and the compact strip, chosen by each player for themselves.</p>
-    </article>
-    <article>
-      <h3>Orders and calls too</h3>
-      <p>A pinned order and a quick call are translated like any other line, and a ready check asks each player in their own language, in the app and in the chat window over the game.</p>
-    </article>
-    <article>
-      <h3>Honest about the machine</h3>
-      <p>The translating is done by Claude, a language model, and it is sometimes wrong. The original is always one click away, and an alliance's admins can switch translation off for everyone.</p>
-    </article>
-  </div>
-</section>
-
-<section id="loot">
-  <h2>Points and loot, from the same evening</h2>
-  <p class="intro">Points come from who was really in voice, loot goes to the right player, and everyone can check the standings. No second site to keep in step.</p>
-  <div class="cards three">
-    <article>
-      <h3>Your way of sharing</h3>
-      <p>Start from a preset: attendance only, classic DKP, DKP by the hour, EPGP, Zero-sum, Suicide Kings, fleet participation, or your own rules. A loot council needs no points at all.</p>
-    </article>
-    <article>
-      <h3>Earned from attendance</h3>
-      <p>When an operation ends, the app drafts everyone's points from their time in voice, with the reason beside each amount. Change anything, then post.</p>
-    </article>
-    <article>
-      <h3>Standings everyone can read</h3>
-      <p>Balances highest first, and every line that made them. A change by hand is a line of its own with its reason, so nothing is quietly edited.</p>
-    </article>
-    <article>
-      <h3>Drops read from a screenshot</h3>
-      <p>Give the app a screenshot of the drops in the game's chat. It lists each item and how many, spelled as on your item list, for you to check and add.</p>
-    </article>
-    <article>
-      <h3>Give it out</h3>
-      <p>Who got it, which character, which points pay, and the price from your list. A mistake is put right with Take back, and the log says so.</p>
-    </article>
-    <article>
-      <h3>Decay and seasons</h3>
-      <p>Take a share off every balance each week or month so old points do not rule for ever, and start a new season with part carried over or none.</p>
-    </article>
-  </div>
-  <figure class="wide">
-      <img src="/shots/loot-read.jpg" alt="An operation's loot panel reading a real screenshot of a raid boss's drops from the game's chat, shown beside it" width="1600" height="775" loading="lazy">
-      <figcaption>A real screenshot of a Queen Ant kill, given to the app on the operation's loot panel.</figcaption>
-  </figure>
-  <figure class="wide">
-      <img src="/shots/points-draft.jpg" alt="The points draft after an operation: each player's time in voice, whether they said they were coming, the reason for their points and the amount" width="1600" height="775" loading="lazy">
-      <figcaption>The points draft after an operation: time in voice, the reason, and the points.</figcaption>
-  </figure>
-</section>
-
-<section id="kept">
-  <h2>Everything is kept</h2>
-  <p class="intro">Every operation keeps its roster, its attendance, its points and its loot, for as long as the alliance wants them.</p>
-  <div class="split">
-    <div>
-      <h3>Attendance</h3>
-      <p>Who was in voice and for how long, counted from the start. Late arrivals, early leavers and players who said they were coming and never showed are plain to see.</p>
-      <h3>History</h3>
-      <p>Turnout from one operation to the next, and every player's record: how often they come, how long they stay, when they were last there.</p>
-      <h3>The log</h3>
-      <p>Every approval, move, role change, ban, points line and drop, with who did it, in plain sentences. Admins see everything, clan leaders their clan, each player their own.</p>
-    </div>
-    <figure>
-      <img src="/shots/history.jpg" alt="The History tab: six operations in three months, average turnout of 65 percent, and a turnout chart with one column per operation" width="1600" height="775" loading="lazy">
-      <figcaption>The History tab: turnout per operation over three months.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="between">
-  <h2>Between operations</h2>
-  <p class="intro">Most evenings are not a siege. The same app is where the alliance sits the rest of the time, and one screen shows it: your nets on the left, your room in the middle, your alliance as it is right now on the right.</p>
-  <div class="cards three">
-    <article>
-      <h3>Groups</h3>
-      <p>Any member starts a small room for a dungeon, a farming spot or a chat, and anyone in the alliance can join it, whatever their clan. The clan's lounge stays audible underneath, quieter.</p>
-    </article>
-    <article>
-      <h3>Who is online</h3>
-      <p>Every group with the players in it, and everyone else who has the app open: in the lounge, in an operation, or away.</p>
-    </article>
-    <article>
-      <h3>Chat in every room</h3>
-      <p>The lounges and groups have a chat of their own, with quick calls, and it can sit over the game like the operation's.</p>
-    </article>
-    <article>
-      <h3>Leaders are still heard</h3>
-      <p>A clan's leader and officers speak to their clan between events as they do during one, and an alliance can give its admins a net that reaches every clan.</p>
-    </article>
-    <article>
-      <h3>Call to arms</h3>
-      <p>A world boss is up, or a castle is under attack. An admin starts an operation that is live at once: every group becomes a party and everyone is on its nets.</p>
-    </article>
-    <article>
-      <h3>One line for what waits</h3>
-      <p>An event asking if you are coming, a player asking to join your party, a new version: one line under the tabs, the most pressing first.</p>
-    </article>
-  </div>
-  <figure class="wide">
-    <img src="/shots/between.jpg" alt="The Voice tab between operations: the player's nets on the left, the clan's lounge with its chat in the middle, and on the right the alliance's groups and who is online" width="1600" height="775" loading="lazy">
-    <figcaption>An ordinary evening: your nets, your room and its chat, and the alliance's groups and who is online.</figcaption>
-  </figure>
-</section>
-
-<section id="leaders">
-  <h2>Run the alliance from the same window</h2>
-  <p class="intro">Each screen offers only what your role allows, and the server checks every action again.</p>
-  <div class="cards">
-    <article>
-      <h3>Clans and invite links</h3>
-      <p>Players come in by an invite link from their clan's leader, with a set number of uses and days, straight in or on a waiting list.</p>
-    </article>
-    <article>
-      <h3>Roles that mean something</h3>
-      <p>Owner, admins, clan leaders and officers, event leaders and deputies, party leaders. Voice rights change with the role.</p>
-    </article>
-    <article>
-      <h3>The lounge</h3>
-      <p>Each clan has a lounge to sit and talk in, and the alliance can open one shared by every clan. When an operation ends, everyone is returned there.</p>
-    </article>
-    <article>
-      <h3>Briefings</h3>
-      <p>The event leader can lock Broadcast open and talk without holding a key. It releases itself if forgotten.</p>
-    </article>
-  </div>
-</section>
-
-<section id="alliance">
-  <h2>Your alliance, your game, your words</h2>
-  <p class="intro">Nothing about any one game is built in. An alliance sets the app up for the game it plays, and what is inside an alliance is seen and heard by nobody outside it.</p>
-  <div class="cards">
-    <article>
-      <h3>An alliance of your own</h3>
-      <p>Start one from the app with a name and a game. You own it: create its clans, appoint admins, and hand it on if you step down. Nobody can find it or ask to join from outside.</p>
-    </article>
-    <article>
-      <h3>Fits your game</h3>
-      <p>Classes and roles, party size, level or gear bands, your own kinds of event. Start from the lists for Lineage 2, World of Warcraft or Throne and Liberty, or from nothing.</p>
-    </article>
-    <article>
-      <h3>In your own words</h3>
-      <p>If your players say guild where the app says clan, or raid where it says operation, say so once. The app, its guides and the Discord announcements then speak your way.</p>
-    </article>
-    <article>
-      <h3>Kept apart</h3>
-      <p>Every release is tested by having one alliance's players try everything against another's, and all of it must be refused.</p>
-    </article>
-  </div>
-  <figure class="wide">
-    <img src="/shots/setup.jpg" alt="The game setup editor: an alliance's own kinds of event, group types and level bands, and the words the app is built around, each with a box for the alliance's own word" width="1600" height="775" loading="lazy">
-    <figcaption>Game setup: your own kinds of event, and your own words for what the app is built around.</figcaption>
-  </figure>
 </section>
 
 <section id="open">
@@ -457,14 +511,55 @@ const ld = {
 
 <script>
   // A video is fetched from YouTube only when someone asks to play it.
+  const posters = new Map<HTMLElement, Element>();
   for (const box of document.querySelectorAll<HTMLElement>("[data-video]")) {
-    box.querySelector(".play")?.addEventListener("click", () => {
+    const play = box.querySelector<HTMLElement>(".play");
+    if (!play) continue;
+    posters.set(box, play);
+    play.addEventListener("click", () => {
       const frame = document.createElement("iframe");
       frame.src = `https://www.youtube-nocookie.com/embed/${box.dataset.video}?autoplay=1&rel=0`;
-      frame.title = box.querySelector(".play")?.getAttribute("aria-label")?.replace(/^Play the /, "") ?? "Warcryer video";
+      frame.title = play.getAttribute("aria-label")?.replace(/^Play the /, "") ?? "Warcryer video";
       frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
       frame.allowFullscreen = true;
       box.replaceChildren(frame);
     });
   }
+
+  // Choosing another video stops the one that was playing: its picture is put back.
+  for (const pick of document.querySelectorAll<HTMLInputElement>("input[name=reel]")) {
+    pick.addEventListener("change", () => {
+      for (const [box, poster] of posters) if (box.firstElementChild !== poster) box.replaceChildren(poster);
+    });
+  }
+  // A link that points at one of the videos chooses it on the way.
+  for (const link of document.querySelectorAll<HTMLElement>("a[data-reel]")) {
+    link.addEventListener("click", () => {
+      const pick = document.getElementById(link.dataset.reel ?? "") as HTMLInputElement | null;
+      if (pick && !pick.checked) { pick.checked = true; pick.dispatchEvent(new Event("change")); }
+    });
+  }
+
+  // The closer look shows one part at a time. The choosing is done by the page itself (radio buttons
+  // and their labels); this only keeps the chosen part in view and makes /#voice and the like open it.
+  // A part is scrolled to by its panel, which leaves room above itself for its tab (scroll-margin-top
+  // in the stylesheet), so that this and the browser's own jump to an address land in the same place.
+  const HEADER = 72;
+  const tabOf = (pick: Element) => pick.nextElementSibling as HTMLElement;
+  const panelOf = (pick: Element) => tabOf(pick).nextElementSibling as HTMLElement;
+  for (const pick of document.querySelectorAll<HTMLInputElement>("input[name=tour]")) {
+    pick.addEventListener("change", () => {
+      const top = tabOf(pick).getBoundingClientRect().top;
+      if (top < HEADER || top > window.innerHeight * 0.5) panelOf(pick).scrollIntoView({ block: "start" });
+      history.replaceState(null, "", `#${pick.id.slice(2)}`);
+    });
+  }
+  function openFromAddress(how: ScrollBehavior = "smooth") {
+    const pick = document.getElementById(`t-${location.hash.slice(1)}`) as HTMLInputElement | null;
+    if (!pick || pick.name !== "tour") return;
+    pick.checked = true;
+    panelOf(pick).scrollIntoView({ block: "start", behavior: how });
+  }
+  window.addEventListener("hashchange", () => openFromAddress());
+  openFromAddress("instant");
 </script>

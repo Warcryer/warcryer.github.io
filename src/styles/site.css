@@ -32,7 +32,7 @@ a { color: var(--gold-bright); text-underline-offset: 3px; }
 a:hover { color: #fff; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
-h1, h2, h3, .brand span { font-family: var(--display); letter-spacing: .08em; }
+h1, h2, h3, .panel h4, .brand span { font-family: var(--display); letter-spacing: .08em; }
 h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 700; margin: .2em 0 0; color: var(--gold-bright); text-transform: uppercase; line-height: 1.05; }
 h2 { font-size: clamp(1.45rem, 3.6vw, 2.1rem); font-weight: 700; color: var(--gold-bright); margin: 0 0 .5em; text-wrap: balance; }
 h3 { font-size: 1.02rem; font-weight: 700; color: var(--text); margin: 0 0 .35em; text-transform: uppercase; }
@@ -92,7 +92,57 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 .play:hover .play-mark, .play:focus-visible .play-mark { border-color: var(--gold-bright); box-shadow: 0 0 28px rgb(200 164 90 / .45); transform: scale(1.05); }
 .play:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 .video-note { margin-top: 1em; }
-.video-more { margin-top: 2.5em; }
+
+/* One player, three videos. Like the closer look below, the choosing is radio buttons and their
+   labels, so it works before any script has run. */
+.pick { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; opacity: 0; overflow: hidden; clip-path: inset(50%); }
+.reel { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); grid-template-rows: auto auto auto 1fr; gap: 12px clamp(16px, 2.5vw, 28px); margin-top: 1.6em; }
+.reel-pick { grid-column: 2; display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 14px; align-items: center; padding: 10px; background: var(--bg-1); border: 1px solid var(--line); border-left: 3px solid var(--line); border-radius: 2px; color: var(--muted); font-size: .86rem; cursor: pointer; transition: border-color .15s, color .15s; }
+.reel-pick:nth-of-type(1) { grid-row: 1; }
+.reel-pick:nth-of-type(2) { grid-row: 2; }
+.reel-pick:nth-of-type(3) { grid-row: 3; }
+.reel-pick img { border: 1px solid var(--line); border-radius: 2px; }
+.reel-pick strong { display: block; color: var(--text); font-weight: 600; font-size: .95rem; }
+.reel-pick:hover { border-color: var(--gold-dim); }
+.pick:checked + .reel-pick { border-color: var(--gold-dim); border-left-color: var(--gold); background: var(--bg-2); }
+.pick:checked + .reel-pick strong { color: var(--gold-bright); }
+.pick:focus-visible + .reel-pick, .pick:focus-visible + .tab { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+.reel-panel { grid-column: 1; grid-row: 1 / 5; display: none; }
+.pick:checked + .reel-pick + .reel-panel { display: block; }
+.reel-panel .intro { margin: 1.4em 0 0; max-width: none; font-size: .98rem; }
+@media (max-width: 860px) {
+  .reel { display: flex; flex-direction: column; gap: 8px; }
+  .reel-pick { grid-template-columns: 72px minmax(0, 1fr); padding: 7px 10px; }
+  .reel-panel { order: 2; margin-top: 8px; }
+}
+
+/* The closer look: nine parts of the app, one shown at a time. Tabs on a wide screen, a list of
+   rows that open on a narrow one. */
+.tour { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { order: 1; flex: 0 0 auto; text-align: center; padding: .8em .9em; background: var(--bg-1); border: 1px solid var(--line); border-top: 3px solid var(--line); border-radius: 2px; color: var(--muted); font: 600 .76rem/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; user-select: none; transition: border-color .15s, color .15s; }
+.tab:hover { color: var(--text); border-color: var(--gold-dim); }
+.pick:checked + .tab { color: var(--gold-bright); background: var(--bg-2); border-color: var(--gold-dim); border-top-color: var(--gold); }
+.panel { order: 2; flex: 0 0 100%; min-width: 0; display: none; padding-top: clamp(28px, 4vw, 44px); scroll-margin-top: 56px; }
+@media (min-width: 761px) and (max-width: 1159px) { .panel { scroll-margin-top: 100px; } }
+.pick:checked + .tab + .panel { display: block; }
+.panel-title { font-size: clamp(1.25rem, 3vw, 1.7rem); color: var(--gold-bright); text-transform: none; margin: 0 0 .5em; text-wrap: balance; }
+.panel h4 { font-size: 1.02rem; font-weight: 700; color: var(--text); margin: 0 0 .35em; text-transform: uppercase; }
+.panel .nets h4 { color: var(--net); }
+.next { margin: 2.4em 0 0; text-align: right; }
+.next label { display: inline-block; padding: .55em 1.2em; border: 1px solid var(--gold-dim); border-radius: 2px; color: var(--gold-bright); font: 600 .78rem/1.2 var(--sans); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.next label::after { content: " \203A"; }
+.next label:hover { border-color: var(--gold-bright); color: #fff; }
+/* Wide enough for all nine on one line: let them fill it. */
+@media (min-width: 1160px) { .tab { flex-grow: 1; } }
+@media (max-width: 760px) {
+  .tour { flex-direction: column; flex-wrap: nowrap; gap: 0; }
+  .tab { order: 0; flex: none; display: flex; justify-content: space-between; align-items: center; text-align: left; padding: 1.05em 1em; margin-top: -1px; border-top-width: 1px; font-size: .84rem; }
+  .tab::after { content: ""; width: 8px; height: 8px; margin: -4px 4px 0 12px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .15s; }
+  .pick:checked + .tab { border-top-color: var(--gold-dim); border-left: 3px solid var(--gold); }
+  .pick:checked + .tab::after { transform: rotate(-135deg); margin-top: 4px; }
+  .panel { order: 0; flex: none; padding: 24px 0 36px; scroll-margin-top: 54px; }
+  .next { display: none; }
+}
 .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
 .flow li { background: var(--bg-1); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 2px; padding: 18px 16px 6px; counter-increment: step; }
 .flow h3::before { content: counter(step) ". "; color: var(--gold); }
