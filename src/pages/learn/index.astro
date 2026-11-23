@@ -1,0 +1,39 @@
+---
+// The Learn section's front page: the newest articles, then every category with its articles.
+import Base from "../../layouts/Base.astro";
+import Crumbs from "../../components/Crumbs.astro";
+import LearnList from "../../components/LearnList.astro";
+import TryIt from "../../components/TryIt.astro";
+import { ARTICLES, CATEGORIES, HAS_LEARN, articlesIn } from "../../data/learn";
+
+const latest = ARTICLES.slice(0, 6);
+---
+<Base title="Learn: running a guild, clan or alliance · Warcryer" description="Plain answers for the people who run guilds, clans and alliances in online games: loot systems, ranks and rules, raids and sieges, voice, and members who speak different languages." bodyClass="page" noindex={!HAS_LEARN}>
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Learn", "/learn/"]]} />
+  <h1>Learn</h1>
+  <p class="lede">Plain answers for the people who run guilds, clans and alliances: how to share loot, set ranks and rules, lead raids and sieges, keep voice in order, and hold together members who speak different languages.</p>
+</section>
+{HAS_LEARN ? (
+  <>
+    {ARTICLES.length > latest.length && (
+      <section class="learn-section">
+        <h2>Newest</h2>
+        <LearnList articles={latest} />
+      </section>
+    )}
+    {CATEGORIES.map((c) => (
+      <section class="learn-section">
+        <h2><a href={c.path}>{c.name}</a></h2>
+        <p class="intro">{c.description}</p>
+        <LearnList articles={articlesIn(c)} />
+      </section>
+    ))}
+  </>
+) : (
+  <section class="learn-section">
+    <p class="intro">The first articles are being written. Until they are here, the <a href="/guides/">guides</a> show how Warcryer itself works.</p>
+  </section>
+)}
+<TryIt />
+</Base>

@@ -22,6 +22,7 @@ npm run build      # the site, in dist/
 | `src/data/compare.ts` | The facts behind the comparison pages. Everything said about another product must come from that product's own pages; when re-checking, update `CHECKED`. |
 | `src/data/guides.ts` | The list of guides and what each covers. |
 | `src/content/` | The guides, privacy policy and terms, **copied** from the app's repository. Do not edit them here. |
+| `src/pages/learn/` | The Learn section: its front page, a page per category, a page per article. See "The Learn articles" below. |
 | `src/styles/site.css` | All the styles. Colours and type match the app. |
 | `public/` | Files served as they are: emblem, favicon, fonts, screenshots, robots.txt. |
 | `infra/` | The nginx site file, the one-off root setup, and the deploy script. |
@@ -37,6 +38,16 @@ npm run sync-docs -- v0.26.0   # or from a given tag
 
 It rewrites links between them to the site's addresses and records which version was copied (`src/content/source.json`). Commit what it changed, then deploy.
 
+## The Learn articles
+
+The articles at `/learn/` are not in this repository. They are written, checked and published in the Warcryer service's admin, and every build of the site asks the service for what is published at that moment (`tools/sync-learn.mjs`, run first by `npm run build`). The answer holds each article's text already drawn as HTML, and the stylesheet for it, the same one the editor's preview uses; both land in files git ignores (`src/data/learn.json`, `src/styles/learn-article.css`).
+
+- A build fails, and nothing is deployed, when the service cannot be reached: a deploy must never quietly drop the articles. `npm run dev` carries on with what is there, or with none.
+- After the build, `tools/check-learn.mjs` makes sure every article has its page, every old address forwards, and no link inside an article leads to a page that was not built.
+- `LEARN_API` points the build at another service (a test stack).
+- When an article is published or taken down, the service runs `infra/republish.sh`: it builds the commit that is live, not this folder, in a checkout of its own (`~/.cache/warcryer-site-live`), and deploys it. So publishing an article never puts unfinished work live.
+- While nothing is published the front page says so, asks search engines not to list it, and the menu has no "Learn".
+
 ## Putting it live
 
 ```sh
@@ -45,7 +56,7 @@ bash infra/deploy.sh rollback    # back to the previous deploy
 bash infra/deploy.sh list
 ```
 
-No sudo: `/var/www/warcryer.org` belongs to this account. Each deploy is a folder of its own named after its time and commit, and the `current` link switches in one step; the last five are kept. It refuses uncommitted changes.
+No sudo: `/var/www/warcryer.org` belongs to this account. Each deploy is a folder of its own named after its time and commit, and the `current` link switches in one step; the last twelve are kept. It refuses uncommitted changes.
 
 The server was prepared once with `sudo bash infra/setup-root.sh` (folders, nginx site file, Let's Encrypt certificate). Run it again after changing `infra/nginx/warcryer.org.conf`. The site sits behind Cloudflare, whose SSL mode for the zone is "Full (strict)".
 

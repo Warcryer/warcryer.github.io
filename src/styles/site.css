@@ -50,7 +50,7 @@ p { margin: 0 0 1em; }
 .top nav { display: flex; align-items: center; gap: clamp(12px, 2.4vw, 28px); font-size: .92rem; }
 .top nav a:not(.btn) { color: var(--muted); text-decoration: none; }
 .top nav a:not(.btn):hover { color: var(--text); }
-@media (max-width: 720px) { .top nav a:not(.btn) { display: none; } }
+@media (max-width: 960px) { .top nav a:not(.btn) { display: none; } }
 
 /* Buttons */
 .btn {
@@ -218,7 +218,7 @@ table.compare.many td { width: auto; }
 .menu-panel { position: absolute; right: 0; top: 48px; min-width: 210px; display: flex; flex-direction: column; padding: 8px 0; background: var(--bg-1); border: 1px solid var(--gold-dim); border-radius: 2px; box-shadow: 0 18px 40px rgb(0 0 0 / .6); }
 .menu-panel a { padding: 10px 18px; color: var(--text); text-decoration: none; }
 .menu-panel a:hover, .menu-panel a[aria-current="page"] { color: var(--gold-bright); background: var(--bg-2); }
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .menu { display: block; }
   .top nav { gap: 10px; }
 }
@@ -378,3 +378,24 @@ ol.path li::before { content: counter(path); position: absolute; left: 0; top: 0
 .matchup .headline span { color: var(--gold); font-size: .7rem; margin-right: 4px; }
 .matchup .more { color: var(--gold-bright); font-size: .9rem; }
 @media (max-width: 720px) { .matchups { grid-template-columns: 1fr; } }
+
+/* ---- Learn: the articles' front page, category pages and what stands around an article.
+   The look of an article's own text is in learn-article.css, which comes with the articles. ---- */
+.learn-section { padding-top: clamp(28px, 4vw, 48px); padding-bottom: clamp(28px, 4vw, 48px); }
+.learn-section > h2 a { color: inherit; text-decoration: none; }
+.learn-section > h2 a:hover { color: #fff; }
+.learn-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.learn-list li { background: rgb(18 20 26 / .85); border: 1px solid var(--line); border-radius: 2px; padding: 18px 20px 14px; transition: border-color .2s; }
+.learn-list li:hover { border-color: var(--gold-dim); }
+.learn-list h2, .learn-list h3 { font: 600 1.08rem/1.35 var(--sans); letter-spacing: 0; text-transform: none; margin: 0 0 .4em; }
+.learn-list h2 a, .learn-list h3 a { color: var(--gold-bright); text-decoration: none; }
+.learn-list h2 a:hover, .learn-list h3 a:hover { color: #fff; text-decoration: underline; }
+.learn-list p { color: var(--muted); font-size: .94rem; margin: 0 0 .5em; }
+.learn-list .new { margin-left: .6em; padding: 1px 8px; border: 1px solid rgb(200 164 90 / .6); border-radius: 999px; background: rgb(200 164 90 / .14); color: #f0d999; font-size: .7rem; font-weight: 600; letter-spacing: .04em; vertical-align: 2px; }
+@media (max-width: 720px) { .learn-list { grid-template-columns: 1fr; } }
+.learn-meta { margin-top: 1.2em; }
+.learn-body { min-width: 0; max-width: 74ch; }
+.learn-next { margin-top: 3em; padding-top: 1.6em; border-top: 1px solid var(--line); }
+.learn-next h2 { font-size: 1.15rem; }
+.learn-next .learn-list { grid-template-columns: 1fr; }
+.learn-made { margin-top: 3em; padding-top: 1em; border-top: 1px solid var(--line); font-size: .8rem; }

@@ -1,0 +1,26 @@
+---
+// One category of the Learn section: /learn/loot-systems/ and so on. Only categories with an article get a page.
+import Base from "../../../layouts/Base.astro";
+import Crumbs from "../../../components/Crumbs.astro";
+import LearnList from "../../../components/LearnList.astro";
+import TryIt from "../../../components/TryIt.astro";
+import { CATEGORIES, articlesIn, type LearnCategory } from "../../../data/learn";
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { category: c.slug }, props: { c } }));
+}
+const { c } = Astro.props as { c: LearnCategory };
+const others = CATEGORIES.filter((o) => o.key !== c.key);
+---
+<Base title={`${c.name} · Warcryer Learn`} description={c.description} bodyClass="page">
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["Learn", "/learn/"], [c.name, c.path]]} />
+  <h1>{c.name}</h1>
+  <p class="lede">{c.description}</p>
+</section>
+<section class="learn-section">
+  <LearnList articles={articlesIn(c)} level="h2" />
+  {others.length > 0 && <p class="fine note">More in Learn: {others.map((o, i) => <>{i > 0 && ", "}<a href={o.path}>{o.name}</a></>)}.</p>}
+</section>
+<TryIt />
+</Base>

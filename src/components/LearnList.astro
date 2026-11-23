@@ -1,0 +1,16 @@
+---
+// A list of Learn articles: title, what it answers, and how long it takes to read.
+import { isNew, minutes, type LearnArticle } from "../data/learn";
+interface Props { articles: LearnArticle[]; level?: "h2" | "h3" }
+const { articles, level = "h3" } = Astro.props;
+const H = level;
+---
+<ul class="learn-list">
+  {articles.map((a) => (
+    <li>
+      <H><a href={a.path}>{a.title}</a>{isNew(a) && <span class="new">New</span>}</H>
+      <p>{a.promise}</p>
+      <p class="fine">{minutes(a)} min read</p>
+    </li>
+  ))}
+</ul>

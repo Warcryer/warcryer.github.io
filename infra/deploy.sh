@@ -4,7 +4,8 @@
 #
 # Each deploy goes into a folder of its own under /var/www/warcryer.org/releases
 # and the "current" link is switched to it in one step, so a visitor never sees
-# half a site. The last five are kept.
+# half a site. The last twelve are kept (a published Learn article makes a
+# deploy of its own, see republish.sh).
 #   bash infra/deploy.sh rollback   # back to the one before
 #   bash infra/deploy.sh list       # what is there, newest first
 #
@@ -12,8 +13,8 @@
 # what is live can always be found in git: the folder name ends in the commit.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-WWW=/var/www/warcryer.org
-KEEP=5
+WWW=${WWW:-/var/www/warcryer.org}
+KEEP=12
 
 case "${1:-}" in
   list)
@@ -25,6 +26,9 @@ case "${1:-}" in
     ln -sfn "releases/$prev" "$WWW/current.new" && mv -Tf "$WWW/current.new" "$WWW/current"
     echo "warcryer.org is back on $prev (was $now)"; exit 0 ;;
 esac
+
+# One deploy at a time: a second one waits for the first.
+exec 9>"$WWW/.deploy.lock" && flock -w 900 9 || { echo "Another deploy holds the lock." >&2; exit 1; }
 
 [ -w "$WWW/releases" ] || { echo "$WWW/releases is missing or not writable; run infra/setup-root.sh first." >&2; exit 1; }
 if [ -n "$(git status --porcelain)" ] && [ "${FORCE:-}" != 1 ]; then

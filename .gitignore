@@ -2,3 +2,5 @@ node_modules/
 dist/
 .astro/
 __pycache__/
+src/data/learn.json
+src/styles/learn-article.css
