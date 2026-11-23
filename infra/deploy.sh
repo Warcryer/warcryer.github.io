@@ -35,6 +35,8 @@ if [ -n "$(git status --porcelain)" ] && [ "${FORCE:-}" != 1 ]; then
   echo "There are uncommitted changes; commit them first (or FORCE=1)." >&2; git status --short >&2; exit 1
 fi
 
+# The Learn articles are asked of the service on this machine directly, not through its public address.
+export LEARN_API=${LEARN_API:-http://127.0.0.1:4310/api/learn/published}
 [ -d node_modules ] || npm ci
 npm run -s build
 [ -f dist/index.html ] && [ -f dist/404.html ] || { echo "The build did not produce the site." >&2; exit 1; }
