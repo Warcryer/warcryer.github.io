@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.41.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Your alliance's first hour
 

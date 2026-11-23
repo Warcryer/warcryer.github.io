@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.41.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -131,6 +131,15 @@ An operation has a text chat beside its voice: on the **Voice** tab, under the l
 
 - **The order** is one line that whoever runs the operation pins for everyone: what you are doing right now. It stays at the top of the chat, in red, until it is replaced or cleared, and it shows on the compact strip too, so you see it without the chat open. A new order comes with a short low sound and is lit for a few seconds. Each order is also a line on Broadcast, so you can read back what the orders were.
 - **A ready check** is the organisers asking everyone at once: ready? You get a line with **Ready** and **Not ready**, a short rising sound, and half a minute. Click one, or bind a **Ready** key (Settings → Keys) and answer without leaving the game. The organisers see who is not ready and who has not answered; everyone sees the count, and the result is a line on Broadcast. Not answering counts as no answer, nothing more. Your alliance's admins can switch ready checks off.
+
+### Your targets
+
+In a big fight your leaders may name enemies for you to keep down.
+
+- **The names that apply to you** stand in a line at the top of the chat, under the order, marked **Targets**: your own first, then your party's, your clan's, and those given to everyone. They show on the compact strip too, so you see them without the chat open.
+- **Click a name to copy it**, spelled exactly as your leader wrote it. A few words may follow a name (a class, a clan).
+- **When your targets change** you hear a short low sound, the line is lit for a few seconds, and a note in your party's chat says what they are now. Moved to another party, you get that party's.
+- **The whole list**, with who has which target, is under **Targets** on the operation's panel and on its roster board.
 
 ### Quick calls
 

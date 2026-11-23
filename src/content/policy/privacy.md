@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.41.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/PRIVACY.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Privacy policy
 
@@ -17,6 +17,7 @@ Apart from that it sends nothing until you sign in. It has no telemetry, analyti
 | Your Discord account ID and Discord name | At sign-in, from Discord to the server | To know who you are. When you ask to join a clan, its leader and officers see your Discord name beside the request, so they can tell it is you; nobody else is shown it. Only Discord's `identify` permission is requested: no email address, no server list, no messages. The app never sees your Discord password. |
 | In-game name, class and level | When you set them | Shown to other members beside your voice and on rosters. |
 | Your other characters: each one's name, class and level, and whether you play it beside your main | When you list them in Settings | Shown to your clan on its roster and to the members on an event's roster, so organisers know what you can bring. |
+| Priority targets: the in-game names of enemies that leaders set for an operation, with a few words about each if they add any | When an event leader, a deputy, an alliance admin, or a clan's leader or officer adds one | Shown to the players of that operation the target is given to, at the top of their chat, and as a whole list to everyone taking part in it. Kept with the operation. They are never sent for translation. |
 | Your answer to an event: coming or not, and another character's name, class and level or a note if you give them | When you sign up | Shown to the members on that event's roster, so the organiser can build parties. |
 | Clan membership, join requests, constant party and roster places, clan crest images | When you or your leaders change them | To decide which voice rooms you belong in. |
 | The group you sit in between events, and its name if its starter gave one | When you start, join or leave a group | Shown to your alliance's members on the Voice tab, so they can join you. Not kept: it goes when you leave or the group ends. Time in a group is not written down anywhere. If a leader takes you out of a group, the alliance's log says so. |
@@ -44,7 +45,7 @@ Key bindings, audio device choices, volume settings and per-player volumes. They
 
 ## Keyboard and mouse
 
-To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.41.0/src-tauri/src/input).
+To notice push-to-talk keys while a game has focus, the app reads keyboard and mouse button state system-wide. Only the keys you have bound are acted on, plus the single key you press while binding one. Key presses are not logged, stored or sent anywhere, and they are never blocked: other programs still receive them. The code is in [`src-tauri/src/input`](https://github.com/Warcryer/client/tree/v0.42.0/src-tauri/src/input).
 
 ## Who can see what
 
@@ -57,7 +58,7 @@ The server clears old records by itself every night:
 | What | Kept for |
 | --- | --- |
 | Times you sat in a lounge | 30 days |
-| An operation that has ended, with its roster and its attendance record (for each member of its clans: how long they were in voice, what they had answered, their party and the character they came as) | Until an alliance admin deletes the operation or the alliance is deleted. Your own lines in it go at once when you delete your account |
+| An operation that has ended, with its roster, its priority targets and its attendance record (for each member of its clans: how long they were in voice, what they had answered, their party and the character they came as) | Until an alliance admin deletes the operation or the alliance is deleted. Your own lines in it go at once when you delete your account |
 | The exact times you joined and left each voice room during an operation | 12 months after it ended |
 | Your points and each line behind them | As long as the alliance (or the clan) whose points they are exists. If you leave, they are kept and still there if you come back. They go at once when you delete your account |
 | Loot: what dropped, who received it and what it cost | As long as the alliance exists. When you delete your account, the drops you received stay as drops with no one named |

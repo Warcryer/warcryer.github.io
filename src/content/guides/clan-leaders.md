@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.41.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for clan leaders and officers
 
@@ -100,6 +100,7 @@ You can:
 - **Choose a party's leader** in your clan's parties: click a member of the party, then **Make party leader**.
 - **A party led by another clan** is theirs to arrange. To get one of your members into it, the member clicks **Ask to join** and its leader accepts, or you ask the event leader. You can always take your own member back out to Reserve.
 - **Answer join requests** from your own members.
+- **Set priority targets:** name the enemies your clan, one of your clan's parties or one of your members is to keep down. Open **Priority targets** on the board, or **Targets** on the operation's panel of the Voice tab during the fight. Choose whom the name is for, type it (several with commas between) and press Enter. Those players see it at the top of their chat and on their strip, and a click on it copies it. Targets for everyone on the operation, and for another clan's parties and players, are for the event leader, deputies and alliance admins to set.
 - **Delete a party**, if everyone in it is from your clan.
 
 You cannot move members of another clan, and you cannot start or end the operation. The event leader, deputies and alliance admins can do both.
