@@ -1,24 +1,15 @@
 ---
 // The front page.
 import Base from "../layouts/Base.astro";
+import { APP_LD, ORGANISATION_LD, WEBSITE_LD } from "../data/about";
 import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID, LANG_VIDEO_ID, TARGETS_VIDEO_ID } from "../data/site";
 
-const ld = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Warcryer",
-  applicationCategory: "CommunicationApplication",
-  operatingSystem: "Windows 10, Windows 11",
-  description: "Clan and alliance management for MMORPGs with voice built in: plan operations, build the roster, go live on voice that follows it, and keep attendance, points and loot. in fourteen languages, with the chat translated for each reader.",
-  url: SITE,
-  downloadUrl: `${SITE}/download/`,
-  image: `${SITE}/shots/roster.jpg`,
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-};
+// The organisation, the site and the app, pointing at one another (src/data/about.ts).
+const ld = { "@context": "https://schema.org", "@graph": [ORGANISATION_LD, WEBSITE_LD, APP_LD] };
 ---
 <Base
   title="Warcryer: run your alliance, voice built in"
-  description="Clan and alliance management for MMORPGs with voice built in. Plan operations, build the roster, go live on voice that follows it, and keep attendance, DKP and loot in the same app. in fourteen languages, with the chat translated for each reader. Free while in beta."
+  description="Clan and alliance management for MMORPGs with voice built in. Plan operations, build the roster, go live on voice that follows it, and keep attendance, DKP and loot in the same app, in fourteen languages, with the chat translated for each reader. Free while in beta."
   image="roster.jpg"
   footNote="TeamSpeak, Discord, Mumble and Ventrilo are trademarks of their owners, named here only for comparison; Warcryer is not affiliated with them."
 >

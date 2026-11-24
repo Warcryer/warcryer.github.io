@@ -48,6 +48,20 @@ The articles at `/learn/` are not in this repository. They are written, checked 
 - When an article is published or taken down, the service runs `infra/republish.sh`: it builds the commit that is live, not this folder, in a checkout of its own (`~/.cache/warcryer-site-live`), and deploys it. So publishing an article never puts unfinished work live.
 - While nothing is published the front page says so, asks search engines not to list it, and the menu has no "Learn".
 
+## For search engines and AI assistants
+
+What Warcryer is, is said once, in `src/data/about.ts`. Three things are built from it, so they cannot
+disagree: the page `/about/`; the schema.org data on the front page and on `/about/` (the organisation, the
+site and the app, with links to the GitHub organisation and the Discord); and the text files for AI
+assistants, built by `src/lib/llms.ts`: `/llms.txt` (an index), `/llms-full.txt` (everything in one file)
+and `/llms/<page>.txt` (the About page, each guide, each comparison and each Learn article as Markdown).
+They end in `.txt` because the web server would send `.md` as a download. When a fact changes (price,
+size, platforms, languages), change it in `about.ts`.
+
+After each deploy `tools/indexnow.mjs` tells the search engines that take part in IndexNow (Bing among
+them) which pages changed. Its key is the file `public/<32 letters>.txt` and is not a secret. What was
+told last is in `/var/www/warcryer.org/.indexnow.json`. `INDEXNOW=0 bash infra/deploy.sh` leaves it out.
+
 ## Putting it live
 
 ```sh

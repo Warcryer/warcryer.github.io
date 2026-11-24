@@ -48,4 +48,10 @@ chmod -R a+rX "$WWW/releases/$name"
 ln -sfn "releases/$name" "$WWW/current.new" && mv -Tf "$WWW/current.new" "$WWW/current"
 echo "warcryer.org now serves $name"
 
+# The search engines are told which pages changed (tools/indexnow.mjs). Only for the real site, and a
+# failure there never fails the deploy. INDEXNOW=0 leaves it out.
+if [ "$WWW" = /var/www/warcryer.org ] && [ "${INDEXNOW:-1}" != 0 ]; then
+  node tools/indexnow.mjs "$WWW/releases/$name" || true
+fi
+
 ls -1t "$WWW/releases" | tail -n +$((KEEP + 1)) | while read -r old; do rm -rf "${WWW:?}/releases/${old:?}"; done

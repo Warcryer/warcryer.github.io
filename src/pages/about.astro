@@ -1,0 +1,84 @@
+---
+// What Warcryer is, as plain facts: the page a person or a machine can quote. Its sentences come from
+// src/data/about.ts, which also feeds the data for search engines and the text files for AI assistants.
+import Base from "../layouts/Base.astro";
+import Crumbs from "../components/Crumbs.astro";
+import { DIFFERS, DOES, DOES_NOT, FACTS, FAQ, NOT_TO_BE_CONFUSED, ONE_LINE, ORGANISATION_LD, SUMMARY, WEBSITE_LD } from "../data/about";
+import { ORDER, PRODUCTS } from "../data/compare";
+import { DISCORD, GITHUB, SITE } from "../data/site";
+
+const LINKS: Record<string, string> = { "Contact": DISCORD, "Source code": GITHUB };
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ORGANISATION_LD,
+    WEBSITE_LD,
+    { "@type": "AboutPage", "@id": `${SITE}/about/`, url: `${SITE}/about/`, name: "What Warcryer is", about: { "@id": `${SITE}/#app` }, isPartOf: { "@id": `${SITE}/#website` } },
+    { "@type": "FAQPage", mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+  ],
+};
+---
+<Base
+  title="What Warcryer is: the facts in one place"
+  description="Warcryer is clan and alliance management for MMORPG players, with voice built in: what it does, who it is for, what it costs, what it runs on, and what it does not do."
+  bodyClass="page"
+  image="roster.jpg"
+  footNote="TeamSpeak, Discord, Mumble and Ventrilo are trademarks of their owners, named here only for comparison; Warcryer is not affiliated with them."
+>
+<script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
+
+<section class="hero">
+  <Crumbs items={[["Warcryer", "/"], ["About", "/about/"]]} />
+  <h1>What Warcryer is</h1>
+  <p class="lede">{ONE_LINE}</p>
+  <p class="lede">{SUMMARY}</p>
+</section>
+
+<section id="facts">
+  <h2>The facts</h2>
+  <div class="table-wrap">
+    <table class="compare facts">
+      <tbody>
+        {FACTS.map(([k, v]) => (
+          <tr>
+            <th scope="row">{k}</th>
+            <td>{v}{LINKS[k] && <> <a href={LINKS[k]}>{k === "Contact" ? "Join it" : "On GitHub"}</a>.</>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="does">
+  <h2>What it does</h2>
+  <ul class="limits">
+    {DOES.map(([k, v]) => <li><strong>{k}.</strong> {v}</li>)}
+  </ul>
+  <p class="intro">The <a href="/">front page</a> shows each part, and the <a href="/guides/">guides</a> explain how to use them.</p>
+</section>
+
+<section id="does-not">
+  <h2>What it does not do</h2>
+  <p class="intro">Warcryer is built for organised play, and it is young. These are its limits today.</p>
+  <ul class="limits">{DOES_NOT.map((l) => <li>{l}</li>)}</ul>
+</section>
+
+<section id="differs">
+  <h2>How it differs from a voice chat app</h2>
+  <p class="intro">{DIFFERS}</p>
+  <p class="intro">Side by side: {ORDER.map((k, i) => <>{i > 0 && (i === ORDER.length - 1 ? " and " : ", ")}<a href={`/compare/${k}/`}>Warcryer vs {PRODUCTS[k].name}</a></>)}.</p>
+  <p class="fine">{NOT_TO_BE_CONFUSED}</p>
+</section>
+
+<section id="questions">
+  <h2>Questions</h2>
+  <div class="faq">
+    {FAQ.map((f) => (<details><summary>{f.q}</summary><p>{f.a}</p></details>))}
+  </div>
+</section>
+
+<section>
+  <p class="fine">For AI assistants and other programs: this site as plain text is at <a href="/llms.txt">/llms.txt</a>, and all of it in one file at <a href="/llms-full.txt">/llms-full.txt</a>.</p>
+</section>
+</Base>
