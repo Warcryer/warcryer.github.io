@@ -8,8 +8,10 @@ import { HAS_LEARN } from "../data/learn";
 interface Props {
   title: string;
   description: string;
-  /** A picture in public/shots/ for link previews. */
+  /** The picture for link previews: a file in public/shots/, or a path on the site ("/learn-img/abc.png"). */
   image?: string;
+  /** What that picture shows, for those who cannot see it. */
+  imageAlt?: string;
   type?: "website" | "article";
   /** Extra class on <body>; "page" gives inner pages their smaller heading. */
   bodyClass?: string;
@@ -18,7 +20,8 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, image = "board.jpg", type = "website", bodyClass, footNote, noindex = false } = Astro.props;
+const { title, description, image = "board.jpg", imageAlt, type = "website", bodyClass, footNote, noindex = false } = Astro.props;
+const preview = image.startsWith("/") ? `${SITE}${image}` : `${SITE}/shots/${image}`;
 const path = Astro.url.pathname;
 const canonical = new URL(path, SITE).href;
 // The Learn section joins the menu once it has an article.
@@ -39,7 +42,8 @@ const here = (href: string) => (href !== "/" && !href.includes("#") && path.star
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:url" content={canonical}>
-<meta property="og:image" content={`${SITE}/shots/${image}`}>
+<meta property="og:image" content={preview}>
+{imageAlt && <meta property="og:image:alt" content={imageAlt}>}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0c0f">
 <link rel="icon" href="/favicon.png">

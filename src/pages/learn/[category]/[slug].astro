@@ -36,12 +36,13 @@ const ld = {
   wordCount: a.words,
   articleSection: c.name,
   mainEntityOfPage: url,
-  image: `${SITE}/shots/board.jpg`,
+  // The article's own first picture, where it has one.
+  image: a.image ? { "@type": "ImageObject", url: `${SITE}${a.image.path}`, width: a.image.width, height: a.image.height, caption: a.image.alt } : `${SITE}/shots/board.jpg`,
   author: { "@type": "Organization", name: "Warcryer", url: `${SITE}/` },
   publisher: { "@type": "Organization", name: "Warcryer", url: `${SITE}/`, logo: { "@type": "ImageObject", url: `${SITE}/favicon.png` } },
 };
 ---
-<Base title={`${a.title} · Warcryer`} description={a.description} type="article" bodyClass="page">
+<Base title={`${a.title} · Warcryer`} description={a.description} type="article" bodyClass="page" image={a.image?.path} imageAlt={a.image?.alt}>
 <Fragment slot="head">
   <meta property="article:published_time" content={a.firstPublishedAt}>
   <meta property="article:modified_time" content={a.publishedAt}>

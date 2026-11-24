@@ -20,6 +20,8 @@ export type LearnArticle = {
   publishedAt: string;
   drafted: boolean;
   related: string[];
+  /** Its first picture, for link previews: a path on this site. Null when it has none. */
+  image?: { path: string; width: number; height: number; alt: string } | null;
 };
 
 export const ARTICLES = data.articles as LearnArticle[];

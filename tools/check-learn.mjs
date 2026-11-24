@@ -18,6 +18,8 @@ for (const a of learn.articles) {
   const html = readFileSync(page(a.path), "utf8");
   if (!html.includes("<h1")) wrong.push(`${a.path} has no title`);
   for (const m of a.html.matchAll(/href="(\/[^"#?]*)/g)) if (!existsSync(page(m[1])) && !existsSync(join(root, "dist", m[1]))) wrong.push(`${a.path} links to ${m[1]}, which is not a page`);
+  for (const m of a.html.matchAll(/<img src="(\/[^"]*)"/g)) if (!existsSync(join(root, "dist", m[1]))) wrong.push(`${a.path} shows the picture ${m[1]}, which is not in the build`);
+  if (a.image && !existsSync(join(root, "dist", a.image.path))) wrong.push(`${a.path} names ${a.image.path} for its link preview, which is not in the build`);
   if (!existsSync(page(learn.categories.find((c) => c.key === a.categoryKey).path))) wrong.push(`no category page for ${a.path}`);
 }
 for (const m of learn.moved) if (!existsSync(page(m.from))) wrong.push(`the old address ${m.from} does not forward`);

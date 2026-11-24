@@ -3,4 +3,5 @@ dist/
 .astro/
 __pycache__/
 src/data/learn.json
+public/learn-img/
 src/styles/learn-article.css

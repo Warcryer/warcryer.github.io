@@ -94,6 +94,8 @@ export function htmlToMd(html: string): string {
   s = s.replace(/<a [^>]*class="[^"]*anchor[^"]*"[^>]*>.*?<\/a>/g, "");
   s = s.replace(/<sup[^>]*>.*?<\/sup>/g, "").replace(/<span class="la-publisher">(.*?)<\/span>/gs, ", $1");
   s = s.replace(/<p class="la-(?:quick|callout)-title">(.*?)<\/p>/gs, "\n\n**$1**\n\n");
+  // A picture: its description stands for it, with its caption under it.
+  s = s.replace(/<figure class="la-figure"><img src="([^"]*)" alt="([^"]*)"[^>]*>(?:<figcaption>(.*?)<\/figcaption>)?<\/figure>/gs, (_m, src: string, alt: string, caption?: string) => `\n\n![${alt}](${abs(unescape(src))})${caption ? `\n\n*${caption}*` : ""}\n\n`);
   s = s.replace(/<h2[^>]*>(.*?)<\/h2>/gs, "\n\n## $1\n\n").replace(/<h3[^>]*>(.*?)<\/h3>/gs, "\n\n### $1\n\n").replace(/<h4[^>]*>(.*?)<\/h4>/gs, "\n\n#### $1\n\n");
   s = s.replace(/<tr[^>]*>(.*?)<\/tr>/gs, (_m, row: string) => `| ${[...row.matchAll(/<t[hd][^>]*>(.*?)<\/t[hd]>/gs)].map((c) => c[1].replace(/\n/g, " ").trim()).join(" | ")} |\n`);
   s = s.replace(/<thead[^>]*>(.*?)<\/thead>/gs, (_m, head: string) => `${head}${"|---".repeat((head.match(/\|/g)?.length ?? 2) - 1)}|\n`);
