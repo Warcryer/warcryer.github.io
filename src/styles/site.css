@@ -96,18 +96,19 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 /* One player, three videos. Like the closer look below, the choosing is radio buttons and their
    labels, so it works before any script has run. */
 .pick { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; opacity: 0; overflow: hidden; clip-path: inset(50%); }
-.reel { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); grid-template-rows: auto auto auto 1fr; gap: 12px clamp(16px, 2.5vw, 28px); margin-top: 1.6em; }
+.reel { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); grid-template-rows: auto auto auto auto 1fr; gap: 12px clamp(16px, 2.5vw, 28px); margin-top: 1.6em; }
 .reel-pick { grid-column: 2; display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 14px; align-items: center; padding: 10px; background: var(--bg-1); border: 1px solid var(--line); border-left: 3px solid var(--line); border-radius: 2px; color: var(--muted); font-size: .86rem; cursor: pointer; transition: border-color .15s, color .15s; }
 .reel-pick:nth-of-type(1) { grid-row: 1; }
 .reel-pick:nth-of-type(2) { grid-row: 2; }
 .reel-pick:nth-of-type(3) { grid-row: 3; }
+.reel-pick:nth-of-type(4) { grid-row: 4; }
 .reel-pick img { border: 1px solid var(--line); border-radius: 2px; }
 .reel-pick strong { display: block; color: var(--text); font-weight: 600; font-size: .95rem; }
 .reel-pick:hover { border-color: var(--gold-dim); }
 .pick:checked + .reel-pick { border-color: var(--gold-dim); border-left-color: var(--gold); background: var(--bg-2); }
 .pick:checked + .reel-pick strong { color: var(--gold-bright); }
 .pick:focus-visible + .reel-pick, .pick:focus-visible + .tab { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
-.reel-panel { grid-column: 1; grid-row: 1 / 5; display: none; }
+.reel-panel { grid-column: 1; grid-row: 1 / 6; display: none; }
 .pick:checked + .reel-pick + .reel-panel { display: block; }
 .reel-panel .intro { margin: 1.4em 0 0; max-width: none; font-size: .98rem; }
 @media (max-width: 860px) {

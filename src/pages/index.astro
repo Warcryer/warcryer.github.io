@@ -1,7 +1,7 @@
 ---
 // The front page.
 import Base from "../layouts/Base.astro";
-import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID, LANG_VIDEO_ID } from "../data/site";
+import { SITE, GITHUB, DISCORD, VIDEO_ID, LOOT_VIDEO_ID, LANG_VIDEO_ID, TARGETS_VIDEO_ID } from "../data/site";
 
 const ld = {
   "@context": "https://schema.org",
@@ -85,8 +85,24 @@ const ld = {
           <span class="play-mark" aria-hidden="true"></span>
         </button>
       </div>
-      <p class="intro">A twenty-two-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, the lounge, groups and who is online, building the roster, going live, the chat with orders, ready checks and calls, a look at it over a real game, a briefing, a party losing its leader, the compact strip, attendance and history, and every player reading in their own language. It has captions and no sound. The clans and players in it are made up.</p>
+      <p class="intro">A twenty-two-minute walkthrough from the alliance leader's seat: signing in, starting an alliance and fitting it to your game, clans and invite links, the lounge, groups and who is online, building the roster, going live, the chat with orders, priority targets, ready checks and calls, a look at it over a real game, a briefing, a party losing its leader, the compact strip, attendance and history, and every player reading in their own language. It has captions and no sound. The clans and players in it are made up.</p>
       <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${VIDEO_ID}`}>watch it on YouTube</a>.</p>
+    </div>
+
+    <input class="pick" type="radio" name="reel" id="v-targets">
+    <label class="reel-pick" for="v-targets">
+      <img src="/shots/targets-video.jpg" alt="" width="1600" height="900" loading="lazy">
+      <span><strong>Priority targets</strong> 2 minutes</span>
+    </label>
+    <div class="reel-panel">
+      <div class="video" data-video={TARGETS_VIDEO_ID}>
+        <button type="button" class="play" aria-label="Play the video Priority targets">
+          <img src="/shots/targets-video.jpg" alt="The video's opening card: Priority targets" width="1600" height="900" loading="lazy">
+          <span class="play-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="intro">In a mass fight each party is given enemies to keep down. The leader writes the list on the Voice screen, and each player sees the names meant for them at the top of the chat, in the app and in the chat window over a real game, and copies one with a click.</p>
+      <p class="fine video-note">Playing it loads the video from YouTube. Or <a href={`https://youtu.be/${TARGETS_VIDEO_ID}`}>watch it on YouTube</a>.</p>
     </div>
 
     <input class="pick" type="radio" name="reel" id="v-lang">
@@ -234,7 +250,7 @@ const ld = {
           <h4>A pinned order</h4>
           <p>The event leader pins an order on Broadcast. It stays at the top of everyone's chat and on their strip until it changes.</p>
           <h4>Priority targets</h4>
-          <p>Leaders name the enemies each party, or one player, is to keep down. The names stand at the top of that player's chat and on their strip, and a click copies one, spelled right.</p>
+          <p>Leaders name the enemies each party, or one player, is to keep down. The names stand at the top of that player's chat and on their strip, and a click copies one, spelled right. <a href="#watch" data-reel="v-targets">Watch two minutes of it</a>.</p>
           <h4>Ready checks</h4>
           <p>One click asks everyone; the answers count up as they come in: ready, not ready, no answer.</p>
           <h4>Quick calls</h4>
