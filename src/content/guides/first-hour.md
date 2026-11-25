@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.1/docs/first-hour.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Your alliance's first hour
 
@@ -8,7 +8,7 @@ Warcryer is in beta and free. You need a **beta code** to start an alliance: ask
 
 ## 1. Install and sign in (5 minutes)
 
-1. Download the installer from the [Releases page](/download/) and run it. Windows warns that it is not code-signed yet: click **More info**, then **Run anyway**.
+1. Download the installer from the [Releases page](/download/) and run it. If Windows SmartScreen warns (the app is code-signed, but the signature is new), click **More info**, then **Run anyway**.
 2. Click **Sign in with Discord**, approve in your browser, and confirm your in-game name.
 3. Go through the three setup steps: microphone and headset, the three-second test, and your push-to-talk key.
 

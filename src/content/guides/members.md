@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.1/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -6,7 +6,7 @@ You never pick a voice channel in this app. Your place in the roster decides wha
 
 ## Getting started
 
-1. **Install.** Download the newest installer from the [Releases page](/download/). It is not code-signed yet, so Windows shows a blue SmartScreen warning: click **More info**, then **Run anyway**. You only do this once: after that the app [updates itself](#updates-and-the-tray-icon).
+1. **Install.** Download the newest installer from the [Releases page](/download/). It is code-signed, but the signature is new, so Windows may still show a blue SmartScreen warning for a while: click **More info**, then **Run anyway**. You only do this once: after that the app [updates itself](#updates-and-the-tray-icon).
 2. **Sign in.** Click **Sign in with Discord**. Your browser opens, you approve, and the app continues by itself. The app receives your Discord account ID and name only: no email, no server list, never your password.
    - If the app does not continue, the browser page has a section called **The app did not open** with a code. In the app, open **Enter code instead** and paste it.
 3. **Your name.** Enter your in-game name exactly as it appears in game. Within an alliance a name belongs to one account, as it does in the game: if yours is already taken, tell your clan leader. Which characters a name may have depends on the game your alliance plays; if yours does not fit when you use an invite link, the app says so and you change it in **Settings**.
