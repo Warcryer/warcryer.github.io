@@ -5,9 +5,9 @@ import Base from "../layouts/Base.astro";
 import Crumbs from "../components/Crumbs.astro";
 import { DIFFERS, DOES, DOES_NOT, FACTS, FAQ, NOT_TO_BE_CONFUSED, ONE_LINE, ORGANISATION_LD, SUMMARY, WEBSITE_LD } from "../data/about";
 import { ORDER, PRODUCTS } from "../data/compare";
-import { DISCORD, GITHUB, SITE } from "../data/site";
+import { DISCORD, GITHUB, SITE, YOUTUBE } from "../data/site";
 
-const LINKS: Record<string, string> = { "Contact": DISCORD, "Source code": GITHUB };
+const LINKS: Record<string, [string, string]> = { "Contact": [DISCORD, "Join it"], "Source code": [GITHUB, "On GitHub"], "Videos": [YOUTUBE, "Watch them"] };
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -42,7 +42,7 @@ const ld = {
         {FACTS.map(([k, v]) => (
           <tr>
             <th scope="row">{k}</th>
-            <td>{v}{LINKS[k] && <> <a href={LINKS[k]}>{k === "Contact" ? "Join it" : "On GitHub"}</a>.</>}</td>
+            <td>{v}{LINKS[k] && <> <a href={LINKS[k][0]}>{LINKS[k][1]}</a>.</>}</td>
           </tr>
         ))}
       </tbody>

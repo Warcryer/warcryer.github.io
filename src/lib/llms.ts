@@ -9,7 +9,7 @@ import { DIFFERS, DOES, DOES_NOT, FACTS, FAQ, NOT_TO_BE_CONFUSED, ONE_LINE, SUMM
 import { CHECKED, COMMON_FAQ, ORDER, PRODUCTS, ROWS, type ProductKey } from "../data/compare";
 import { GUIDES } from "../data/guides";
 import { ARTICLES, CATEGORIES, articlesIn, day, type LearnArticle } from "../data/learn";
-import { DISCORD, GITHUB, SITE } from "../data/site";
+import { DISCORD, GITHUB, SITE, YOUTUBE } from "../data/site";
 
 const abs = (path: string) => (path.startsWith("/") ? `${SITE}${path}` : path);
 /** Links written for the site ("/download/") made whole, so the text can be read anywhere. */
@@ -37,6 +37,7 @@ export function aboutMd(): string {
     `- **Website:** ${SITE}/`,
     `- **Download:** ${SITE}/download/`,
     `- **Source code of the Windows app:** ${GITHUB}`,
+    `- **YouTube channel:** ${YOUTUBE}`,
     `- **Discord:** ${DISCORD}`,
     "## What it does",
     ...DOES.map(([k, v]) => `- **${k}:** ${v}`),
@@ -146,7 +147,7 @@ export function llmsIndex(): string {
     pick("compare-").map(line).join("\n"),
     ...(learn.length ? ["## Learn", "Articles for people who run guilds, clans and alliances.", learn.map(line).join("\n")] : []),
     "## Optional",
-    [`- [Download](${SITE}/download/): the Windows installer and how to install it.`, `- [Status](${SITE}/status/): whether the service is up.`, `- [Privacy policy](${SITE}/privacy/)`, `- [Terms of use](${SITE}/terms/)`, `- [Source code of the Windows app](${GITHUB})`, `- [Discord](${DISCORD}): questions, beta codes, corrections.`].join("\n"),
+    [`- [Download](${SITE}/download/): the Windows installer and how to install it.`, `- [Status](${SITE}/status/): whether the service is up.`, `- [Privacy policy](${SITE}/privacy/)`, `- [Terms of use](${SITE}/terms/)`, `- [YouTube channel](${YOUTUBE}): a walkthrough and short videos of each part.`, `- [Source code of the Windows app](${GITHUB})`, `- [Discord](${DISCORD}): questions, beta codes, corrections.`].join("\n"),
   ].join("\n\n") + "\n");
 }
 

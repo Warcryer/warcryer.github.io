@@ -5,7 +5,7 @@
 // Every line here must be true of the service as it runs today, and agree with the comparison pages
 // (compare.ts) and the guides. When a fact changes (price, size, platforms, languages), change it here.
 import { COMMON_FAQ, OUR_LIMITS } from "./compare";
-import { DISCORD, GITHUB, SITE } from "./site";
+import { DISCORD, GITHUB, SITE, YOUTUBE } from "./site";
 
 /** The phrase that goes beside the name wherever it is introduced: other things are called nearly the same. */
 export const WHAT = "clan and alliance management for MMORPG players, with voice built in";
@@ -33,6 +33,7 @@ export const FACTS: [string, string][] = [
   ["Hosting", "Hosted for you. You cannot run your own server."],
   ["Source code", "The Windows app is open source (MIT licence). The server is not public."],
   ["Who makes it", "Warcryer is a community project. It is not affiliated with or endorsed by any game publisher."],
+  ["Videos", "A walkthrough and short videos of each part, on Warcryer's YouTube channel."],
   ["Contact", "The Warcryer Discord."],
 ];
 
@@ -68,7 +69,7 @@ export const FAQ: { q: string; a: string }[] = [
 ];
 
 /** Where else Warcryer is, for the data that ties these places to the site. */
-export const SAME_AS = [GITHUB.replace(/\/[^/]+$/, ""), GITHUB, DISCORD];
+export const SAME_AS = [GITHUB.replace(/\/[^/]+$/, ""), GITHUB, YOUTUBE, DISCORD];
 
 /** schema.org: the organisation, the site and the app, pointing at one another. */
 export const ORGANISATION_LD = {

@@ -1,7 +1,7 @@
 ---
 // Every page: the head, the header with its menu, and the footer.
 import "../styles/site.css";
-import { SITE, NAV, DISCORD, GITHUB, RELEASES, ISSUES } from "../data/site";
+import { SITE, NAV, DISCORD, GITHUB, RELEASES, ISSUES, YOUTUBE } from "../data/site";
 import StatusDot from "../components/StatusDot.astro";
 import { HAS_LEARN } from "../data/learn";
 
@@ -87,6 +87,7 @@ const here = (href: string) => (href !== "/" && !href.includes("#") && path.star
     <a href="/compare/">Compare</a>
     <a href="/status/"><StatusDot />Status</a>
     <a href={DISCORD}>Discord</a>
+    <a href={YOUTUBE}>YouTube</a>
     <a href={GITHUB}>GitHub</a>
     <a href={RELEASES}>Releases</a>
     <a href="/terms/">Terms of use</a>
