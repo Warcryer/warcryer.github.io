@@ -9,7 +9,7 @@ export const ISSUES = `${GITHUB}/issues`;
 export const YOUTUBE = "https://www.youtube.com/@Warcryer-voice";
 /** The walkthrough (re-recorded at 0.42). */
 export const VIDEO_ID = "RN7N0Ppht-E";
-export const LOOT_VIDEO_ID = "DJ13PojgG9E";
+export const LOOT_VIDEO_ID = "GQbmY1cM47s";
 /** "Chat in your language" (recorded at 0.41). */
 export const LANG_VIDEO_ID = "mOKSXRxuiS8";
 /** "Priority targets" (recorded at 0.42). */
