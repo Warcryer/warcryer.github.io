@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.43.0/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.43.1/docs/clan-leaders.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for clan leaders and officers
 

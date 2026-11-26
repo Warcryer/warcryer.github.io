@@ -134,7 +134,7 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 .next label::after { content: " \203A"; }
 .next label:hover { border-color: var(--gold-bright); color: #fff; }
 /* Wide enough for all nine on one line: let them fill it. */
-@media (min-width: 1160px) { .tab { flex-grow: 1; } }
+@media (min-width: 1160px) { .tab { flex: 1 1 calc(20% - 6px); } }
 @media (max-width: 760px) {
   .tour { flex-direction: column; flex-wrap: nowrap; gap: 0; }
   .tab { order: 0; flex: none; display: flex; justify-content: space-between; align-items: center; text-align: left; padding: 1.05em 1em; margin-top: -1px; border-top-width: 1px; font-size: .84rem; }
