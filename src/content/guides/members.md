@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.1/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.43.0/docs/members.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for members
 
@@ -105,13 +105,13 @@ Party, Reserve and the lounge work the same way, and you choose one of two modes
 - **Push-to-talk.** Hold a key and speak. Mouse side buttons work. One key, the **Party** key, is used for your party and for the lounge.
 - **Voice activation.** The mic opens when you speak. Set the marker on the level bar above your background noise and below your voice, or click **Auto** and stay quiet for five seconds. Short sounds such as a key click or a knock on the desk do not open it.
 
-Broadcast, Command and Clan are always push-to-talk, each with its own key. If you are given a role that can speak on one of them, the app asks you to bind a key for it.
+Broadcast, Command, Clan and Allies (the leaders of allied alliances, see the [admins' guide](/guides/alliance-admins/#allies-a-pact-with-other-alliances)) are always push-to-talk, each with its own key. If you are given a role that can speak on one of them, the app asks you to bind a key for it.
 
 Good to know:
 
 - Your keys are never taken from the game. The game still receives them.
 - Speaking on one net never mutes what you hear on the others.
-- While you hold a Broadcast, Command or Clan key, your voice goes only to that net; voice activation pauses.
+- While you hold a Broadcast, Command, Clan or Allies key, your voice goes only to that net; voice activation pauses.
 - **Mic and headset buttons**, at the top right of the app: click the microphone to turn your mic off or on, and the headset to stop hearing anyone. Red and crossed out means off. The microphone turns green while your mic is open, and the foot of the Voice tab says on which net. With the headset off your mic is off too; turning the headset on again puts your mic back the way it was. While your headset is off, the others in your nets see a red, crossed-out headset beside your name, so they know you cannot hear them; whether your mic is off is not shown. The compact strip has the same two buttons.
 - The **Mute all** key does what the mic button does, and the **Headset** key what the headset button does, without leaving the game. Both are set in Settings → **Keys**.
 

@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.1/TERMS.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.43.0/TERMS.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Terms of use
 

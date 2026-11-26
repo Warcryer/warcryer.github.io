@@ -1,4 +1,4 @@
-<!-- Copied from https://github.com/Warcryer/client/blob/v0.42.1/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
+<!-- Copied from https://github.com/Warcryer/client/blob/v0.43.0/docs/alliance-admins.md by tools/sync-docs.mjs. Edit it there, not here. -->
 
 # Guide for alliance admins and event leaders
 
@@ -63,6 +63,30 @@ The owner cannot leave the alliance or delete their account while they own it: h
 - A limit only stops growth. At the limit nobody new can be approved or moved into a clan, and an invite link that normally lets people straight in puts them on the waiting list instead. Nobody is removed and no voice is cut.
 - If the alliance needs more room, ask on the [Warcryer Discord](https://discord.gg/qf4meEMfhp).
 - An alliance that is over its limit, or whose operations the service has paused, keeps its members and lounges and cannot create or start an operation until that is put right. A running operation can always be ended.
+
+### Allies: a pact with other alliances
+
+When alliances fight together (a siege, a raid on a common enemy), their leaders can share one voice net, the **Allies** net, with its own key and its own chat. The **Allies** section of the Alliance tab sets it up.
+
+**Who is on it.** From each alliance in the pact: its owner, its admins, and up to three **delegates** the admins name below the pact (a siege commander who is not an admin, for one). Nobody else of any alliance hears it, and a leader of another alliance can never speak to your members.
+
+**What the other alliances see.** Your leaders' names, each with your alliance's name, and what they say and write on the Allies net. Never your roster, clans, parties, operations, points, who is online, or any other net.
+
+**Making a pact.**
+
+1. Choose **Standing** (until an alliance leaves) or **Ends after 24 hours** (for a one-off fight), and click **Make a pact code**.
+2. Give the code to the other alliance's leaders however you like: in the game, on Discord. It works once, within 24 hours.
+3. An admin of the other alliance enters it under **Join a pact**, clicks **Look it up** to see whose it is, and **Accept**. You are both on the Allies net within a second or two.
+
+There is no list of alliances to search: a pact is made only by handing over a code.
+
+**More alliances.** A pact holds up to four alliances. Any admin of an alliance in the pact can make a code to bring the next one in. An alliance is in one pact at a time.
+
+**Talking.** Bind the **Allies** key in Settings → Keys. It works everywhere: in an operation and between them, beside your own nets. While you hold it, your voice goes only to the Allies net. While an ally speaks, your clan, party and lounge are made quieter, as they are for Command.
+
+**Leaving.** **Leave the pact** (then again to confirm) takes your alliance out at once. A pact left with one alliance ends, and its chat goes with it. A pact of 24 hours ends by itself when its time is up.
+
+Every alliance's **Log** records codes made and withdrawn, alliances joining and leaving, the end of the pact, and delegates named. Another alliance is named in it, never its players.
 
 ### Call to arms
 
@@ -362,7 +386,7 @@ This matters for trust, so it is worth knowing.
 
 - The server decides who may join each net, from the roster as it is at that moment. The app only shows what the server allows.
 - When someone is moved, removed or banned, the server takes them out of the rooms they should no longer be in. A modified app cannot stay behind or get back in.
-- A plain member can only ever hear their party, their clan and Broadcast. Command is only given to current leaders.
+- A plain member can only ever hear their party, their clan and Broadcast. Command is only given to current leaders. The Allies net is only given to an alliance's owner, admins and named delegates, and only while their alliance is in the pact.
 - Every roster move and every role change is recorded with who did it. Read it on the **Alliance** tab under **Log** (see below). Every join and leave on every net is recorded too; an operation's **Attendance** is worked out from them.
 - Voice is never recorded.
 
