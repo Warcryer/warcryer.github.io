@@ -19,6 +19,7 @@ export const TARGETS_VIDEO_ID = "ZD4JEElKArk";
 export const NAV = [
   { href: "/#planning", label: "Planning" },
   { href: "/#voice", label: "Voice" },
+  { href: "/#allies", label: "Allies" },
   { href: "/#languages", label: "Languages" },
   { href: "/#loot", label: "Points and loot" },
   { href: "/guides/", label: "Guides" },

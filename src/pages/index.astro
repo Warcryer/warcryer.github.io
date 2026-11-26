@@ -167,6 +167,11 @@ const ld = { "@context": "https://schema.org", "@graph": [ORGANISATION_LD, WEBSI
           <p class="who">Players waiting for a party</p>
           <p>Latecomers wait here with the organisers until they are placed.</p>
         </li>
+        <li style="--net:#4fc3d9">
+          <h4>Allies</h4>
+          <p class="who">Leaders of allied alliances</p>
+          <p>The leaders of up to four alliances in a pact, on their own key. <label class="inline-link" for="t-allies">More on Allies</label></p>
+        </li>
       </ol>
 
       <div class="split">
@@ -194,6 +199,36 @@ const ld = { "@context": "https://schema.org", "@graph": [ORGANISATION_LD, WEBSI
           <p>Thirty seconds later the next member in party order is promoted, told, and on Command at once.</p>
         </div>
       </div>
+      <p class="next"><label for="t-allies">Next: Allies</label></p>
+    </div>
+
+    <input class="pick" type="radio" name="tour" id="t-allies">
+    <label class="tab" for="t-allies">Allies</label>
+    <div class="panel" id="allies">
+      <h3 class="panel-title">Allies: several alliances, one net for their leaders</h3>
+      <p class="intro">When alliances fight side by side, their leaders need to talk. A pact puts the leaders of up to four alliances on one voice net, with a key and a chat of its own, while each stays on their own alliance's nets. Their members never hear it.</p>
+      <div class="cards">
+        <article>
+          <h4>A pact by code</h4>
+          <p>An admin makes a pact code and gives it to the other alliance's leaders, who look it up and accept. A code works once, for 24 hours, and nobody can find an alliance from outside.</p>
+        </article>
+        <article>
+          <h4>Its own key, everywhere</h4>
+          <p>The Allies key talks on the net in an operation and between them. Each leader still hears their own clan and parties underneath.</p>
+        </article>
+        <article>
+          <h4>Who is on it</h4>
+          <p>From each alliance: its owner, its admins and up to three delegates they name, such as a siege commander. Nobody else of any alliance hears it.</p>
+        </article>
+        <article>
+          <h4>Nothing else crosses</h4>
+          <p>An allied leader shows by name and alliance. Rosters, clans, operations and other nets stay private. A pact stands, or ends by itself after 24 hours, and any admin can take their alliance out.</p>
+        </article>
+      </div>
+      <figure class="wide">
+        <img src="/shots/allies.jpg" alt="Two alliance leaders side by side on the Voice screen, each with an Allies net at the top of their nets; one holds the Allies key and the other sees him speaking, with his alliance's name" width="1600" height="775" loading="lazy">
+        <figcaption>Valen of Ember Accord holds his Allies key. Thane of Iron Covenant sees him speaking, with his alliance's name.</figcaption>
+      </figure>
       <p class="next"><label for="t-planning">Next: Planning</label></p>
     </div>
 
@@ -437,7 +472,7 @@ const ld = { "@context": "https://schema.org", "@graph": [ORGANISATION_LD, WEBSI
     <label class="tab" for="t-alliance">Your game</label>
     <div class="panel" id="alliance">
       <h3 class="panel-title">Your alliance, your game, your words</h3>
-      <p class="intro">Nothing about any one game is built in. An alliance sets the app up for the game it plays, and what is inside an alliance is seen and heard by nobody outside it.</p>
+      <p class="intro">Nothing about any one game is built in. An alliance sets the app up for the game it plays, and what is inside an alliance is seen and heard by nobody outside it. The one exception is one its admins choose: in a pact, allied leaders hear each other on the Allies net, and nothing else crosses.</p>
       <div class="cards">
         <article>
           <h4>An alliance of your own</h4>

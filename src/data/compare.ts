@@ -7,6 +7,8 @@
 export const CHECKED = "18 November 2026";
 /** The rows on translation and languages were read later than the rest. */
 export const CHECKED_LANGUAGES = "22 November 2026";
+/** The row on allied alliances (Discord's developer docs, Mumble's own issue tracker, Ventrilo's FAQ and changelog, TeamSpeak's whisper-list page). */
+export const CHECKED_ALLIES = "26 November 2026";
 export const CHECKED_ISO = "2026-11-18";
 
 /** What Warcryer does not do, said the same way on every page. */
@@ -37,7 +39,7 @@ export const ROWS: { id: string; label: string; ours: string; mark?: Mark }[] = 
     "id": "several",
     "mark": "yes",
     "label": "Hearing several groups at once",
-    "ours": "Every player is on up to five nets at once (Broadcast, Command, Clan, Party, Reserve), each with its own key."
+    "ours": "Every player is on up to five nets at once (Broadcast, Command, Clan, Party, Reserve), each with its own key; the leaders of alliances in a pact are on Allies as well."
   },
   {
     "id": "over",
@@ -98,6 +100,12 @@ export const ROWS: { id: string; label: string; ours: string; mark?: Mark }[] = 
     "mark": "yes",
     "label": "Between events",
     "ours": "A lounge for each clan, groups any member can start, who is online across the alliance, and a Call to arms that makes it a live operation at once."
+  },
+  {
+    "id": "allies",
+    "mark": "yes",
+    "label": "Leaders of allied alliances together",
+    "ours": "A pact made with a one-use code puts the owners, admins and up to three named delegates of up to four alliances on one Allies net, with its own key and chat, while each stays on their own alliance's nets. Their members never hear it, and nothing else crosses."
   },
   {
     "id": "hosting",
@@ -187,6 +195,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "Not offered.",
       "languages": "The new client comes in eight languages, Simplified Chinese, Russian and Polish among them, translated by its community.",
       "between": "Channels anyone can sit in, all week.",
+      "allies": "Not a feature. The leaders meet on one shared server, where its admins set up a channel or whisper lists for them.",
       "hosting": "Run your own server, rent one, or use TeamSpeak's own hosted Communities.",
       "price": "The client is free. Servers are licensed or rented by the slot.",
       "source": "Proprietary.",
@@ -206,6 +215,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "no",
       "languages": "yes",
       "between": "yes",
+      "allies": "part",
       "platforms": "yes",
       "also": "yes"
     },
@@ -321,6 +331,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "Not part of Discord itself, going by its own pages. A server can add a translation app or bot.",
       "languages": "About thirty languages, with Chinese in both written forms, Russian, Polish, Greek and Turkish.",
       "between": "Voice channels anyone can join, all week.",
+      "allies": "Not a feature. The leaders join one server and a voice channel on it; a user is in one voice channel at a time, so while there they are out of their own.",
       "hosting": "Hosted by Discord.",
       "price": "Free. Paid extras are optional.",
       "source": "Proprietary.",
@@ -340,6 +351,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "part",
       "languages": "yes",
       "between": "yes",
+      "allies": "part",
       "platforms": "yes",
       "also": "yes"
     },
@@ -456,6 +468,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "Not offered.",
       "languages": "Translated by its community into more than forty languages; how complete each one is varies.",
       "between": "Channels anyone can sit in, all week.",
+      "allies": "Not a feature. A Mumble client is connected to one server at a time, so the leaders meet on one server, in a channel set up for them.",
       "hosting": "Run your own server, or rent one from a third party.",
       "price": "Free.",
       "source": "Open source, client and server.",
@@ -475,6 +488,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "no",
       "languages": "yes",
       "between": "yes",
+      "allies": "part",
       "platforms": "yes",
       "also": "yes"
     },
@@ -587,6 +601,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "translate": "Not offered. It can read chat aloud.",
       "languages": "Its own pages name no language but English.",
       "between": "Channels anyone can sit in, all week.",
+      "allies": "Not a feature. Ventrilo 5 can stay connected to several servers at once, each in its own tab, so a leader can also sit on a server the alliances share.",
       "hosting": "Hosted by Ventrilo's owner.",
       "price": "A free server for 5 people online; $9.99 a month or $99.99 a year for 400.",
       "source": "Proprietary.",
@@ -605,6 +620,7 @@ export const PRODUCTS: Record<ProductKey, Product> = {
       "chat": "part",
       "translate": "no",
       "between": "yes",
+      "allies": "part",
       "platforms": "yes",
       "also": "part"
     },

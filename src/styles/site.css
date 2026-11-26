@@ -117,7 +117,7 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
   .reel-panel { order: 2; margin-top: 8px; }
 }
 
-/* The closer look: nine parts of the app, one shown at a time. Tabs on a wide screen, a list of
+/* The closer look: ten parts of the app, one shown at a time. Tabs on a wide screen, a list of
    rows that open on a narrow one. */
 .tour { display: flex; flex-wrap: wrap; gap: 6px; }
 .tab { order: 1; flex: 0 0 auto; text-align: center; padding: .8em .9em; background: var(--bg-1); border: 1px solid var(--line); border-top: 3px solid var(--line); border-radius: 2px; color: var(--muted); font: 600 .76rem/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; user-select: none; transition: border-color .15s, color .15s; }
@@ -153,7 +153,7 @@ figcaption { color: var(--muted); font-size: .88rem; margin-top: .8em; text-alig
 
 
 /* Nets */
-.nets { list-style: none; margin: 0 0 3em; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.nets { list-style: none; margin: 0 0 3em; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .nets li { background: var(--bg-1); border: 1px solid var(--line); border-top: 3px solid var(--net); border-radius: 2px; padding: 18px 16px 6px; }
 .nets h3 { color: var(--net); }
 .nets .who { font-size: .8rem; color: var(--text); margin-bottom: .7em; }
@@ -458,3 +458,4 @@ table.facts tbody th { width: 24%; white-space: nowrap; }
   table.facts tbody th { white-space: normal; border-bottom: 0; padding-bottom: 2px; }
   table.facts tbody td { padding-top: 4px; }
 }
+.inline-link { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
